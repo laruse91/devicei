@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "prettier"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "quotes": ["warn", "single"],
+        "semi": ["warn", "never"],
+        "jsx-quotes": ["warn", "prefer-single"],
+        "eslint no-case-declarations": ["off"],
+        "no-unused-vars": ["off"]
+    }
+}
