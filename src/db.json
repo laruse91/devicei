@@ -1,6 +1,6 @@
 {
     "goods": {
-        "watch": {
+        "all": {
             "1": {
                 "id": 123450,
                 "brand": "Apple",
@@ -84,9 +84,7 @@
                 },
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": ["watch", "samsung"]
-            }
-        },
-        "laptop": {
+            },
             "8": {
                 "id": 123457,
                 "brand": "Apple",
@@ -134,9 +132,7 @@
                 },
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": ["laptop", "dell"]
-            }
-        },
-        "phone": {
+            },
             "13": {
                 "id": 123462,
                 "brand": "Apple",
@@ -316,9 +312,7 @@
                 },
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": ["phone", "xiaomi"]
-            }
-        },
-        "tablet": {
+            },
             "28": {
                 "id": 123477,
                 "brand": "Apple",
@@ -337,7 +331,7 @@
                 "title": "Refurbished Apple iPad Mini",
                 "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/21-2-540x540.jpg?alt=media&token=2d1ea849-5264-47e4-8a7b-d686a975580a",
                 "price": {
-                    "old": null,
+                    "old": 400,
                     "current": 170
                 },
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
@@ -354,9 +348,7 @@
                 },
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": ["tablet", "apple"]
-            }
-        },
-        "monitor": {
+            },
             "31": {
                 "id": 123480,
                 "brand": "Apple",
@@ -381,18 +373,461 @@
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": ["monitor", "apple"]
             }
+        },
+        "categories": {
+            "watch": {
+                "1": {
+                    "id": 123450,
+                    "brand": "Apple",
+                    "title": "Apple Fitness Watch",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/26-2-600x600.jpg?alt=media&token=0b290661-f695-442e-8b12-c441c5e0fefc",
+                    "price": {
+                        "old": null,
+                        "current": 150
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "apple"]
+                },
+                "2": {
+                    "id": 123451,
+                    "brand": "Apple",
+                    "title": "Apple Silicone Watch",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/16-3-540x540.jpg?alt=media&token=dd55c3a8-13e5-4b4b-98d1-ea6a79fb0aa9",
+                    "price": {
+                        "old": null,
+                        "current": 200
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "apple"]
+                },
+                "3": {
+                    "id": 123452,
+                    "brand": "Sony",
+                    "title": "Sony Watch Series F",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/23-3.jpg?alt=media&token=4c63b065-9465-4bc6-a7c0-ed254ba08a62",
+                    "price": {
+                        "old": null,
+                        "current": 327
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "sony"]
+                },
+                "4": {
+                    "id": 123453,
+                    "brand": "Sony",
+                    "title": "Sony Watch 3 SWR50",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/17-3-600x600.jpg?alt=media&token=40147869-50c9-422a-8888-e3ca111b5e57",
+                    "price": {
+                        "old": null,
+                        "current": 327
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "sony"]
+                },
+                "5": {
+                    "id": 123454,
+                    "brand": "Apple",
+                    "title": "Misfit Shine 2",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/10.jpg?alt=media&token=85048599-a9f2-40a2-9abb-647430c24cc7",
+                    "price": {
+                        "old": null,
+                        "current": 269
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "apple"]
+                },
+                "6": {
+                    "id": 123455,
+                    "brand": "Motorolla",
+                    "title": "Motorola Gear S2 Watch",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/19-3.jpg?alt=media&token=71fc40eb-142f-4170-9dda-3b9760f1d645",
+                    "price": {
+                        "old": null,
+                        "current": 327
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "motorolla"]
+                },
+                "7": {
+                    "id": 123456,
+                    "brand": "Samsung",
+                    "title": "Samsung Gear Blue",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/4.jpg?alt=media&token=83a88878-7d5c-46aa-a720-1e1b8e4f1319",
+                    "price": {
+                        "old": 40,
+                        "current": 20
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["watch", "samsung"]
+                }
+            },
+            "laptop": {
+                "8": {
+                    "id": 123457,
+                    "brand": "Apple",
+                    "title": "12-inch Intel Core",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/13-3-540x540.jpg?alt=media&token=8f05b823-1020-411f-a07a-eda2e1c5d0fc",
+                    "price": {
+                        "old": null,
+                        "current": 1120
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["laptop", "apple"]
+                },
+                "9": {
+                    "id": 123458,
+                    "brand": "Apple",
+                    "title": "Apple Macbook",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/12-3-540x540.jpg?alt=media&token=8b60c9c7-6b1f-400d-b140-9f64044bf55c",
+                    "price": {
+                        "old": null,
+                        "current": 1000
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["laptop", "apple"]
+                },
+                "10": {
+                    "id": 123459,
+                    "brand": "Asus",
+                    "title": "Asus Zenbook ux360ca",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/2-3-540x540.jpg?alt=media&token=f523025a-acf8-4241-919e-282f5c5891c4",
+                    "price": {
+                        "old": 1100,
+                        "current": 900
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["laptop", "asus"]
+                },
+                "11": {
+                    "id": 123460,
+                    "brand": "Dell",
+                    "title": "Dell 12.0-inch 256GB",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/5-2-540x540.jpg?alt=media&token=02b6299c-081a-4789-84df-80168fec8d78",
+                    "price": {
+                        "old": null,
+                        "current": 800
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["laptop", "dell"]
+                }
+            },
+            "phone": {
+                "13": {
+                    "id": 123462,
+                    "brand": "Apple",
+                    "title": "Apple iPhone 5S 32GB GM",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/11-2-540x540.jpg?alt=media&token=cad0d646-018c-4551-a82f-ffe793943476",
+                    "price": {
+                        "old": null,
+                        "current": 700
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "apple"]
+                },
+                "14": {
+                    "id": 123463,
+                    "brand": "Apple",
+                    "title": "Apple iPhone 6",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/20-3-540x540.jpg?alt=media&token=98758e9f-3f3a-479e-bfa4-1fb6826c987c",
+                    "price": {
+                        "old": null,
+                        "current": 400
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "apple"]
+                },
+                "15": {
+                    "id": 123464,
+                    "brand": "Apple",
+                    "title": "Apple iPhone 6 16GB",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/11-2-540x540.jpg?alt=media&token=cad0d646-018c-4551-a82f-ffe793943476",
+                    "price": {
+                        "old": null,
+                        "current": 700
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "apple"]
+                },
+                "16": {
+                    "id": 123465,
+                    "brand": "Apple",
+                    "title": "Apple iPhone 6 16GB",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/12-2-540x540.jpg?alt=media&token=79f08911-7634-46cc-9fe6-2eeb265bd57a",
+                    "price": {
+                        "old": null,
+                        "current": 700
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "apple"]
+                },
+                "17": {
+                    "id": 123466,
+                    "brand": "HTC",
+                    "title": "HTC Desire 830",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/14-2-540x540.jpg?alt=media&token=b9bcad6c-22d9-44a4-b6c4-362ffc0d0b0c",
+                    "price": {
+                        "old": null,
+                        "current": 400
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "HTC"]
+                },
+                "18": {
+                    "id": 123467,
+                    "brand": "Meizu",
+                    "title": "Meizu M6 Note Blue",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/1-3-540x540.jpg?alt=media&token=4d7be3d3-baa6-47b7-aff9-8abcdc4d11a4",
+                    "price": {
+                        "old": 400,
+                        "current": 350
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "meizu"]
+                },
+                "19": {
+                    "id": 123468,
+                    "brand": "Motorola",
+                    "title": "Motorola Plus GSM",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/15-2-540x540.jpg?alt=media&token=efdf3d7b-3286-4ed4-a1d1-acd58849bcd7",
+                    "price": {
+                        "old": null,
+                        "current": 500
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "motorolla"]
+                },
+                "20": {
+                    "id": 123469,
+                    "brand": "Motorola",
+                    "title": "Motorola 32GB",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/18-2-540x540.jpg?alt=media&token=92884766-c8c9-4b28-8c3c-b82da12e0139",
+                    "price": {
+                        "old": null,
+                        "current": 500
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "motorolla"]
+                },
+                "21": {
+                    "id": 123470,
+                    "brand": "Motorola",
+                    "title": "Motorola GSM",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/19-2-540x540.jpg?alt=media&token=8ebbb2f9-17e0-439e-a42e-74f7245e072d",
+                    "price": {
+                        "old": null,
+                        "current": 280
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "motorolla"]
+                },
+                "22": {
+                    "id": 123471,
+                    "brand": "Nokia",
+                    "title": "Nokia 5",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/22-3-540x540.jpg?alt=media&token=64680aeb-93e8-4d4f-a549-627aeeb126a8",
+                    "price": {
+                        "old": null,
+                        "current": 400
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "nokia"]
+                },
+                "23": {
+                    "id": 123472,
+                    "brand": "Nokia",
+                    "title": "Nokia 6 Dual Sim Tempered Blue",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/21-3-540x540.jpg?alt=media&token=5e86b761-499b-41c6-99ee-b5a6a28f300f",
+                    "price": {
+                        "old": null,
+                        "current": 280
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "nokia"]
+                },
+                "24": {
+                    "id": 123473,
+                    "brand": "OnePlus",
+                    "title": "OnePlus 5T",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/5-540x540.jpg?alt=media&token=c9a7cff8-c184-4cd6-8d22-7c1437927361",
+                    "price": {
+                        "old": null,
+                        "current": 120
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "oneplus"]
+                },
+                "25": {
+                    "id": 123474,
+                    "brand": "Samsung",
+                    "title": "Samsung Galaxy J5 Black",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/20-2-540x540.jpg?alt=media&token=8d3ec164-babd-44b7-b29b-bade95b9b913",
+                    "price": {
+                        "old": null,
+                        "current": 280
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "samsung"]
+                },
+                "26": {
+                    "id": 123475,
+                    "brand": "Samsung",
+                    "title": "Samsung Galaxy S8",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/14-3-540x540.jpg?alt=media&token=fe061534-9f69-4283-8186-c83724bf5c0e",
+                    "price": {
+                        "old": null,
+                        "current": 950
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "samsung"]
+                },
+                "27": {
+                    "id": 123476,
+                    "brand": "Xiaomi",
+                    "title": "Xiaomi Mi Mix 2",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/6-540x540.jpg?alt=media&token=be0d1b4c-8778-4b1c-818c-072b5ac55153",
+                    "price": {
+                        "old": null,
+                        "current": 420
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["phone", "xiaomi"]
+                }
+            },
+            "tablet": {
+                "28": {
+                    "id": 123477,
+                    "brand": "Apple",
+                    "title": "Apple 9.7″ iPad",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/18-3.jpg?alt=media&token=c4944593-5502-4a41-b9d7-73e3f95ae42b",
+                    "price": {
+                        "old": null,
+                        "current": 200
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["tablet", "apple"]
+                },
+                "29": {
+                    "id": 123478,
+                    "brand": "Apple",
+                    "title": "Refurbished Apple iPad Mini",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/21-2-540x540.jpg?alt=media&token=2d1ea849-5264-47e4-8a7b-d686a975580a",
+                    "price": {
+                        "old": 400,
+                        "current": 170
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["tablet", "apple"]
+                },
+                "30": {
+                    "id": 123479,
+                    "brand": "Apple",
+                    "title": "Refurbished iPad Mini 4th",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/24-3-540x540.jpg?alt=media&token=bd8aee0d-bcc7-4820-a78c-3c730cac4b8f",
+                    "price": {
+                        "old": null,
+                        "current": 220
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["tablet", "apple"]
+                }
+            },
+            "monitor": {
+                "31": {
+                    "id": 123480,
+                    "brand": "Apple",
+                    "title": "Apple 21.5″ LED",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/7-2-540x540.jpg?alt=media&token=baf4d99e-08f0-4ffb-bfd6-7479ecf492be",
+                    "price": {
+                        "old": null,
+                        "current": 530
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["monitor", "apple"]
+                },
+                "12": {
+                    "id": 123461,
+                    "brand": "Apple",
+                    "title": "3M PF Apple iMac",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/4-2-540x540.jpg?alt=media&token=1ba51646-ab46-4253-a362-ba252921df1a",
+                    "price": {
+                        "old": null,
+                        "current": 1200
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                    "tags": ["monitor", "apple"]
+                }
+            }
+        },
+        "sale": {
+            "7": {
+                "id": 123456,
+                "brand": "Samsung",
+                "title": "Samsung Gear Blue",
+                "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/4.jpg?alt=media&token=83a88878-7d5c-46aa-a720-1e1b8e4f1319",
+                "price": {
+                    "old": 40,
+                    "current": 20
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                "tags": ["watch", "samsung"]
+            },
+            "10": {
+                "id": 123459,
+                "brand": "Asus",
+                "title": "Asus Zenbook ux360ca",
+                "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/2-3-540x540.jpg?alt=media&token=f523025a-acf8-4241-919e-282f5c5891c4",
+                "price": {
+                    "old": 1100,
+                    "current": 900
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                "tags": ["laptop", "asus"]
+            },
+            "18": {
+                "id": 123467,
+                "brand": "Meizu",
+                "title": "Meizu M6 Note Blue",
+                "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/1-3-540x540.jpg?alt=media&token=4d7be3d3-baa6-47b7-aff9-8abcdc4d11a4",
+                "price": {
+                    "old": 400,
+                    "current": 350
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                "tags": ["phone", "meizu"]
+            },
+            "29": {
+                "id": 123478,
+                "brand": "Apple",
+                "title": "Refurbished Apple iPad Mini",
+                "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/21-2-540x540.jpg?alt=media&token=2d1ea849-5264-47e4-8a7b-d686a975580a",
+                "price": {
+                    "old": 400,
+                    "current": 170
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
+                "tags": ["tablet", "apple"]
+            }
         }
     },
-    "backgrounds": [
-        "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/01-1-1.jpg?alt=media&token=88659e1b-de09-428d-a608-523e1cf801ae",
-        "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/03-1.jpg?alt=media&token=7e1877ec-8563-4a6b-b203-4019ddcb37ab"
+
+    "carousel": [
+        {
+            "title": "New collection coming to town",
+            "description": "Introducing fashionable & gorgeous phone from design to stylish wearable",
+            "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/01-1-1.jpg?alt=media&token=88659e1b-de09-428d-a608-523e1cf801ae"
+        },
+        {
+            "title": "New collection coming to town",
+            "description": "Introducing fashionable & gorgeous phone from design to stylish wearable",
+            "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/03-1.jpg?alt=media&token=7e1877ec-8563-4a6b-b203-4019ddcb37ab"
+        }
     ],
+
     "about": [
         "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-3-2.jpg?alt=media&token=c2a91eae-e548-49e9-8edc-40ef79f57647",
         "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-2-2.jpg?alt=media&token=5caff9ba-a59c-40ec-822f-c028a48888c8",
         "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-1-2.jpg?alt=media&token=304305dd-e4ad-49ab-ab73-5ffecdef5e96"
     ],
-
     "news": [
         {
             "id": 321120,
@@ -432,11 +867,11 @@
         }
     ],
 
-    "feature": {
+    "features": {
         "32": {
             "id": 123481,
-            "text": "New Step",
-            "title": "Apple IPhone",
+            "title": "New Step",
+            "brand": "Apple IPhone",
             "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/featured-2-2.jpg?alt=media&token=2af31ab9-833d-44fc-89fb-a5406aa4ce79",
             "price": {
                 "old": null,
@@ -447,8 +882,8 @@
         },
         "33": {
             "id": 123482,
-            "text": "One Shot",
-            "title": "iMac Pro Xeon Radeon Vega",
+            "title": "One Shot",
+            "brand": "iMac Pro Xeon Radeon Vega",
             "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/featured-1-1-2.jpg?alt=media&token=472e5039-7855-4bc6-b8e3-482763389230",
             "price": {
                 "old": null,
@@ -461,8 +896,8 @@
     "bigSale": {
         "34": {
             "id": 123483,
-            "text": "Best Digital",
-            "title": "Sale IPhone X",
+            "title": "Best Digital",
+            "brand": "Sale IPhone X",
             "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/featured-3-2.jpg?alt=media&token=61b6dc6e-a780-4321-9c8e-722e30423b00",
             "price": {
                 "old": 600,

@@ -35,7 +35,7 @@ export const GoodsCard: React.FC<TProps> = React.memo(({ id, image, title, price
                 size='small'
                 hoverable
                 style={{
-                    border: `1px solid #dddddd`,
+                    border: '1px solid #dddddd',
                     borderRadius: '10px',
                 }}>
                 <Col>
@@ -52,13 +52,13 @@ export const GoodsCard: React.FC<TProps> = React.memo(({ id, image, title, price
                         <Row justify='center' align='middle'>
                             <Space size={5}>
                                 <Col>
-                                    <Title style={{ color: `#3452ff` }} level={4}>
+                                    <Title style={{ color: '#3452ff' }} level={4}>
                                         ${price.current}{' '}
                                     </Title>
                                 </Col>
 
                                 {price.old && (
-                                    <Col style={{ marginRight: `10px` }}>
+                                    <Col style={{ marginRight: '10px' }}>
                                         <Title type='secondary' delete level={5}>
                                             ${price.old}
                                         </Title>
@@ -71,7 +71,7 @@ export const GoodsCard: React.FC<TProps> = React.memo(({ id, image, title, price
                             <Rate style={{ fontSize: '14px' }} defaultValue={3} />
                         </Row>
 
-                        <Row justify='center' style={{ margin: `10px auto` }}>
+                        <Row justify='center' style={{ margin: '10px auto' }}>
                             <Button shape='round' size='small'>
                                 TO CART
                             </Button>

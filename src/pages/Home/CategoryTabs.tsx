@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Tabs } from 'antd'
 import { GoodsCard } from '../../components/cards/GoodsCard'
-import { categories, phones, randomGoods } from '../../store/store'
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { select } from '../../selectors/selectors'
 
 const { TabPane } = Tabs
 
 export const CategoryTabs = () => {
-    const [goods, setGoods] = useState(categories)
-    const cards = goods.map((g) => (
+    const [goods, setGoods] = useState('categories')
+    //useSelector
+    const categories = useSelector(select.categories)
+
+    const cards = categories?.map((g) => (
         <GoodsCard key={g.id} title={g.title} id={g.id} image={g.image} price={g.price} tags={g.tags} />
     ))
 
     const handleTabChange = (key: string) => {
-        let arr = randomGoods(4, phones)
-        setGoods(arr)
+        console.log(key)
     }
 
     return (

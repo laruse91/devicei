@@ -1,5 +1,6 @@
 import React from 'react'
 import { Badge, Card, Col, Image, Rate, Row, Typography } from 'antd'
+import { TPrices } from '../../types/types'
 
 const { Title, Paragraph } = Typography
 
@@ -7,14 +8,11 @@ type TProps = {
     image: string
     title: string
     id: number
-    desc: string
-    price: {
-        old: number | null
-        current: number
-    }
+    description: string
+    price: TPrices
 }
 
-export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, desc }) => {
+export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, description }) => {
     const goodsImg = price.old ? (
         <Badge count='SALE!' offset={[-110, 30]} style={{ fontSize: '16px', background: '#3452ff' }}>
             <Image src='good' fallback={image} style={{ cursor: 'pointer' }} />
@@ -29,13 +27,13 @@ export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, 
                 size='small'
                 hoverable
                 style={{
-                    border: `1px solid #dddddd`,
+                    border: '1px solid #dddddd',
                     borderRadius: '10px',
                 }}>
                 <Row justify='space-between'>
                     <Col span={10}>{goodsImg}</Col>
 
-                    <Col span={14} style={{ padding: `10px 0 0 10px` }}>
+                    <Col span={14} style={{ padding: '10px 0 0 10px' }}>
                         <Row>
                             <Rate style={{ fontSize: '14px' }} defaultValue={3} />
                         </Row>
@@ -48,20 +46,20 @@ export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, 
 
                         <Row align='middle'>
                             {price.old && (
-                                <Col style={{ marginRight: `10px` }}>
+                                <Col style={{ marginRight: '10px' }}>
                                     <Title type='secondary' delete level={5}>
                                         ${price.old}
                                     </Title>
                                 </Col>
                             )}
                             <Col>
-                                <Title style={{ color: `#3452ff` }} level={4}>
+                                <Title style={{ color: '#3452ff' }} level={4}>
                                     ${price.current}
                                 </Title>
                             </Col>
                         </Row>
                         <Row>
-                            <Paragraph>{desc}</Paragraph>
+                            <Paragraph>{description}</Paragraph>
                         </Row>
                     </Col>
                 </Row>
