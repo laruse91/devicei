@@ -24,7 +24,8 @@ export const NewsCard: React.FC<TProps> = React.memo(({ image, title, date, tag 
                     cursor: 'pointer',
                     borderRadius: '10px',
                     height: '200px',
-                }}></Row>
+                }}
+            />
 
             <Col>
                 <Row>

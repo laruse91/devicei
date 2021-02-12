@@ -5,11 +5,13 @@ import { TPrices } from '../../types/types'
 const { Title } = Typography
 
 type TProps = {
-    id: number
+    id: string
     image: string
     price: TPrices
     title: string
 }
+
+//todo: refactoring
 
 export const SaleCard: React.FC<TProps> = React.memo(({ id, image, title, price }) => {
     const goodsImg = price.old ? (
@@ -26,13 +28,13 @@ export const SaleCard: React.FC<TProps> = React.memo(({ id, image, title, price 
                 size='small'
                 hoverable
                 style={{
-                    border: `1px solid #dddddd`,
+                    border: '1px solid #dddddd',
                     borderRadius: '10px',
                 }}>
                 <Row justify='space-between'>
                     <Col span={10}>{goodsImg}</Col>
 
-                    <Col span={14} style={{ padding: `10px 0 0 10px` }}>
+                    <Col span={14} style={{ padding: '10px 0 0 10px' }}>
                         <Row>
                             <Rate style={{ fontSize: '14px' }} defaultValue={3} />
                         </Row>
@@ -45,19 +47,19 @@ export const SaleCard: React.FC<TProps> = React.memo(({ id, image, title, price 
 
                         <Row align='middle'>
                             {price.old && (
-                                <Col style={{ marginRight: `10px` }}>
+                                <Col style={{ marginRight: '10px' }}>
                                     <Title type='secondary' delete level={5}>
                                         ${price.old}
                                     </Title>
                                 </Col>
                             )}
                             <Col>
-                                <Title style={{ color: `#3452ff` }} level={4}>
+                                <Title style={{ color: '#3452ff' }} level={4}>
                                     ${price.current}
                                 </Title>
                             </Col>
                         </Row>
-                        <Row justify='end' style={{ margin: `10px 20px 0 0` }}>
+                        <Row justify='end' style={{ margin: '10px 20px 0 0' }}>
                             <Button shape='round' size='small'>
                                 TO CART
                             </Button>

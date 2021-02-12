@@ -3,15 +3,14 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Home } from './pages/Home'
+import { Shop } from './pages/Shop'
 
 const App: React.FC = () => {
-    let store
     let profile
     let about
     let news
     let login
     let error
-    const home = () => <Home />
 
     return (
         <>
@@ -20,8 +19,8 @@ const App: React.FC = () => {
             <main>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect to={'/home'} />} />
-                    <Route path='/home' render={home} />
-                    <Route path='/store' render={store} />
+                    <Route path='/home' render={() => <Home />} />
+                    <Route path='/shop/:category?' render={() => <Shop />} />
                     <Route path='/profile/:userId?' render={profile} />
                     <Route path='/about' render={about} />
                     <Route path='/news' render={news} />

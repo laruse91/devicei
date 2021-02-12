@@ -1,18 +1,17 @@
 import React, { CSSProperties } from 'react'
-import { Carousel, Col, Typography } from 'antd'
+import { Carousel, Col, Row, Typography } from 'antd'
 import { useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 
 export const Carousell: React.FC = () => {
-    //useSelector
     const carousel = useSelector(select.carousel)
 
     const SContent = (url: string): CSSProperties => ({
         color: '#fff',
         lineHeight: '500px',
-        textAlign: 'center',
+        height: '500px',
         background: `url(${url})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -21,8 +20,22 @@ export const Carousell: React.FC = () => {
     const carouselItems = carousel?.map((c) => {
         return (
             <div key={c.image}>
-                <Title style={SContent(c.image)}>{c.title}</Title>
-                <Text>{c.description}</Text>
+                <Row justify='center' style={SContent(c.image)}>
+                    <Col xs={18}>
+                        <Title
+                            level={1}
+                            copyable={false}
+                            style={{ color: '#fff', marginTop: '2em', maxWidth: '400px' }}>
+                            {c.title}
+                        </Title>
+                        <Title
+                            level={4}
+                            copyable={false}
+                            style={{ color: '#b1c2c3', marginTop: '2em', maxWidth: '400px' }}>
+                            {c.description}
+                        </Title>
+                    </Col>
+                </Row>
             </div>
         )
     })

@@ -11,14 +11,20 @@ export const select = {
     sale: (state: TGlobalState) => {
         return state.home.sale
     },
-    bigSale: (state: TGlobalState) => {
-        return state.home.bigSale
+    superSaleOfDay: (state: TGlobalState) => {
+        return state.home.superSaleOfDay
     },
     news: (state: TGlobalState) => {
         return state.home.news
     },
-    categories: (state: TGlobalState) => {
-        return state.home.categories
+    tabGoods: (state: TGlobalState) => {
+        return state.home.tabGoods
+    },
+    goods: (state: TGlobalState) => {
+        return state.shop.goods
+    },
+    total: (state: TGlobalState) => {
+        return state.shop.total
     },
 }
 type TSelector = typeof select

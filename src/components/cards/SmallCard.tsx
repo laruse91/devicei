@@ -1,17 +1,15 @@
 import React from 'react'
 import { Col, Typography } from 'antd'
+import { TPrices } from '../../types/types'
 
 const { Title, Text } = Typography
 
 type TProps = {
     image: string
     title: string
-    id: number
+    id: string
     brand: string
-    price: {
-        old: number | null
-        current: number
-    }
+    price: TPrices
 }
 
 export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price, brand }) => {

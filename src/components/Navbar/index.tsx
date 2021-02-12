@@ -18,17 +18,9 @@ export const Navbar: React.FC = () => {
                     <Menu.Item key='home' icon={<HomeOutlined style={sFont(16)} />}>
                         <NavLink to='/home'>Home</NavLink>
                     </Menu.Item>
-
-                    <Menu.SubMenu key='store' icon={<ShoppingOutlined style={sFont(16)} />} title='Store'>
-                        <Menu.ItemGroup title='Phones'>
-                            <Menu.Item key='setting:1'>Option 1</Menu.Item>
-                            <Menu.Item key='setting:2'>Option 2</Menu.Item>
-                        </Menu.ItemGroup>
-                        <Menu.ItemGroup title='Accessories'>
-                            <Menu.Item key='setting:3'>Option 3</Menu.Item>
-                            <Menu.Item key='setting:4'>Option 4</Menu.Item>
-                        </Menu.ItemGroup>
-                    </Menu.SubMenu>
+                    <Menu.Item key='shop' icon={<HomeOutlined style={sFont(16)} />}>
+                        <NavLink to='/shop'>Shop</NavLink>
+                    </Menu.Item>
 
                     <Menu.Item key='news' icon={<ProjectOutlined style={sFont(16)} />}>
                         <NavLink to='/news'>News</NavLink>

@@ -1,9 +1,11 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import homeReducer from './home-reducer'
 import thunk from 'redux-thunk'
+import shopReducer from './shop-reducer'
 
 const rootReducer = combineReducers({
     home: homeReducer,
+    shop: shopReducer,
 })
 
 type TRootReducer = typeof rootReducer // (globalState: GlobalStateType)=> globalState

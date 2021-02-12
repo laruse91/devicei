@@ -1,13 +1,12 @@
 import React from 'react'
 import { Col, Layout, Row } from 'antd'
 import Title from 'antd/es/typography/Title'
-import { Gutter } from 'antd/es/grid/row'
-import { Breakpoint } from 'antd/lib/_util/responsiveObserve'
+import { Gutter } from 'antd/lib/grid/row'
 
 type TProps = {
     bgColor?: string
     title?: string
-    gutter?: number | Partial<Record<Breakpoint, number>> | [Gutter, Gutter] | undefined
+    gutter?: [Gutter, Gutter]
     justify?: 'space-between' | 'center' | 'start' | 'end' | 'space-around' | undefined
     verticalPadding?: number
 }

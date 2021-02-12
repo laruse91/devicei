@@ -6,7 +6,7 @@ const { Title, Text } = Typography
 
 type TProps = {
     brand: string
-    id: number
+    id: string
     image: string
     price: TPrices
     title: string

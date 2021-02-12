@@ -14,23 +14,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { requestData } from '../../store/home-reducer'
 import { Carousell } from './Carousell'
-import { random } from '../../utils/helpers'
 
 const { Title } = Typography
 
 export const Home: React.FC = () => {
-    console.log('render')
     //useSelector
     const features = useSelector(select.features)
     const sale = useSelector(select.sale)
-    const bigSale = useSelector(select.bigSale)
+    const superSaleOfDay = useSelector(select.superSaleOfDay)
     const news = useSelector(select.news)
     //useDispatch
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(requestData())
-        console.log(sale)
     }, [])
 
     const featureCards = features?.map((f) => {
@@ -43,10 +40,9 @@ export const Home: React.FC = () => {
         return <SaleCard key={g.id} image={g.image} title={g.title} price={g.price} id={g.id} />
     })
 
-    if (!features || !sale || !bigSale || !news) {
+    if (!features || !sale || !superSaleOfDay || !news) {
         return <>...loading</>
     } else {
-        const r = sale && random(0, sale.length)
         return (
             <main>
                 <Carousell />
@@ -79,19 +75,18 @@ export const Home: React.FC = () => {
                     </Section>
                     <Section title='Deal of days' verticalPadding={20}>
                         <BigCard
-                            image={bigSale[0].image}
-                            price={bigSale[0].price}
-                            id={bigSale[0].id}
-                            title={bigSale[0].title}
-                            description={bigSale[0].description}
+                            image={superSaleOfDay.bigCard.image}
+                            price={superSaleOfDay.bigCard.price}
+                            id={superSaleOfDay.bigCard.id}
+                            title={superSaleOfDay.bigCard.title}
+                            description={superSaleOfDay.bigCard.description}
                         />
-
                         <SmallCard
-                            image={sale[r].image}
-                            price={sale[r].price}
-                            id={sale[r].id}
-                            title={sale[r].title}
-                            brand={sale[r].brand}
+                            image={superSaleOfDay.smallCard.image}
+                            price={superSaleOfDay.smallCard.price}
+                            id={superSaleOfDay.smallCard.id}
+                            title={superSaleOfDay.smallCard.title}
+                            brand={superSaleOfDay.smallCard.brand}
                         />
                     </Section>
                 </Space>
