@@ -31,13 +31,23 @@ export const Home: React.FC = () => {
     }, [])
 
     const featureCards = features?.map((f) => {
-        return <FeatureCard key={f.id} image={f.image} brand={f.brand} price={f.price} id={f.id} title={f.title} />
+        return (
+            <FeatureCard
+                key={f.id}
+                image={f.image}
+                brand={f.brand}
+                price={f.price}
+                id={f.id}
+                title={f.title}
+                oldPrice={f.oldPrice}
+            />
+        )
     })
     const newsCards = news?.map((n) => {
         return <NewsCard key={n.id} image={n.image} title={n.title} id={n.id} tag={n.tag} date={n.date} />
     })
     const salesCards = sale?.map((g) => {
-        return <SaleCard key={g.id} image={g.image} title={g.title} price={g.price} id={g.id} />
+        return <SaleCard key={g.id} image={g.image} title={g.title} price={g.price} id={g.id} oldPrice={g.oldPrice} />
     })
 
     if (!features || !sale || !superSaleOfDay || !news) {
@@ -77,6 +87,7 @@ export const Home: React.FC = () => {
                         <BigCard
                             image={superSaleOfDay.bigCard.image}
                             price={superSaleOfDay.bigCard.price}
+                            oldPrice={superSaleOfDay.bigCard.oldPrice}
                             id={superSaleOfDay.bigCard.id}
                             title={superSaleOfDay.bigCard.title}
                             description={superSaleOfDay.bigCard.description}
@@ -84,6 +95,7 @@ export const Home: React.FC = () => {
                         <SmallCard
                             image={superSaleOfDay.smallCard.image}
                             price={superSaleOfDay.smallCard.price}
+                            oldPrice={superSaleOfDay.smallCard.oldPrice}
                             id={superSaleOfDay.smallCard.id}
                             title={superSaleOfDay.smallCard.title}
                             brand={superSaleOfDay.smallCard.brand}

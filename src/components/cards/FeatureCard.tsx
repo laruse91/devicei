@@ -1,6 +1,5 @@
 import React from 'react'
 import { Col, Typography } from 'antd'
-import { TPrices } from '../../types/types'
 
 const { Title, Text } = Typography
 
@@ -8,10 +7,11 @@ type TProps = {
     brand: string
     id: string
     image: string
-    price: TPrices
+    price: number
+    oldPrice: number | null
     title: string
 }
-export const FeatureCard: React.FC<TProps> = React.memo(({ id, image, title, price, brand }) => {
+export const FeatureCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, brand }) => {
     return (
         <Col
             xs={11}
@@ -31,7 +31,7 @@ export const FeatureCard: React.FC<TProps> = React.memo(({ id, image, title, pri
             </Title>
             <Text style={{ color: 'white' }}>Starting at</Text>
             <Title style={{ margin: 0, color: '#f9db76' }} level={1}>
-                ${price.current}
+                ${price}
             </Title>
         </Col>
     )

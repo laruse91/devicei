@@ -1,8 +1,6 @@
 import React from 'react'
 import { Badge, Button, Card, Col, Image, Rate, Row, Space, Typography } from 'antd'
 import { Link } from 'react-router-dom'
-import { TGoods, TPrices } from '../../types/types'
-
 const { Title } = Typography
 
 type TProps = {
@@ -10,17 +8,18 @@ type TProps = {
     title: string
     id: string
     tags: string[]
-    price: TPrices
+    price: number
+    oldPrice: number | null
     size?: number
 }
 
-export const GoodsCard: React.FC<TProps> = React.memo(({ size = 6, id, image, title, price, tags }) => {
+export const GoodsCard: React.FC<TProps> = React.memo(({ size = 6, id, image, title, price, oldPrice, tags }) => {
     const links = tags.map((t) => (
         <Space key={t} size={5}>
             <Link to={'#'}>{t}</Link>{' '}
         </Space>
     ))
-    const goodsImg = price.old ? (
+    const goodsImg = oldPrice ? (
         <Badge count='SALE!' offset={[-110, 30]} style={{ fontSize: '16px', background: '#3452ff' }}>
             <Image src='good' fallback={image} style={{ maxHeight: '200px', cursor: 'pointer' }} />
         </Badge>
@@ -52,14 +51,14 @@ export const GoodsCard: React.FC<TProps> = React.memo(({ size = 6, id, image, ti
                             <Space size={5}>
                                 <Col>
                                     <Title style={{ color: '#3452ff' }} level={4}>
-                                        ${price.current}{' '}
+                                        ${price}{' '}
                                     </Title>
                                 </Col>
 
-                                {price.old && (
+                                {oldPrice && (
                                     <Col style={{ marginRight: '10px' }}>
                                         <Title type='secondary' delete level={5}>
-                                            ${price.old}
+                                            ${oldPrice}
                                         </Title>
                                     </Col>
                                 )}

@@ -3,6 +3,7 @@ import { ThunkAction } from 'redux-thunk'
 import { db } from '../index'
 import { superSaleOfDay, TCarousel, TGoods, TNews, TTabGoods } from '../types/types'
 import { fillArray } from '../utils/helpers'
+import { homeAPI } from '../api/home-api'
 
 const SET_TAB_GOODS = 'SET_TAB_GOODS'
 const SET_DATA = 'SET_DATA'
@@ -50,11 +51,19 @@ type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
 export const requestTabGoods = (): TThunk => async (dispatch) => {
     let tabGoods = {} as TTabGoods
-    await db.ref('goods').once('value', (g) => {
-        tabGoods['recent'] = fillArray(Object.values(g.val().recent), 4)
-        tabGoods['topRated'] = fillArray(Object.values(g.val().topRated), 4)
-        tabGoods['sale'] = fillArray(Object.values(g.val().sale), 4)
-    })
+    // @ts-ignore
+    tabGoods['sale'] = await homeAPI.requestTabGoods('sale')
+    // @ts-ignore
+    tabGoods['rate'] = await homeAPI.requestTabGoods('rate')
+    // @ts-ignore
+    tabGoods['recent'] = await homeAPI.requestTabGoods('recent')
+
+    console.log(tabGoods)
+    // await db.ref('goods').once('value', (g) => {
+    //     tabGoods['recent'] = fillArray(Object.values(g.val().recent), 4)
+    //     tabGoods['topRated'] = fillArray(Object.values(g.val().topRated), 4)
+    //     tabGoods['sale'] = fillArray(Object.values(g.val().sale), 4)
+    // })
     dispatch(actions.setTabGoods(tabGoods))
 }
 export const requestData = (): TThunk => (dispatch) => {

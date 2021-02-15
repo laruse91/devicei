@@ -1,6 +1,5 @@
 import React from 'react'
 import { Col, Typography } from 'antd'
-import { TPrices } from '../../types/types'
 
 const { Title, Text } = Typography
 
@@ -9,10 +8,11 @@ type TProps = {
     title: string
     id: string
     brand: string
-    price: TPrices
+    price: number
+    oldPrice: number | null
 }
 
-export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price, brand }) => {
+export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, brand }) => {
     return (
         <Col
             xs={5}
@@ -31,10 +31,10 @@ export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price
                 {brand}
             </Title>
             <Text type='secondary' delete style={{ color: 'white' }}>
-                ${price.old}
+                ${oldPrice}
             </Text>
             <Title style={{ margin: 0, color: '#f9db76' }} level={1}>
-                ${price.current}
+                ${price}
             </Title>
         </Col>
     )

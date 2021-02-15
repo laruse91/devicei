@@ -1,7 +1,3 @@
-export type TPrices = {
-    current: number
-    old: number | null
-}
 export type TNews = {
     article: string
     date: string
@@ -15,7 +11,8 @@ export type TGoods = {
     description: string
     id: string
     image: string
-    price: TPrices
+    price: number
+    oldPrice: number | null
     tags: string[]
     title: string
     category: string
@@ -30,4 +27,15 @@ export type superSaleOfDay = {
     bigCard: TGoods
     smallCard: TGoods
 }
-export type TTabGoods = { [key: string]: TGoods[] }
+export type TTabs = 'recent' | 'rate' | 'sale'
+export type TTabGoods = {
+    [key in TTabs]: TGoods[]
+}
+export type TInfo = { brands: string[]; total: number; maximalPrice: number }
+export type TCategories = string[]
+export type TProduct = {
+    items: TGoods[]
+    total: number
+    maximalPrice: number
+    brands: string[]
+}

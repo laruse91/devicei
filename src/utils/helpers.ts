@@ -1,4 +1,6 @@
 // get random number
+import { TGoods } from '../types/types'
+
 export const random = (min: number, max: number): number => {
     // случайное число от min до (max+1)
     const rand = min + Math.random() * (max + 1 - min)
@@ -16,4 +18,23 @@ export const fillArray = (arr: any[], count: number) => {
         newArr.splice(r, 1)
     }
     return resArr
+}
+
+//take a part of el in array (for pagination)
+export const part = (page: number, limit: number, array: any[]): any[] => {
+    return array.slice((page - 1) * limit, (page - 1) * limit + limit)
+}
+//get miPrice and maxPrice
+export const minMax = (array: TGoods[]): [number, number] => {
+    let max = 0
+    let min = Infinity
+    for (let i in array) {
+        if (array[i].price > max) {
+            max = array[i].price
+        }
+        if (array[i].price < min) {
+            min = array[i].price
+        }
+    }
+    return [min, max]
 }

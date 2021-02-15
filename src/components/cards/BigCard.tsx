@@ -1,6 +1,5 @@
 import React from 'react'
 import { Badge, Card, Col, Image, Rate, Row, Typography } from 'antd'
-import { TPrices } from '../../types/types'
 
 const { Title, Paragraph } = Typography
 
@@ -9,11 +8,12 @@ type TProps = {
     title: string
     id: string
     description: string
-    price: TPrices
+    price: number
+    oldPrice: number | null
 }
 
-export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, description }) => {
-    const goodsImg = price.old ? (
+export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, description }) => {
+    const goodsImg = oldPrice ? (
         <Badge count='SALE!' offset={[-110, 30]} style={{ fontSize: '16px', background: '#3452ff' }}>
             <Image src='good' fallback={image} style={{ cursor: 'pointer' }} />
         </Badge>
@@ -45,16 +45,16 @@ export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, 
                         </Row>
 
                         <Row align='middle'>
-                            {price.old && (
+                            {oldPrice && (
                                 <Col style={{ marginRight: '10px' }}>
                                     <Title type='secondary' delete level={5}>
-                                        ${price.old}
+                                        ${oldPrice}
                                     </Title>
                                 </Col>
                             )}
                             <Col>
                                 <Title style={{ color: '#3452ff' }} level={4}>
-                                    ${price.current}
+                                    ${price}
                                 </Title>
                             </Col>
                         </Row>

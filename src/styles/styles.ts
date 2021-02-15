@@ -17,6 +17,7 @@ export const s: TStyle = {
     footer: { background: '#212121', padding: '40px 0', marginTop: '30px' },
     footIcon: { fontSize: '22px', color: '#727272', cursor: 'pointer' },
     footText: { fontSize: '18px', color: '#727272' },
+    breadCrumb: { marginTop: '20px', fontSize: '14px' },
 }
 
 export const sFont: (fontSize: number) => CSSProperties = (fontSize) => ({

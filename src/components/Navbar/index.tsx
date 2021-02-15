@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Menu, Row } from 'antd'
 import { HomeOutlined, InfoCircleOutlined, ProjectOutlined, ShoppingOutlined } from '@ant-design/icons'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { sFont } from '../../styles/styles'
 
 // todo: remove any
@@ -10,6 +10,11 @@ export const Navbar: React.FC = () => {
     const handleClick = (e: any) => {
         setCurrent(e.key)
     }
+    const location = useLocation()
+    console.log(location.pathname)
+    useEffect(() => {
+        setCurrent(location.pathname.slice(1))
+    }, [])
 
     return (
         <nav>

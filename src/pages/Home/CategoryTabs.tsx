@@ -4,12 +4,12 @@ import { GoodsCard } from '../../components/cards/GoodsCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { requestTabGoods } from '../../store/home-reducer'
+import { TTabs } from '../../types/types'
 
 const { TabPane } = Tabs
 
 export const CategoryTabs = () => {
-    console.log('tabRender')
-    const [key, setKey] = useState('recent')
+    const [key, setKey] = useState<TTabs>('recent')
 
     const tabGoods = useSelector(select.tabGoods)
     const dispatch = useDispatch()
@@ -19,14 +19,22 @@ export const CategoryTabs = () => {
     }, [])
 
     const handleTabChange = (key: string) => {
-        setKey(key)
+        setKey(key as TTabs)
     }
 
-    const cards =
-        tabGoods &&
-        tabGoods[key].map((g) => (
-            <GoodsCard key={g.id} title={g.title} id={g.id} image={g.image} price={g.price} tags={g.tags} />
-        ))
+    const cards = !tabGoods
+        ? null
+        : tabGoods[key].map((g) => (
+              <GoodsCard
+                  key={g.id}
+                  title={g.title}
+                  id={g.id}
+                  image={g.image}
+                  price={g.price}
+                  tags={g.tags}
+                  oldPrice={g.oldPrice}
+              />
+          ))
 
     if (!tabGoods) {
         return <>'...loading'</>
@@ -38,7 +46,7 @@ export const CategoryTabs = () => {
                         {cards}
                     </Row>
                 </TabPane>
-                <TabPane tab='Top Rated' key='topRated'>
+                <TabPane tab='Top Rated' key='rate'>
                     <Row gutter={[25, 25]} justify='space-between'>
                         {cards}
                     </Row>

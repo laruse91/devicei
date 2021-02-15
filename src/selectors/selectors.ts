@@ -23,8 +23,8 @@ export const select = {
     goods: (state: TGlobalState) => {
         return state.shop.goods
     },
-    total: (state: TGlobalState) => {
-        return state.shop.total
+    categories: (state: TGlobalState) => {
+        return state.shop.categories
     },
 }
 type TSelector = typeof select
