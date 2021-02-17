@@ -18,6 +18,7 @@ export const s: TStyle = {
     footIcon: { fontSize: '22px', color: '#727272', cursor: 'pointer' },
     footText: { fontSize: '18px', color: '#727272' },
     breadCrumb: { marginTop: '20px', fontSize: '14px' },
+    productImage: { borderRadius: '10px', border: '1px solid #dddddd', width: '90%' },
 }
 
 export const sFont: (fontSize: number) => CSSProperties = (fontSize) => ({

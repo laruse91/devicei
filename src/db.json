@@ -10,11 +10,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "apple"
+                    "watches",
+                    "Apple"
                 ],
                 "rate": 4,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "gl2KG1iF1cU6BcpupP3G": {
                 "id": "gl2KG1iF1cU6BcpupP3G",
@@ -25,11 +43,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "apple"
+                    "watches",
+                    "Apple"
                 ],
                 "rate": 5,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "zztISzjJji25cuVmoqST": {
                 "id": "zztISzjJji25cuVmoqST",
@@ -40,11 +76,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "sony"
+                    "watches",
+                    "Sony"
                 ],
                 "rate": 5,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "UgQpebyRLS2bRkPKuROz": {
                 "id": "UgQpebyRLS2bRkPKuROz",
@@ -55,11 +109,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "sony"
+                    "watches",
+                    "Sony"
                 ],
                 "rate": 4,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "zTmtdIZIy7ADYinkxZGG": {
                 "id": "zTmtdIZIy7ADYinkxZGG",
@@ -70,11 +142,29 @@
                 "oldPrice": 300,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "apple"
+                    "watches",
+                    "Apple"
                 ],
                 "rate": 3,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "7175a46xbVJHsAlk1E9d": {
                 "id": "7175a46xbVJHsAlk1E9d",
@@ -85,11 +175,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "motorola"
+                    "watches",
+                    "Motorola"
                 ],
                 "rate": 3,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "SQBk5Sgzup9SqaOkBa2M": {
                 "id": "SQBk5Sgzup9SqaOkBa2M",
@@ -100,11 +208,29 @@
                 "oldPrice": 180,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "watch",
-                    "samsung"
+                    "watches",
+                    "Samsung"
                 ],
                 "rate": 3,
-                "category": "watches"
+                "category": "watches",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "NMDZIxHC5HXMIOjW39th": {
                 "id": "NMDZIxHC5HXMIOjW39th",
@@ -115,11 +241,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "laptop",
-                    "apple"
+                    "laptops",
+                    "Apple"
                 ],
                 "rate": 4,
-                "category": "laptops"
+                "category": "laptops",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "0o78WO86doesTl4sCvfQ": {
                 "id": "0o78WO86doesTl4sCvfQ",
@@ -130,11 +274,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "laptop",
-                    "apple"
+                    "laptops",
+                    "Apple"
                 ],
                 "rate": 5,
-                "category": "laptops"
+                "category": "laptops",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "hOT31jDWWgrYFOfXplPs": {
                 "id": "hOT31jDWWgrYFOfXplPs",
@@ -145,11 +307,29 @@
                 "oldPrice": 900,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "laptop",
-                    "asus"
+                    "laptops",
+                    "Asus"
                 ],
                 "rate": 5,
-                "category": "laptops"
+                "category": "laptops",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "0S4ldqGCgPSqkrIjmuvi": {
                 "id": "0S4ldqGCgPSqkrIjmuvi",
@@ -160,11 +340,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "laptop",
-                    "dell"
+                    "laptops",
+                    "Dell"
                 ],
                 "rate": 4,
-                "category": "laptops"
+                "category": "laptops",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "vcBoOQ95WgEMdSs8Wv2U": {
                 "id": "vcBoOQ95WgEMdSs8Wv2U",
@@ -175,11 +373,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "monitor",
-                    "apple"
+                    "monitors",
+                    "Apple"
                 ],
                 "rate": 4,
-                "category": "monitors"
+                "category": "monitors",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "Rx9H6vscLSt82vxjmd31": {
                 "id": "Rx9H6vscLSt82vxjmd31",
@@ -190,11 +406,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "monitor",
-                    "apple"
+                    "monitors",
+                    "Apple"
                 ],
                 "rate": 5,
-                "category": "monitors"
+                "category": "monitors",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "4woVVJnV7at7UxUPsv9D": {
                 "id": "4woVVJnV7at7UxUPsv9D",
@@ -205,11 +439,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "apple"
+                    "phones",
+                    "Apple"
                 ],
                 "rate": 2,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "HNMpsUdlFZg7I8uuGgqP": {
                 "id": "HNMpsUdlFZg7I8uuGgqP",
@@ -220,11 +472,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "apple"
+                    "phones",
+                    "Apple"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "SuMv0AUqjETIDXCiRloa": {
                 "id": "SuMv0AUqjETIDXCiRloa",
@@ -235,11 +505,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "apple"
+                    "phones",
+                    "Apple"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "XE3sc15lzcvq8y4528UJ": {
                 "id": "XE3sc15lzcvq8y4528UJ",
@@ -250,11 +538,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "apple"
+                    "phones",
+                    "Apple"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "kmAWFlPoP1SQu9yU1pcK": {
                 "id": "kmAWFlPoP1SQu9yU1pcK",
@@ -265,11 +571,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
+                    "phones",
                     "HTC"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "gJWg4ZXL4sZ1je8WXtZg": {
                 "id": "gJWg4ZXL4sZ1je8WXtZg",
@@ -280,11 +604,29 @@
                 "oldPrice": 400,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "meizu"
+                    "phones",
+                    "Meizu"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "fhFsqL7khkrWEdlBocRn": {
                 "id": "fhFsqL7khkrWEdlBocRn",
@@ -295,11 +637,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "motorola"
+                    "phones",
+                    "Motorola"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "gxfb4TSYTYRNY55aeqMf": {
                 "id": "gxfb4TSYTYRNY55aeqMf",
@@ -310,11 +670,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "motorola"
+                    "phones",
+                    "Motorola"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "9oehs3rc5iCVhzKxXdvV": {
                 "id": "9oehs3rc5iCVhzKxXdvV",
@@ -325,11 +703,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "motorola"
+                    "phones",
+                    "Motorola"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "lLBgnMbqxtxpyBOxJ0g7": {
                 "id": "lLBgnMbqxtxpyBOxJ0g7",
@@ -340,11 +736,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "nokia"
+                    "phones",
+                    "Nokia"
                 ],
                 "rate": 1,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "2VX9yODVoCJpdQj0TdDK": {
                 "id": "2VX9yODVoCJpdQj0TdDK",
@@ -355,11 +769,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "nokia"
+                    "phones",
+                    "Nokia"
                 ],
                 "rate": 2,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "BxSFT5Vny0Bc90CX7Ylm": {
                 "id": "BxSFT5Vny0Bc90CX7Ylm",
@@ -370,11 +802,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "oneplus"
+                    "phones",
+                    "OnePlus"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "FCXpLwoxR3n40ReQzvrV": {
                 "id": "FCXpLwoxR3n40ReQzvrV",
@@ -385,11 +835,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "samsung"
+                    "phones",
+                    "Samsung"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "c0T3akVANzCTVbRzhJh3": {
                 "id": "c0T3akVANzCTVbRzhJh3",
@@ -400,11 +868,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "samsung"
+                    "phones",
+                    "Samsung"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "QFUblKcQkDc7pmRLSBVa": {
                 "id": "QFUblKcQkDc7pmRLSBVa",
@@ -415,11 +901,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "phone",
-                    "xiaomi"
+                    "phones",
+                    "Xiaomi"
                 ],
                 "rate": 3,
-                "category": "phones"
+                "category": "phones",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "xx8EySm89u85j4U0bgH1": {
                 "id": "xx8EySm89u85j4U0bgH1",
@@ -430,11 +934,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "tablet",
-                    "apple"
+                    "tablets",
+                    "Apple"
                 ],
                 "rate": 5,
-                "category": "tablets"
+                "category": "tablets",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "EyposwGKhvySgoh4EQVy": {
                 "id": "EyposwGKhvySgoh4EQVy",
@@ -445,11 +967,29 @@
                 "oldPrice": 400,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "tablet",
-                    "apple"
+                    "tablets",
+                    "Apple"
                 ],
                 "rate": 4,
-                "category": "tablets"
+                "category": "tablets",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             },
             "Kjd3H2l0jwhl79ylhqXs": {
                 "id": "Kjd3H2l0jwhl79ylhqXs",
@@ -460,11 +1000,29 @@
                 "oldPrice": null,
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nibh ac ligula dapibus, quis ornare felis malesuada. Cras in feugiat diam. Donec euismod purus lorem, vel euismod sem pharetra at. Integer elit nulla, aliquet eget nisi lobortis, varius accumsan dui. Quisque semper dolor nibh, ac aliquet quam vehicula a. Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio. Vestibulum et tempor nunc. Etiam mattis porttitor lectus, vel egestas nunc dignissim ut.",
                 "tags": [
-                    "tablet",
-                    "apple"
+                    "tablets",
+                    "Apple"
                 ],
                 "rate": 4,
-                "category": "tablets"
+                "category": "tablets",
+                "characteristics": {
+                    "Dimensions": "7.3 inches high x 5.3 inches wide x 3 inches long",
+                    "Volume": "250ml",
+                    "Warranty": "1 year Limited Manufacturer",
+                    "Model Number": "SHO3305BOARD/28",
+                    "Country of Origin": "China"
+                },
+                "reviews": [
+                    {
+                        "id": "gecy5d1wnhk3ts7ncK",
+                        "userId": "gecy5d1wnhk36ts7n4cK",
+                        "userName": "someUser",
+                        "rate": 5,
+                        "date": "October 12, 2017",
+                        "comment": "Aenean id consequat sapien, venenatis feugiat neque. Donec sit amet elit non ante eleifend sagittis sit amet eget mauris. Vestibulum nec pretium leo, sed lacinia odio."
+
+                    }
+                ]
             }
         },
 

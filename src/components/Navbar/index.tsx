@@ -11,7 +11,6 @@ export const Navbar: React.FC = () => {
         setCurrent(e.key)
     }
     const location = useLocation()
-    console.log(location.pathname)
     useEffect(() => {
         setCurrent(location.pathname.slice(1))
     }, [])

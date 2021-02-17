@@ -1,5 +1,5 @@
 // get random number
-import { TGoods } from '../types/types'
+import { TProduct } from '../types/types'
 
 export const random = (min: number, max: number): number => {
     // случайное число от min до (max+1)
@@ -25,7 +25,7 @@ export const part = (page: number, limit: number, array: any[]): any[] => {
     return array.slice((page - 1) * limit, (page - 1) * limit + limit)
 }
 //get miPrice and maxPrice
-export const minMax = (array: TGoods[]): [number, number] => {
+export const minMax = (array: TProduct[]): [number, number] => {
     let max = 0
     let min = Infinity
     for (let i in array) {

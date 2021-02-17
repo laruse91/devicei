@@ -1,11 +1,11 @@
 import React, { memo, useEffect, useState } from 'react'
 import { Section } from '../Home/Section'
-import { GoodsCard } from '../../components/cards/GoodsCard'
+import { ProductCard } from '../../components/cards/ProductCard'
 import { getCategories, getGoods } from '../../store/shop-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { Breadcrumb, Col, Divider, Dropdown, Input, Menu, Pagination, Row, Select, Typography } from 'antd'
-import { Link, useHistory, useLocation, useParams } from 'react-router-dom'
+import { Link, NavLink, useHistory, useLocation, useParams } from 'react-router-dom'
 import { DownOutlined } from '@ant-design/icons'
 import { MenuInfo } from 'rc-menu/lib/interface'
 import { PriceFilter } from './PriceFilter'
@@ -18,8 +18,9 @@ import * as queryString from 'querystring'
 const { Search } = Input
 const { Title } = Typography
 type TQueryParams = {
-    priceFrom: number
-    priceTo: number
+    page?: string
+    priceFrom: string
+    priceTo: string
     brand?: string[]
 }
 
@@ -27,20 +28,24 @@ export const Shop: React.FC = memo(() => {
     const [category, setCategory] = useState<string | undefined>(undefined)
     const [brands, setBrands] = useState<string[]>([])
     const [sort, setSort] = useState<'desc' | 'asc'>('asc')
-    const [price, setPrice] = useState<number[]>([])
+    const [price, setPrice] = useState<[number, number] | undefined>(undefined)
     const [page, setPage] = useState(1)
-
+    console.log(category)
     const goods = useSelector(select.goods)
     const categories = useSelector(select.categories)
     const dispatch = useDispatch()
 
-    const params: { [key: string]: string } = useParams()
+    const params: { category: string } = useParams()
     const history = useHistory()
 
     useEffect(() => {
-        if (params.category) {
-            setCategory(params.category)
-        }
+        const parsed = queryString.parse(history.location.search.substr(1)) as any
+
+        if (params.category) setCategory(params.category)
+        if (parsed.page) setPage(Number(parsed.page))
+        if (parsed.brand) setBrands([parsed.brand])
+        if (parsed.priceFrom) setPrice([Number(parsed.priceFrom), Number(parsed.priceTo)])
+
         dispatch(getGoods(category, price, brands, sort, page))
         dispatch(getCategories())
     }, [])
@@ -50,13 +55,11 @@ export const Shop: React.FC = memo(() => {
             history.replace({ pathname: `/shop/${category}` })
         }
         const query = {} as TQueryParams
-
-        if (brands) {
-            query.brand = brands
-        }
-        if (price.length) {
-            query.priceFrom = price[0]
-            query.priceTo = price[1]
+        if (page !== 1) query.page = String(page)
+        if (brands) query.brand = brands
+        if (price) {
+            query.priceFrom = String(price[0])
+            query.priceTo = String(price[1])
         }
 
         history.push({
@@ -74,7 +77,7 @@ export const Shop: React.FC = memo(() => {
     const handleCategorySelect = (value: string) => {
         setCategory(value)
     }
-    const handlePriceFilter = (values: number[]) => {
+    const handlePriceFilter = (values: [number, number]) => {
         setPrice(values)
     }
     const handleBrandChecked = (values: CheckboxValueType[]) => {
@@ -82,18 +85,7 @@ export const Shop: React.FC = memo(() => {
     }
 
     const goodsCards = goods?.items.map((g) => {
-        return (
-            <GoodsCard
-                key={g.id}
-                image={g.image}
-                title={g.title}
-                id={g.id}
-                price={g.price}
-                tags={g.tags}
-                size={8}
-                oldPrice={g.oldPrice}
-            />
-        )
+        return <ProductCard key={g.id} goods={g} size={8} />
     })
     const menu = (
         <Menu onClick={handleSorting}>
@@ -108,7 +100,7 @@ export const Shop: React.FC = memo(() => {
     }
 
     return (
-        <main>
+        <>
             <Section bgColor='white'>
                 <Col>
                     <Breadcrumb style={s.breadCrumb}>
@@ -120,9 +112,11 @@ export const Shop: React.FC = memo(() => {
                         ) : (
                             <>
                                 <Breadcrumb.Item>
-                                    <Link to={'/shop'}>Shop</Link>
+                                    <Link onClick={() => setCategory(undefined)} to={'/shop'}>
+                                        Shop
+                                    </Link>
                                 </Breadcrumb.Item>
-                                <Breadcrumb.Item>{category}</Breadcrumb.Item>
+                                <Breadcrumb.Item>{category[0].toUpperCase() + category.slice(1)}</Breadcrumb.Item>
                             </>
                         )}
                     </Breadcrumb>
@@ -164,16 +158,21 @@ export const Shop: React.FC = memo(() => {
                     />
 
                     <Row justify='center' style={{ margin: '30px 0' }}>
-                        <Categories onSelect={handleCategorySelect} categories={categories} />
+                        <Categories current={category} onSelect={handleCategorySelect} categories={categories} />
                     </Row>
                     <Row style={{ margin: '30px 0' }}>
-                        <CheckList options={goods.brands} onChange={handleBrandChecked} />
+                        <CheckList checked={brands} options={goods.brands} onChange={handleBrandChecked} />
                     </Row>
                     <Row justify='center'>
-                        <PriceFilter min={0} max={goods.maximalPrice} onSliderChange={handlePriceFilter} />
+                        <PriceFilter
+                            currentRange={price}
+                            min={0}
+                            max={goods.maximalPrice}
+                            onRangeChange={handlePriceFilter}
+                        />
                     </Row>
                 </Col>
             </Section>
-        </main>
+        </>
     )
 })

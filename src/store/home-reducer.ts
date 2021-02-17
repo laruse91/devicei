@@ -1,7 +1,7 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { db } from '../index'
-import { superSaleOfDay, TCarousel, TGoods, TNews, TTabGoods } from '../types/types'
+import { superSaleOfDay, TCarousel, TProduct, TNews, TTabGoods } from '../types/types'
 import { fillArray } from '../utils/helpers'
 import { homeAPI } from '../api/home-api'
 
@@ -10,14 +10,14 @@ const SET_DATA = 'SET_DATA'
 
 export const initialState = {
     carousel: null as TCarousel[] | null,
-    features: null as TGoods[] | null,
-    sale: null as TGoods[] | null,
+    features: null as TProduct[] | null,
+    sale: null as TProduct[] | null,
     tabGoods: null as TTabGoods | null,
     superSaleOfDay: null as superSaleOfDay | null,
     news: null as TNews[] | null,
 }
 
-type TInitialState = typeof initialState
+export type TInitialState = typeof initialState
 
 const homeReducer = (state = initialState, action: TActions): TInitialState => {
     switch (action.type) {
@@ -38,8 +38,8 @@ type TActions = TCombineActions<typeof actions>
 const actions = {
     setData: (
         carousel: TCarousel[] | null,
-        features: TGoods[] | null,
-        sale: TGoods[] | null,
+        features: TProduct[] | null,
+        sale: TProduct[] | null,
         superSaleOfDay: superSaleOfDay | null,
         news: TNews[] | null
     ) => ({ type: SET_DATA, payload: { carousel, features, sale, superSaleOfDay, news } } as const),
@@ -49,27 +49,19 @@ const actions = {
 // Thunks
 type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
-export const requestTabGoods = (): TThunk => async (dispatch) => {
+export const requestTabGoods = (limit = 4): TThunk => async (dispatch) => {
     let tabGoods = {} as TTabGoods
     // @ts-ignore
-    tabGoods['sale'] = await homeAPI.requestTabGoods('sale')
+    tabGoods['sale'] = await homeAPI.requestTabGoods('sale', limit)
     // @ts-ignore
-    tabGoods['rate'] = await homeAPI.requestTabGoods('rate')
-    // @ts-ignore
-    tabGoods['recent'] = await homeAPI.requestTabGoods('recent')
+    tabGoods['rate'] = await homeAPI.requestTabGoods('rate', limit)
 
-    console.log(tabGoods)
-    // await db.ref('goods').once('value', (g) => {
-    //     tabGoods['recent'] = fillArray(Object.values(g.val().recent), 4)
-    //     tabGoods['topRated'] = fillArray(Object.values(g.val().topRated), 4)
-    //     tabGoods['sale'] = fillArray(Object.values(g.val().sale), 4)
-    // })
-    dispatch(actions.setTabGoods(tabGoods))
+    tabGoods.sale && tabGoods.sale && dispatch(actions.setTabGoods(tabGoods))
 }
 export const requestData = (): TThunk => (dispatch) => {
     let carousel: TCarousel[] | null = null
-    let features: TGoods[] | null = null
-    let sale: TGoods[] | null = null
+    let features: TProduct[] | null = null
+    let sale: TProduct[] | null = null
     let superSaleOfDay: superSaleOfDay | null = null
     let news: TNews[] | null = null
 

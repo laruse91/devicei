@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Tabs } from 'antd'
-import { GoodsCard } from '../../components/cards/GoodsCard'
+import { ProductCard } from '../../components/cards/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { requestTabGoods } from '../../store/home-reducer'
@@ -9,7 +9,7 @@ import { TTabs } from '../../types/types'
 const { TabPane } = Tabs
 
 export const CategoryTabs = () => {
-    const [key, setKey] = useState<TTabs>('recent')
+    const [tab, setTab] = useState<TTabs>('rate')
 
     const tabGoods = useSelector(select.tabGoods)
     const dispatch = useDispatch()
@@ -19,33 +19,16 @@ export const CategoryTabs = () => {
     }, [])
 
     const handleTabChange = (key: string) => {
-        setKey(key as TTabs)
+        setTab(key as TTabs)
     }
 
-    const cards = !tabGoods
-        ? null
-        : tabGoods[key].map((g) => (
-              <GoodsCard
-                  key={g.id}
-                  title={g.title}
-                  id={g.id}
-                  image={g.image}
-                  price={g.price}
-                  tags={g.tags}
-                  oldPrice={g.oldPrice}
-              />
-          ))
+    const cards = !tabGoods ? null : tabGoods[tab].map((g) => <ProductCard key={g.id} goods={g} />)
 
     if (!tabGoods) {
         return <>'...loading'</>
     } else {
         return (
             <Tabs defaultActiveKey='recent' onChange={handleTabChange}>
-                <TabPane tab='Recent' key='recent'>
-                    <Row gutter={[25, 25]} justify='space-between'>
-                        {cards}
-                    </Row>
-                </TabPane>
                 <TabPane tab='Top Rated' key='rate'>
                     <Row gutter={[25, 25]} justify='space-between'>
                         {cards}

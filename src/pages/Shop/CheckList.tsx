@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Checkbox, Col, Row } from 'antd'
 import { CheckboxValueType } from 'antd/es/checkbox/Group'
 
 type TProps = {
+    checked: string[]
     options: string[]
     onChange: (value: CheckboxValueType[]) => void
 }
 
-export const CheckList: React.FC<TProps> = React.memo(({ options, onChange }) => {
+export const CheckList: React.FC<TProps> = React.memo(({ checked, options, onChange }) => {
     const items = options.map((brand) => {
         return (
             <Row key={brand}>
@@ -17,7 +18,7 @@ export const CheckList: React.FC<TProps> = React.memo(({ options, onChange }) =>
     })
 
     return (
-        <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+        <Checkbox.Group value={checked} style={{ width: '100%' }} onChange={onChange}>
             <Col xs={24}>{items}</Col>
         </Checkbox.Group>
     )

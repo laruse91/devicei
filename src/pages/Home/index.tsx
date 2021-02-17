@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { NewsCard } from '../../components/cards/NewsCard'
 import { Space, Typography } from 'antd'
 import { Section } from './Section'
@@ -17,7 +17,7 @@ import { Carousell } from './Carousell'
 
 const { Title } = Typography
 
-export const Home: React.FC = () => {
+export const Home: React.FC = memo(() => {
     //useSelector
     const features = useSelector(select.features)
     const sale = useSelector(select.sale)
@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
         return <>...loading</>
     } else {
         return (
-            <main>
+            <>
                 <Carousell />
 
                 <Space size={40} direction='vertical'>
@@ -105,7 +105,7 @@ export const Home: React.FC = () => {
                 <Section title='Popular news' bgColor='white' verticalPadding={40} gutter={[20, 0]}>
                     {newsCards}
                 </Section>
-            </main>
+            </>
         )
     }
-}
+})

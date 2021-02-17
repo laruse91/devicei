@@ -26,5 +26,8 @@ export const select = {
     categories: (state: TGlobalState) => {
         return state.shop.categories
     },
+    product: (state: TGlobalState) => {
+        return state.product.product
+    },
 }
 type TSelector = typeof select
