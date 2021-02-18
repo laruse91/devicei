@@ -9,6 +9,8 @@ import { getProduct } from '../../store/product-reducer'
 import { Comment } from '../../components/common/Comment'
 import { CommentForm } from '../../components/common/CommentForm'
 import { TReviewForm } from '../../types/types'
+import { TagLinks } from '../../components/common/TagLinks'
+import { Price } from '../../components/common/Price'
 
 const { Title, Text } = Typography
 const { TabPane } = Tabs
@@ -61,6 +63,7 @@ export const Product: React.FC = () => {
 
     const category = product && product.category[0].toUpperCase() + product.category.slice(1)
 
+    if (!product) return <div>loading</div>
     return (
         <>
             <Section bgColor='white' verticalPadding={10}>
@@ -77,25 +80,14 @@ export const Product: React.FC = () => {
 
             <Section bgColor='white'>
                 <Col xs={12}>
-                    <Image preview={false} style={s.productImage} src={product?.image} />
+                    <Image preview={false} style={s.productImage} src={product.image} />
                 </Col>
                 <Col xs={12}>
-                    <Title level={2}>{product?.title}</Title>
-                    <Rate disabled value={product?.rate} style={sFont(16)} />
+                    <Title level={2}>{product.name}</Title>
+                    <Rate disabled value={product.rate} style={sFont(16)} />
 
-                    <Row align='middle' style={{ margin: '20px 0' }}>
-                        {product?.oldPrice && (
-                            <Col style={{ marginRight: '10px' }}>
-                                <Text type='secondary' delete>
-                                    ${product?.oldPrice}
-                                </Text>
-                            </Col>
-                        )}
+                    <Price price={product.price} oldPrice={product.oldPrice} size={3} justify='start' />
 
-                        <Title level={3} style={{ color: '#3452ff' }}>
-                            ${product?.price}
-                        </Title>
-                    </Row>
                     <Text>{product?.description}</Text>
                     <Row style={{ margin: '20px 0' }}>
                         <InputNumber
@@ -107,13 +99,10 @@ export const Product: React.FC = () => {
                         <Button shape='round'>ADD TO CART</Button>
                     </Row>
                     <Row align='middle'>
-                        <Title style={{ margin: 0 }} level={5}>
+                        <Title style={{ margin: '0 20px 0 0' }} level={5}>
                             Categories:
                         </Title>
-                        <Link style={{ margin: '0 5px 0 20px' }} to={`/shop/${product?.tags[0]}`}>
-                            {product?.tags[0]},
-                        </Link>
-                        <Link to={`/shop/${product?.tags[0]}?brand=${product?.tags[1]}`}>{product?.tags[1]}</Link>
+                        <TagLinks tags={product.tags} />
                     </Row>
                 </Col>
             </Section>

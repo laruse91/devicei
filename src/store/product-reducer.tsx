@@ -1,9 +1,9 @@
-import {TCategories, TProduct, TInfo, TGoods} from '../types/types'
-import {TCombineActions, TGlobalState} from './store'
-import {ThunkAction} from 'redux-thunk'
-import {goodsAPI} from '../api/goods-api'
-import {part} from '../utils/helpers'
-import {fireDB} from '../index'
+import { TCategories, TProduct, TInfo, TGoods } from '../types/types'
+import { TCombineActions, TGlobalState } from './store'
+import { ThunkAction } from 'redux-thunk'
+import { goodsAPI } from '../api/goods-api'
+import { part } from '../utils/helpers'
+import { fireDB } from '../index'
 
 const SET_PRODUCT = 'SET_PRODUCT'
 
@@ -29,7 +29,7 @@ const productReducer = (state = initialState, action: TActions): TInitialState =
 type TActions = TCombineActions<typeof actions>
 
 const actions = {
-    setGoods: (product: TProduct) => ({type: SET_PRODUCT, payload: {product}} as const),
+    setGoods: (product: TProduct) => ({ type: SET_PRODUCT, payload: { product } } as const),
 }
 
 // Thunks
@@ -39,12 +39,11 @@ export const getProduct = (id: string): TThunk => async (dispatch) => {
     // @ts-ignore
     const product: TProduct = await goodsAPI.requestProduct(id)
 
-    // for (let id in allfff) {
+    // for (let id in home) {
     //     // @ts-ignore
-    //     await fireDB.collection('goods').doc(id).set(allfff[id])
+    //     await fireDB.collection('home').doc(id).set(home[id])
     // }
-
-    dispatch(actions.setGoods(product))
+    if (product) dispatch(actions.setGoods(product))
 }
 
 export default productReducer

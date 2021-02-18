@@ -8,17 +8,17 @@ export const select = {
     features: (state: TGlobalState) => {
         return state.home.features
     },
-    sale: (state: TGlobalState) => {
-        return state.home.sale
+    saleGoods: (state: TGlobalState) => {
+        return state.home.saleGoods
     },
-    superSaleOfDay: (state: TGlobalState) => {
-        return state.home.superSaleOfDay
+    tabGoods: (state: TGlobalState) => {
+        return state.home.tabGoods
     },
     news: (state: TGlobalState) => {
         return state.home.news
     },
-    tabGoods: (state: TGlobalState) => {
-        return state.home.tabGoods
+    isLoading: (state: TGlobalState) => {
+        return state.home.isLoading
     },
     goods: (state: TGlobalState) => {
         return state.shop.goods

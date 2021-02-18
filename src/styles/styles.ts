@@ -1,24 +1,15 @@
 import { CSSProperties } from 'react'
-
-type TStyle = {
-    [key: string]: CSSProperties
-}
+import { TStyle } from '../types/types'
 
 export const s: TStyle = {
-    header: {
-        padding: '20px',
-        position: 'sticky',
-        top: '0',
-        zIndex: 100,
-        width: '100%',
-        background: 'white',
-        boxShadow: '0 5px 20px -6px #c6c6c6',
-    },
-    footer: { background: '#212121', padding: '40px 0', marginTop: '30px' },
     footIcon: { fontSize: '22px', color: '#727272', cursor: 'pointer' },
     footText: { fontSize: '18px', color: '#727272' },
     breadCrumb: { marginTop: '20px', fontSize: '14px' },
     productImage: { borderRadius: '10px', border: '1px solid #dddddd', width: '90%' },
+    productCard: { border: '1px solid #dddddd', borderRadius: '10px', cursor: 'default' },
+    productName: { marginTop: '5px', height: '55px', cursor: 'pointer' },
+    futureProductName: { color: 'white', marginTop: '5px', height: '90px', cursor: 'pointer' },
+    badge: { fontSize: '16px', background: '#3452ff' },
 }
 
 export const sFont: (fontSize: number) => CSSProperties = (fontSize) => ({

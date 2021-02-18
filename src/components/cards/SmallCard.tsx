@@ -7,12 +7,12 @@ type TProps = {
     image: string
     title: string
     id: string
-    brand: string
+    name: string
     price: number
     oldPrice: number | null
 }
 
-export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, brand }) => {
+export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, name }) => {
     return (
         <Col
             xs={5}
@@ -28,7 +28,7 @@ export const SmallCard: React.FC<TProps> = React.memo(({ id, image, title, price
                 {title}
             </Title>
             <Title style={{ margin: '0 0 20px', color: 'white', cursor: 'pointer' }} level={2}>
-                {brand}
+                {name}
             </Title>
             <Text type='secondary' delete style={{ color: 'white' }}>
                 ${oldPrice}

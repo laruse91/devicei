@@ -12,13 +12,13 @@ type TProps = {
 }
 
 export const Section: React.FC<TProps> = React.memo(
-    ({ title, bgColor, justify = 'space-between', gutter, children, verticalPadding = 0 }) => {
+    ({ title, bgColor, justify = 'center', gutter, children, verticalPadding = 0 }) => {
         const bg = bgColor ? bgColor : ''
 
         return (
             <Layout style={{ background: `${bg}`, padding: `${verticalPadding}px 0` }}>
                 <Row justify='center' align='middle'>
-                    <Col xs={18} xxl={16}>
+                    <Col xs={22} xl={18} xxl={16}>
                         {title && <Title level={2}>{title}</Title>}
                         <Row justify={justify} gutter={gutter}>
                             {children}

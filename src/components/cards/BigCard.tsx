@@ -5,14 +5,14 @@ const { Title, Paragraph } = Typography
 
 type TProps = {
     image: string
-    title: string
+    name: string
     id: string
     description: string
     price: number
     oldPrice: number | null
 }
 
-export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, oldPrice, description }) => {
+export const BigCard: React.FC<TProps> = React.memo(({ id, image, name, price, oldPrice, description }) => {
     const goodsImg = oldPrice ? (
         <Badge count='SALE!' offset={[-110, 30]} style={{ fontSize: '16px', background: '#3452ff' }}>
             <Image src='good' fallback={image} style={{ cursor: 'pointer' }} />
@@ -40,7 +40,7 @@ export const BigCard: React.FC<TProps> = React.memo(({ id, image, title, price, 
 
                         <Row style={{ height: '70px' }}>
                             <Title style={{ cursor: 'pointer', marginTop: '5px' }} level={4}>
-                                {title}
+                                {name}
                             </Title>
                         </Row>
 

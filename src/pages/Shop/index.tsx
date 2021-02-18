@@ -21,7 +21,7 @@ type TQueryParams = {
     page?: string
     priceFrom: string
     priceTo: string
-    brand?: string[]
+    brand?: string
 }
 
 export const Shop: React.FC = memo(() => {
@@ -30,7 +30,7 @@ export const Shop: React.FC = memo(() => {
     const [sort, setSort] = useState<'desc' | 'asc'>('asc')
     const [price, setPrice] = useState<[number, number] | undefined>(undefined)
     const [page, setPage] = useState(1)
-    console.log(category)
+
     const goods = useSelector(select.goods)
     const categories = useSelector(select.categories)
     const dispatch = useDispatch()
@@ -39,11 +39,11 @@ export const Shop: React.FC = memo(() => {
     const history = useHistory()
 
     useEffect(() => {
-        const parsed = queryString.parse(history.location.search.substr(1)) as any
+        const parsed = queryString.parse(history.location.search.substr(1)) as TQueryParams
 
         if (params.category) setCategory(params.category)
         if (parsed.page) setPage(Number(parsed.page))
-        if (parsed.brand) setBrands([parsed.brand])
+        if (parsed.brand) setBrands(parsed.brand.split('_'))
         if (parsed.priceFrom) setPrice([Number(parsed.priceFrom), Number(parsed.priceTo)])
 
         dispatch(getGoods(category, price, brands, sort, page))
@@ -56,7 +56,7 @@ export const Shop: React.FC = memo(() => {
         }
         const query = {} as TQueryParams
         if (page !== 1) query.page = String(page)
-        if (brands) query.brand = brands
+        if (brands.length) query.brand = brands.join('_')
         if (price) {
             query.priceFrom = String(price[0])
             query.priceTo = String(price[1])
@@ -85,7 +85,7 @@ export const Shop: React.FC = memo(() => {
     }
 
     const goodsCards = goods?.items.map((g) => {
-        return <ProductCard key={g.id} goods={g} size={8} />
+        return <ProductCard key={g.id} product={g} size={8} />
     })
     const menu = (
         <Menu onClick={handleSorting}>
@@ -149,7 +149,7 @@ export const Shop: React.FC = memo(() => {
                     <Row gutter={[20, 20]}>{goodsCards}</Row>
                 </Col>
 
-                <Col xs={6} style={{ padding: '0 20px 0 20px' }}>
+                <Col xs={6} style={{ padding: '0 20px' }}>
                     <Search
                         placeholder='input search text'
                         allowClear

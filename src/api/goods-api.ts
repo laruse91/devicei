@@ -1,5 +1,6 @@
 import { fireDB } from '../index'
 import { TProduct } from '../types/types'
+import firebase from 'firebase'
 
 export const goodsAPI = {
     requestGoods(

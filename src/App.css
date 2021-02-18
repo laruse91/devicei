@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
+.header {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: white;
+    box-shadow: 0 5px 20px -6px #c6c6c6;
+}
+
+.main {
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: auto;
+    background: #212121;
+    padding: 40px 0;
+    width: 100%;
+}

@@ -1,7 +1,12 @@
+import { CSSProperties } from 'react'
+
+export type TStyle = {
+    [key: string]: CSSProperties
+}
 export type TNews = {
     article: string
     date: string
-    id: 321120
+    id: string
     image: string
     tag: string
     title: string
@@ -15,17 +20,20 @@ export type TReview = {
     userPhoto: string
     rate: number
 }
+export type TGroup = 'sale' | 'rate' | 'saleOfDay' | 'new' | 'profitable'
 export type TProduct = {
     brand: string
+    name: string
     description: string
     id: string
     image: string
     price: number
     oldPrice: number | null
-    tags: string[]
+    tags: [string, string]
     title: string
     category: string
     rate: number
+    group: string | null
     characteristics: {
         [key: string]: string
     }
@@ -36,14 +44,8 @@ export type TCarousel = {
     description: string
     image: string
 }
-export type superSaleOfDay = {
-    bigCard: TProduct
-    smallCard: TProduct
-}
-export type TTabs = 'recent' | 'rate' | 'sale'
-export type TTabGoods = {
-    [key in TTabs]: TProduct[]
-}
+export type TTabs = 'rate' | 'new'
+export type TSales = 'sale' | 'saleOfDay'
 export type TInfo = { brands: string[]; total: number; maximalPrice: number }
 export type TCategories = string[]
 export type TGoods = {

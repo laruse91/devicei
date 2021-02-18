@@ -1,82 +1,101 @@
-import React from 'react'
-import { Badge, Button, Card, Col, Image, Rate, Row, Space, Typography } from 'antd'
-import { Link, useHistory } from 'react-router-dom'
+import React, { memo } from 'react'
+import { Badge, Button, Card, Col, Image, Rate, Row, Typography } from 'antd'
+import { useHistory } from 'react-router-dom'
 import { TProduct } from '../../types/types'
-const { Title } = Typography
+import { s, sFont } from '../../styles/styles'
+import { TagLinks } from '../common/TagLinks'
+import { Price } from '../common/Price'
+
+const { Title, Paragraph } = Typography
 
 type TProps = {
-    goods: TProduct
+    product: TProduct
     size?: number
+    type?: 'vertical' | 'horizontal'
+    hover?: boolean
+    desc?: boolean
 }
 
-export const ProductCard: React.FC<TProps> = React.memo(({ goods, size = 6 }) => {
-    const links = goods.tags.map((t) => (
-        <Space key={t} size={5}>
-            <Link to={'#'}>{t}</Link>{' '}
-        </Space>
-    ))
-    const goodsImg = goods.oldPrice ? (
-        <Badge count='SALE!' offset={[-110, 30]} style={{ fontSize: '16px', background: '#3452ff' }}>
-            <Image src='good' fallback={goods.image} style={{ maxHeight: '200px', cursor: 'pointer' }} />
-        </Badge>
-    ) : (
-        <Image src='good' fallback={goods.image} style={{ cursor: 'pointer' }} />
-    )
-    const history = useHistory()
-    const handleCardClick = () => {
-        history.replace({ pathname: `/product/${goods.id}` })
-    }
+export const ProductCard: React.FC<TProps> = memo(
+    ({ product, size = 6, type = 'vertical', hover = true, desc = false }) => {
+        const history = useHistory()
+        const handleCardClick = () => {
+            history.replace({ pathname: `/product/${product.id}` })
+        }
+        const tag = product.group
+        const badge = tag === 'sale' || tag === 'new' ? tag[0].toUpperCase() + tag.slice(1) : 0
 
-    return (
-        <Col xs={size}>
-            <Card
-                size='small'
-                hoverable
-                style={{
-                    border: '1px solid #dddddd',
-                    borderRadius: '10px',
-                }}>
-                <Col>
-                    <Row onClick={handleCardClick}>{goodsImg}</Row>
-                    <Col>
-                        <Row justify='center'>{links}</Row>
+        if (type === 'vertical')
+            return (
+                <Col xs={24 / (24 / size - 2)} md={24 / (24 / size - 1)} lg={size}>
+                    <Badge count={badge} style={s.badge} offset={[-50, 30]}>
+                        <Card size='small' hoverable={hover} style={s.productCard}>
+                            <Row justify='center'>
+                                <Col style={{ margin: '0 auto' }} xs={22} sm={16} md={18}>
+                                    <Row justify='center' style={{ cursor: 'pointer' }} onClick={handleCardClick}>
+                                        <Image src='product' width={'100%'} fallback={product.image} />
+                                    </Row>
 
-                        <Row style={{ height: '70px' }} justify='center' onClick={handleCardClick}>
-                            <Title style={{ cursor: 'pointer', marginTop: '5px' }} level={4}>
-                                {goods.title}
-                            </Title>
-                        </Row>
+                                    <TagLinks tags={product.tags} />
 
-                        <Row justify='center' align='middle'>
-                            <Space size={5}>
-                                <Col>
-                                    <Title style={{ color: '#3452ff' }} level={4}>
-                                        ${goods.price}{' '}
-                                    </Title>
-                                </Col>
-
-                                {goods.oldPrice && (
-                                    <Col style={{ marginRight: '10px' }}>
-                                        <Title type='secondary' delete level={5}>
-                                            ${goods.oldPrice}
+                                    <Row justify='center' onClick={handleCardClick}>
+                                        <Title style={s.productName} level={4} ellipsis={{ rows: 2 }}>
+                                            {product.name}
                                         </Title>
-                                    </Col>
-                                )}
-                            </Space>
-                        </Row>
+                                    </Row>
 
-                        <Row justify='center'>
-                            <Rate style={{ fontSize: '14px' }} defaultValue={goods.rate} />
-                        </Row>
+                                    <Price oldPrice={product.oldPrice} price={product.price} />
 
-                        <Row justify='center' style={{ margin: '10px auto' }}>
-                            <Button shape='round' size='small'>
-                                TO CART
-                            </Button>
-                        </Row>
-                    </Col>
+                                    <Row justify='center'>
+                                        <Rate style={sFont(14)} disabled value={product.rate} />
+                                    </Row>
+
+                                    <Row justify='center' style={{ marginTop: '10px' }}>
+                                        <Button shape='round' size='small'>
+                                            TO CART
+                                        </Button>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Card>
+                    </Badge>
                 </Col>
-            </Card>
-        </Col>
-    )
-})
+            )
+
+        return (
+            <Col xs={24} sm={12} md={12} lg={size}>
+                <Card size='small' style={s.productCard} hoverable={hover}>
+                    <Row justify='space-between'>
+                        <Col xs={10} sm={12} style={{ cursor: 'pointer' }} onClick={handleCardClick}>
+                            <Badge count={badge} style={s.badge} offset={[-20, 20]}>
+                                <Image src='product' width={'100%'} fallback={product.image} />
+                            </Badge>
+                        </Col>
+
+                        <Col xs={14} sm={12} style={{ paddingTop: '10px' }}>
+                            <Row justify='center'>
+                                <Rate style={sFont(14)} disabled value={product.rate} />
+                            </Row>
+
+                            <Row justify='center' onClick={handleCardClick}>
+                                <Title style={s.productName} level={5} ellipsis={{ rows: 2 }}>
+                                    {product.name}
+                                </Title>
+                            </Row>
+
+                            <Price oldPrice={product.oldPrice} price={product.price} />
+
+                            <Row justify='center' style={{ marginTop: '10px' }}>
+                                <Button shape='round' size='small'>
+                                    TO CART
+                                </Button>
+                            </Row>
+
+                            {desc && <Paragraph>{product.description}</Paragraph>}
+                        </Col>
+                    </Row>
+                </Card>
+            </Col>
+        )
+    }
+)

@@ -5,6 +5,7 @@ import { Footer } from './components/Footer'
 import { Home } from './pages/Home'
 import { Shop } from './pages/Shop'
 import { Product } from './pages/Product'
+import './App.css'
 
 const App: React.FC = () => {
     let about
@@ -13,10 +14,12 @@ const App: React.FC = () => {
     let error
 
     return (
-        <>
-            <Header />
+        <div className='container'>
+            <header className='header'>
+                <Header />
+            </header>
 
-            <main>
+            <main className='main'>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect to={'/home'} />} />
                     <Route path='/home' render={() => <Home />} />
@@ -29,8 +32,10 @@ const App: React.FC = () => {
                 </Switch>
             </main>
 
-            <Footer />
-        </>
+            <footer className='footer'>
+                <Footer />
+            </footer>
+        </div>
     )
 }
 

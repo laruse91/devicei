@@ -1,32 +1,42 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
-import { db } from '../index'
-import { superSaleOfDay, TCarousel, TProduct, TNews, TTabGoods } from '../types/types'
-import { fillArray } from '../utils/helpers'
+import { TCarousel, TGroup, TNews, TProduct, TSales, TTabs } from '../types/types'
 import { homeAPI } from '../api/home-api'
+import { newsAPI } from '../api/news-api'
 
-const SET_TAB_GOODS = 'SET_TAB_GOODS'
+const SET_GOODS = 'SET_TAB_GOODS'
 const SET_DATA = 'SET_DATA'
+const SET_NEWS = 'SET_NEWS'
+const SET_SALE_GOODS = 'SET_SALE_GOODS'
+const REMOVE_LOADING = 'REMOVE_LOADING'
 
 export const initialState = {
     carousel: null as TCarousel[] | null,
     features: null as TProduct[] | null,
-    sale: null as TProduct[] | null,
-    tabGoods: null as TTabGoods | null,
-    superSaleOfDay: null as superSaleOfDay | null,
+    tabGoods: null as { [key in TTabs]: TProduct[] } | null,
+    saleGoods: null as { [key in TSales]: TProduct[] } | null,
     news: null as TNews[] | null,
+    isLoading: true,
 }
-
 export type TInitialState = typeof initialState
 
 const homeReducer = (state = initialState, action: TActions): TInitialState => {
     switch (action.type) {
         case SET_DATA:
-        case SET_TAB_GOODS:
+        case SET_NEWS:
+        case SET_SALE_GOODS:
+        case SET_GOODS:
             return {
                 ...state,
                 ...action.payload,
             }
+
+        case REMOVE_LOADING:
+            return {
+                ...state,
+                isLoading: false,
+            }
+
         default:
             return state
     }
@@ -36,52 +46,44 @@ const homeReducer = (state = initialState, action: TActions): TInitialState => {
 type TActions = TCombineActions<typeof actions>
 
 const actions = {
-    setData: (
-        carousel: TCarousel[] | null,
-        features: TProduct[] | null,
-        sale: TProduct[] | null,
-        superSaleOfDay: superSaleOfDay | null,
-        news: TNews[] | null
-    ) => ({ type: SET_DATA, payload: { carousel, features, sale, superSaleOfDay, news } } as const),
-    setTabGoods: (tabGoods: TTabGoods) => ({ type: SET_TAB_GOODS, payload: { tabGoods } } as const),
+    setData: (carousel: TCarousel[], features: TProduct[]) =>
+        ({ type: SET_DATA, payload: { carousel, features } } as const),
+    setTabGoods: (tabGoods: { [key in TTabs]: TProduct[] }) => ({ type: SET_GOODS, payload: { tabGoods } } as const),
+    setNews: (news: TNews[]) => ({ type: SET_NEWS, payload: { news } } as const),
+    setSaleGoods: (saleGoods: { [key in TSales]: TProduct[] }) =>
+        ({ type: SET_SALE_GOODS, payload: { saleGoods } } as const),
+    removeLoading: () => ({ type: REMOVE_LOADING } as const),
 }
 
 // Thunks
 type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
-export const requestTabGoods = (limit = 4): TThunk => async (dispatch) => {
-    let tabGoods = {} as TTabGoods
-    // @ts-ignore
-    tabGoods['sale'] = await homeAPI.requestTabGoods('sale', limit)
-    // @ts-ignore
-    tabGoods['rate'] = await homeAPI.requestTabGoods('rate', limit)
+export const getGoods = (groups: TGroup[], limit = 4, tag: 'tab' | 'sale'): TThunk => async (dispatch) => {
+    let goods = {} as { [key in TGroup]: TProduct[] }
 
-    tabGoods.sale && tabGoods.sale && dispatch(actions.setTabGoods(tabGoods))
+    for (let c of groups) {
+        const response = await homeAPI.requestGoods(c, limit)
+        if (response) goods[c] = response
+    }
+    if (tag === 'tab') dispatch(actions.setTabGoods(goods))
+    if (tag === 'sale') dispatch(actions.setSaleGoods(goods))
 }
-export const requestData = (): TThunk => (dispatch) => {
-    let carousel: TCarousel[] | null = null
-    let features: TProduct[] | null = null
-    let sale: TProduct[] | null = null
-    let superSaleOfDay: superSaleOfDay | null = null
-    let news: TNews[] | null = null
 
-    Promise.all([
-        db.ref('carousel').once('value', (bg) => {
-            carousel = bg.val()
-        }),
-        db.ref('features').once('value', (g) => {
-            features = Object.values(g.val())
-        }),
-        db.ref('goods').once('value', (g) => {
-            sale = fillArray(Object.values(g.val().sale), 3)
-            superSaleOfDay = g.val().superSaleOfDay
-        }),
-        db.ref('news').once('value', (n) => {
-            news = fillArray(Object.values(n.val()), 3)
-        }),
-    ]).then(() => {
-        dispatch(actions.setData(carousel, features, sale, superSaleOfDay, news))
-    })
+export const getNews = (): TThunk => async (dispatch) => {
+    const news: TNews[] | void = await newsAPI.requestNews(3)
+    news && dispatch(actions.setNews(news))
+}
+
+export const getHomeData = (): TThunk => async (dispatch) => {
+    const response = await homeAPI.requestData()
+    if (response) {
+        const carousel: TCarousel[] = response.carousel
+        const features: TProduct[] = response.features
+        dispatch(actions.setData(carousel, features))
+    }
+    await dispatch(getGoods(['sale', 'saleOfDay'], 3, 'sale'))
+    await dispatch(getNews())
+    await dispatch(actions.removeLoading())
 }
 
 export default homeReducer
