@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react'
-import { Section } from '../Home/Section'
+import { Section } from '../../components/common/Section'
 import { ProductCard } from '../../components/cards/ProductCard'
 import { getCategories, getGoods } from '../../store/shop-reducer'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,6 +14,7 @@ import { Categories } from './Categories'
 import { CheckList } from './CheckList'
 import { CheckboxValueType } from 'antd/es/checkbox/Group'
 import * as queryString from 'querystring'
+import { BreadCrumbs } from '../../components/BreadCrumbs'
 
 const { Search } = Input
 const { Title } = Typography
@@ -101,32 +102,30 @@ export const Shop: React.FC = memo(() => {
 
     return (
         <>
-            <Section bgColor='white'>
-                <Col>
-                    <Breadcrumb style={s.breadCrumb}>
-                        <Breadcrumb.Item>
-                            <Link to={'/home'}>Home</Link>
-                        </Breadcrumb.Item>
-                        {!category ? (
-                            <Breadcrumb.Item>Shop</Breadcrumb.Item>
-                        ) : (
-                            <>
-                                <Breadcrumb.Item>
-                                    <Link onClick={() => setCategory(undefined)} to={'/shop'}>
-                                        Shop
-                                    </Link>
-                                </Breadcrumb.Item>
-                                <Breadcrumb.Item>{category[0].toUpperCase() + category.slice(1)}</Breadcrumb.Item>
-                            </>
-                        )}
-                    </Breadcrumb>
-
-                    <Title style={{ margin: '0' }}>{pageTitle}</Title>
-                </Col>
+            <Section justify='start' bgColor='white' verticalPadding={10}>
+                <Breadcrumb style={s.breadCrumb}>
+                    <Breadcrumb.Item>
+                        <Link to={'/home'}>Home</Link>
+                    </Breadcrumb.Item>
+                    {!category ? (
+                        <Breadcrumb.Item>Shop</Breadcrumb.Item>
+                    ) : (
+                        <>
+                            <Breadcrumb.Item>
+                                <Link onClick={() => setCategory(undefined)} to={'/shop'}>
+                                    Shop
+                                </Link>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item>{category[0].toUpperCase() + category.slice(1)}</Breadcrumb.Item>
+                        </>
+                    )}
+                </Breadcrumb>
             </Section>
+            <Section justify='start' bgColor='white'>
+                <Title style={{ margin: '0' }}>{pageTitle}</Title>
 
-            <Divider />
-
+                <Divider />
+            </Section>
             <Section bgColor='white' gutter={[0, 20]}>
                 <Col xs={18}>
                     <Row justify='space-between' align='middle' style={{ marginBottom: '20px' }}>

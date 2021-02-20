@@ -1,11 +1,9 @@
 import React, { memo, useEffect } from 'react'
 import { NewsCard } from '../../components/cards/NewsCard'
-import { Skeleton, Space, Typography } from 'antd'
-import { Section } from './Section'
+import { Space } from 'antd'
+import { Section } from '../../components/common/Section'
 import { CategoryTabs } from './CategoryTabs'
 import { FeatureCard } from '../../components/cards/FeatureCard'
-import { BigCard } from '../../components/cards/BigCard'
-import { SmallCard } from '../../components/cards/SmallCard'
 import { PromiseCard } from '../../components/cards/PromiseCard'
 import {
     DollarTwoTone,
@@ -20,8 +18,6 @@ import { select } from '../../selectors/selectors'
 import { Carousell } from './Carousell'
 import { getHomeData } from '../../store/home-reducer'
 import { ProductCard } from '../../components/cards/ProductCard'
-
-const { Title } = Typography
 
 export const Home: React.FC = memo(() => {
     const features = useSelector(select.features)
@@ -56,7 +52,7 @@ export const Home: React.FC = memo(() => {
             <Carousell />
 
             <Space size={40} direction='vertical'>
-                <Section justify='center' verticalPadding={40}>
+                <Section justify='center' verticalPadding={40} gutter={[20, 20]}>
                     <PromiseCard title='Home Shipping' description='Free for all order'>
                         <HomeTwoTone style={sFont(30)} />
                     </PromiseCard>
@@ -65,11 +61,11 @@ export const Home: React.FC = memo(() => {
                         <DollarTwoTone style={sFont(30)} />
                     </PromiseCard>
 
-                    <PromiseCard title='Clients′ Support' description='Fast Service'>
+                    <PromiseCard title='Client`s Support' description='Fast Service'>
                         <SafetyCertificateTwoTone style={sFont(30)} />
                     </PromiseCard>
 
-                    <PromiseCard title='Fast Delivery' description='Best Service' border>
+                    <PromiseCard title='Fast Delivery' description='Best Service'>
                         <ThunderboltTwoTone style={sFont(30)} />
                     </PromiseCard>
                 </Section>

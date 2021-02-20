@@ -14,7 +14,7 @@ export const FeatureCard: React.FC<TProps> = memo(({ product, size = 12, type = 
     const sCard: CSSProperties = {
         background: `url(${product.image})`,
         borderRadius: '10px',
-        padding: '30px 20px 30px 40px',
+        padding: '30px 15px 30px 20px',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -28,8 +28,8 @@ export const FeatureCard: React.FC<TProps> = memo(({ product, size = 12, type = 
     ) : (
         <Text style={{ color: 'white' }}>Starting at</Text>
     )
-    let xs = 12
-    let sm = 8
+    let xs = 24
+    let sm = 12
     let md = 8
 
     if (type === 'horizontal') {

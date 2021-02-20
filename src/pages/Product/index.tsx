@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Section } from '../Home/Section'
+import { Section } from '../../components/common/Section'
 import { Breadcrumb, Button, Col, Divider, Image, InputNumber, Rate, Row, Tabs, Typography } from 'antd'
 import { s, sFont } from '../../styles/styles'
 import { Link, useParams } from 'react-router-dom'
@@ -11,6 +11,7 @@ import { CommentForm } from '../../components/common/CommentForm'
 import { TReviewForm } from '../../types/types'
 import { TagLinks } from '../../components/common/TagLinks'
 import { Price } from '../../components/common/Price'
+import { BreadCrumbs } from '../../components/BreadCrumbs'
 
 const { Title, Text } = Typography
 const { TabPane } = Tabs
@@ -61,22 +62,10 @@ export const Product: React.FC = () => {
         })
     )
 
-    const category = product && product.category[0].toUpperCase() + product.category.slice(1)
-
     if (!product) return <div>loading</div>
     return (
         <>
-            <Section bgColor='white' verticalPadding={10}>
-                <Breadcrumb style={s.breadCrumb}>
-                    <Breadcrumb.Item>
-                        <Link to={'/home'}>Home</Link>
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>
-                        <Link to={'/shop'}>Shop</Link>
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>{category}</Breadcrumb.Item>
-                </Breadcrumb>
-            </Section>
+            <BreadCrumbs routes={['shop', product.category]} />
 
             <Section bgColor='white'>
                 <Col xs={12}>

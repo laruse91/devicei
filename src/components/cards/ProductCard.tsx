@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Badge, Button, Card, Col, Image, Rate, Row, Typography } from 'antd'
+import { Badge, Button, Card, Col, Grid, Image, Rate, Row, Typography } from 'antd'
 import { useHistory } from 'react-router-dom'
 import { TProduct } from '../../types/types'
 import { s, sFont } from '../../styles/styles'
@@ -7,6 +7,7 @@ import { TagLinks } from '../common/TagLinks'
 import { Price } from '../common/Price'
 
 const { Title, Paragraph } = Typography
+const { useBreakpoint } = Grid
 
 type TProps = {
     product: TProduct
@@ -18,12 +19,17 @@ type TProps = {
 
 export const ProductCard: React.FC<TProps> = memo(
     ({ product, size = 6, type = 'vertical', hover = true, desc = false }) => {
+        const screen = useBreakpoint()
         const history = useHistory()
+
         const handleCardClick = () => {
             history.replace({ pathname: `/product/${product.id}` })
         }
+
         const tag = product.group
         const badge = tag === 'sale' || tag === 'new' ? tag[0].toUpperCase() + tag.slice(1) : 0
+
+        const description = desc && <Paragraph ellipsis={{ rows: 5 }}>{product.description}</Paragraph>
 
         if (type === 'vertical')
             return (
@@ -39,7 +45,7 @@ export const ProductCard: React.FC<TProps> = memo(
                                     <TagLinks tags={product.tags} />
 
                                     <Row justify='center' onClick={handleCardClick}>
-                                        <Title style={s.productName} level={4} ellipsis={{ rows: 2 }}>
+                                        <Title style={s.productName} level={screen.sm ? 4 : 5} ellipsis={{ rows: 2 }}>
                                             {product.name}
                                         </Title>
                                     </Row>
@@ -78,22 +84,24 @@ export const ProductCard: React.FC<TProps> = memo(
                             </Row>
 
                             <Row justify='center' onClick={handleCardClick}>
-                                <Title style={s.productName} level={5} ellipsis={{ rows: 2 }}>
+                                <Title style={s.productName} level={screen.md ? 4 : 5} ellipsis={{ rows: 2 }}>
                                     {product.name}
                                 </Title>
                             </Row>
 
                             <Price oldPrice={product.oldPrice} price={product.price} />
 
-                            <Row justify='center' style={{ marginTop: '10px' }}>
+                            <Row justify='center' style={{ margin: '10px 0' }}>
                                 <Button shape='round' size='small'>
                                     TO CART
                                 </Button>
                             </Row>
 
-                            {desc && <Paragraph>{product.description}</Paragraph>}
+                            {screen.lg && description}
                         </Col>
                     </Row>
+
+                    {!screen.lg && description}
                 </Card>
             </Col>
         )

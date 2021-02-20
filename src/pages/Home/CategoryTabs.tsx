@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import { Row, Tabs } from 'antd'
 import { ProductCard } from '../../components/cards/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,14 +28,14 @@ export const CategoryTabs = () => {
         return <>'...loading'</>
     } else {
         return (
-            <Tabs defaultActiveKey={tab} onChange={handleTabChange}>
+            <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px' }}>
                 <TabPane tab='Top Rated' key='rate'>
-                    <Row gutter={[25, 25]} justify='space-between'>
+                    <Row gutter={[25, 25]} justify='space-between' style={{ maxHeight: '400px' }}>
                         {cards}
                     </Row>
                 </TabPane>
                 <TabPane tab='New' key='new'>
-                    <Row gutter={[25, 25]} justify='space-between'>
+                    <Row gutter={[25, 25]} justify='space-between' style={{ maxHeight: '400px' }}>
                         {cards}
                     </Row>
                 </TabPane>
