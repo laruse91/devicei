@@ -24,7 +24,10 @@ export const select = {
         return state.shop.goods
     },
     categories: (state: TGlobalState) => {
-        return state.shop.categories
+        return state.app.categories
+    },
+    isAuth: (state: TGlobalState) => {
+        return state.auth.isAuth
     },
     product: (state: TGlobalState) => {
         return state.product.product

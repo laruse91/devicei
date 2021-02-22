@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { getGoods } from '../../store/home-reducer'
 import { TTabs } from '../../types/types'
+import { fillArray } from '../../utils/helpers'
+import { CardSkeleton } from '../../components/cards/CardSkeleton'
 
 const { TabPane } = Tabs
 
@@ -21,16 +23,23 @@ export const CategoryTabs = () => {
     const handleTabChange = (key: string) => {
         setTab(key as TTabs)
     }
+    const responsive = { xs: 12, sm: 8, md: 6, lg: 6, xxl: 6 }
 
-    const cards = !tabGoods ? null : tabGoods[tab].map((g) => <ProductCard key={g.id} product={g} />)
+    const cards = !tabGoods
+        ? fillArray(4).map((card) => {
+              return <CardSkeleton key={card} responsive={responsive} />
+          })
+        : tabGoods[tab].map((g) => {
+              return <ProductCard key={g.id} product={g} responsive={responsive} />
+          })
 
     if (!tabGoods) {
         return <>'...loading'</>
     } else {
         return (
             <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px' }}>
-                <TabPane tab='Top Rated' key='rate'>
-                    <Row gutter={[25, 25]} justify='space-between' style={{ maxHeight: '400px' }}>
+                <TabPane tab='Top Rated' key='rate' style={{ maxHeight: '410px' }}>
+                    <Row justify='center' gutter={[10, 10]}>
                         {cards}
                     </Row>
                 </TabPane>

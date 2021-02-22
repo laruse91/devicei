@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { RefObject } from 'react'
 import { Col, Layout, Row } from 'antd'
 import Title from 'antd/es/typography/Title'
 import { Gutter } from 'antd/lib/grid/row'

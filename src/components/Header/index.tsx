@@ -1,9 +1,8 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import logo from '../../assets/logo.png'
 import { Col, Image, Row } from 'antd'
-import { ShoppingCartOutlined } from '@ant-design/icons'
 import { Navbar } from '../Navbar'
-import { s, sFont } from '../../styles/styles'
+import { Auth } from '../Auth'
 
 export const Header: React.FC = () => {
     return (
@@ -14,7 +13,7 @@ export const Header: React.FC = () => {
                         <Image src='logo' fallback={logo} />
                     </Col>
                     <Col>
-                        <ShoppingCartOutlined style={sFont(30)} />
+                        <Auth />
                     </Col>
                 </Row>
                 <Row>

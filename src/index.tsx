@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom'
 import firebase from 'firebase/app'
 import 'firebase/database'
 import 'firebase/firestore'
+import 'firebase/auth'
+import firebaseui from 'firebaseui'
 import store from './store/store'
 import { Provider } from 'react-redux'
 
@@ -23,6 +25,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 export const db = firebase.database()
 export const fireDB = firebase.firestore()
+export const fireAuth = firebase.auth()
 
 render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>

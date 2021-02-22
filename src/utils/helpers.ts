@@ -7,17 +7,13 @@ export const random = (min: number, max: number): number => {
     return Math.floor(rand)
 }
 
-//fill array by random el from other array
-export const fillArray = (arr: any[], count: number) => {
-    let newArr = arr.slice()
-    let resArr = []
-
-    for (let i = 1; i <= count; i++) {
-        const r = random(0, newArr.length - 1)
-        resArr.push(newArr[r])
-        newArr.splice(r, 1)
+//create new arr with x=num elements
+export const fillArray = (num: number) => {
+    let arr = []
+    for (let i = 0; i < num; i++) {
+        arr.push(i)
     }
-    return resArr
+    return arr
 }
 
 //take a part of el in array (for pagination)

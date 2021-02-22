@@ -3,8 +3,12 @@ import homeReducer from './home-reducer'
 import thunk from 'redux-thunk'
 import shopReducer from './shop-reducer'
 import productReducer from './product-reducer'
+import appReducer from './app-reducer'
+import authReducer from './auth-reducer'
 
 const rootReducer = combineReducers({
+    app: appReducer,
+    auth: authReducer,
     home: homeReducer,
     shop: shopReducer,
     product: productReducer,

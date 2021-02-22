@@ -19,7 +19,7 @@ export const CheckList: React.FC<TProps> = React.memo(({ checked, options, onCha
 
     return (
         <Checkbox.Group value={checked} style={{ width: '100%' }} onChange={onChange}>
-            <Col xs={24}>{items}</Col>
+            <Col>{items}</Col>
         </Checkbox.Group>
     )
 })

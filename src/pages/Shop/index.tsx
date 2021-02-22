@@ -1,29 +1,28 @@
 import React, { memo, useEffect, useState } from 'react'
 import { Section } from '../../components/common/Section'
 import { ProductCard } from '../../components/cards/ProductCard'
-import { getCategories, getGoods } from '../../store/shop-reducer'
+import { getGoods } from '../../store/shop-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
-import { Breadcrumb, Col, Divider, Dropdown, Input, Menu, Pagination, Row, Select, Typography } from 'antd'
-import { Link, NavLink, useHistory, useLocation, useParams } from 'react-router-dom'
+import { Affix, Col, Collapse, Divider, Dropdown, Grid, Input, Menu, Pagination, Row, Typography } from 'antd'
+import { useHistory, useParams } from 'react-router-dom'
 import { DownOutlined } from '@ant-design/icons'
 import { MenuInfo } from 'rc-menu/lib/interface'
 import { PriceFilter } from './PriceFilter'
-import { s } from '../../styles/styles'
 import { Categories } from './Categories'
 import { CheckList } from './CheckList'
 import { CheckboxValueType } from 'antd/es/checkbox/Group'
 import * as queryString from 'querystring'
-import { BreadCrumbs } from '../../components/BreadCrumbs'
+import { TQueryParams } from '../../types/types'
+import { CardSkeleton } from '../../components/cards/CardSkeleton'
+import { fillArray } from '../../utils/helpers'
+import { BreadCrumbs } from '../../components/common/BreadCrumbs'
+import { getCategories } from '../../store/app-reducer'
 
+const { Panel } = Collapse
 const { Search } = Input
 const { Title } = Typography
-type TQueryParams = {
-    page?: string
-    priceFrom: string
-    priceTo: string
-    brand?: string
-}
+const { useBreakpoint } = Grid
 
 export const Shop: React.FC = memo(() => {
     const [category, setCategory] = useState<string | undefined>(undefined)
@@ -38,23 +37,25 @@ export const Shop: React.FC = memo(() => {
 
     const params: { category: string } = useParams()
     const history = useHistory()
+    const screen = useBreakpoint()
 
-    useEffect(() => {
+    const parseQuery = (): void => {
         const parsed = queryString.parse(history.location.search.substr(1)) as TQueryParams
 
-        if (params.category) setCategory(params.category)
         if (parsed.page) setPage(Number(parsed.page))
         if (parsed.brand) setBrands(parsed.brand.split('_'))
         if (parsed.priceFrom) setPrice([Number(parsed.priceFrom), Number(parsed.priceTo)])
+    }
 
+    useEffect(() => {
+        parseQuery()
+        if (params.category) setCategory(params.category)
+        if (!categories) dispatch(getCategories())
         dispatch(getGoods(category, price, brands, sort, page))
-        dispatch(getCategories())
     }, [])
     useEffect(() => {
         dispatch(getGoods(category, price, brands, sort, page))
-        if (category) {
-            history.replace({ pathname: `/shop/${category}` })
-        }
+
         const query = {} as TQueryParams
         if (page !== 1) query.page = String(page)
         if (brands.length) query.brand = brands.join('_')
@@ -66,7 +67,12 @@ export const Shop: React.FC = memo(() => {
         history.push({
             search: queryString.stringify(query),
         })
-    }, [category, brands, price, page, sort])
+    }, [brands, price, page, sort])
+    useEffect(() => {
+        dispatch(getGoods(category, price, brands, sort, page))
+        setBrands([])
+        if (category) history.replace({ pathname: `/shop/${category}` })
+    }, [category])
 
     const handlePageChange = (page: number) => {
         setPage(page)
@@ -84,50 +90,79 @@ export const Shop: React.FC = memo(() => {
     const handleBrandChecked = (values: CheckboxValueType[]) => {
         setBrands(values as string[])
     }
+    const handleLinkClick = () => {
+        setCategory(undefined)
+    }
 
-    const goodsCards = goods?.items.map((g) => {
-        return <ProductCard key={g.id} product={g} size={8} />
-    })
+    const responsive = { xs: 24, sm: 12, md: 12, lg: 8, xxl: 6 }
+    const pageTitle = category ? category[0].toUpperCase() + category.slice(1) : 'Shop'
+    const offset = !screen.sm ? -1000 : 150
+    const cardType = !screen.sm ? 'horizontal' : 'vertical'
+
+    const goodsCards = !goods
+        ? fillArray(12).map((card) => {
+              return <CardSkeleton key={card} responsive={responsive} />
+          })
+        : goods.items.map((g) => {
+              return <ProductCard key={g.id} product={g} responsive={responsive} type={cardType} />
+          })
     const menu = (
         <Menu onClick={handleSorting}>
             <Menu.Item key='asc'>Price: low to height</Menu.Item>
             <Menu.Item key='desc'>Price: height to low</Menu.Item>
         </Menu>
     )
-    const pageTitle = category ? category[0].toUpperCase() + category.slice(1) : 'Shop'
-
-    if (!goods || !categories) {
-        return <>...loading</>
-    }
+    const filtration = goods && categories && (
+        <Affix offsetTop={offset}>
+            <div>
+                <Row justify='center'>
+                    <Categories current={category} onSelect={handleCategorySelect} categories={categories} />
+                </Row>
+                <Row style={{ margin: '30px 0' }}>
+                    <CheckList checked={brands} options={goods.brands} onChange={handleBrandChecked} />
+                </Row>
+                <Row justify='center'>
+                    <PriceFilter
+                        currentRange={price}
+                        min={0}
+                        max={goods.maximalPrice}
+                        onRangeChange={handlePriceFilter}
+                    />
+                </Row>
+            </div>
+        </Affix>
+    )
 
     return (
         <>
-            <Section justify='start' bgColor='white' verticalPadding={10}>
-                <Breadcrumb style={s.breadCrumb}>
-                    <Breadcrumb.Item>
-                        <Link to={'/home'}>Home</Link>
-                    </Breadcrumb.Item>
-                    {!category ? (
-                        <Breadcrumb.Item>Shop</Breadcrumb.Item>
-                    ) : (
-                        <>
-                            <Breadcrumb.Item>
-                                <Link onClick={() => setCategory(undefined)} to={'/shop'}>
-                                    Shop
-                                </Link>
-                            </Breadcrumb.Item>
-                            <Breadcrumb.Item>{category[0].toUpperCase() + category.slice(1)}</Breadcrumb.Item>
-                        </>
-                    )}
-                </Breadcrumb>
-            </Section>
+            <BreadCrumbs routes={['shop', category]} onClick={handleLinkClick} />
+
             <Section justify='start' bgColor='white'>
                 <Title style={{ margin: '0' }}>{pageTitle}</Title>
-
                 <Divider />
             </Section>
-            <Section bgColor='white' gutter={[0, 20]}>
-                <Col xs={18}>
+
+            <Section bgColor='white' gutter={[20, 20]} justify='start'>
+                <Col xs={24} sm={8} md={8} lg={6} xl={6} xxl={4}>
+                    <Search
+                        placeholder='input search text'
+                        allowClear
+                        onSearch={handleSearch}
+                        style={{ width: '100%', marginBottom: '30px' }}
+                    />
+
+                    {!screen.sm ? (
+                        <Collapse style={{ borderRadius: '5px' }}>
+                            <Panel header='Filters' key='filter'>
+                                {filtration}
+                            </Panel>
+                        </Collapse>
+                    ) : (
+                        filtration
+                    )}
+                </Col>
+
+                <Col xs={24} sm={16} md={16} lg={18} xl={18} xxl={20}>
                     <Row justify='space-between' align='middle' style={{ marginBottom: '20px' }}>
                         <Col xs={4}>
                             <Dropdown overlay={menu} trigger={['click']}>
@@ -139,37 +174,13 @@ export const Shop: React.FC = memo(() => {
                         </Col>
                         <Pagination
                             defaultCurrent={page}
-                            total={goods.total}
+                            total={goods?.total}
                             defaultPageSize={12}
                             onChange={handlePageChange}
                         />
                         <Col xs={4} />
                     </Row>
                     <Row gutter={[20, 20]}>{goodsCards}</Row>
-                </Col>
-
-                <Col xs={6} style={{ padding: '0 20px' }}>
-                    <Search
-                        placeholder='input search text'
-                        allowClear
-                        onSearch={handleSearch}
-                        style={{ width: '100%' }}
-                    />
-
-                    <Row justify='center' style={{ margin: '30px 0' }}>
-                        <Categories current={category} onSelect={handleCategorySelect} categories={categories} />
-                    </Row>
-                    <Row style={{ margin: '30px 0' }}>
-                        <CheckList checked={brands} options={goods.brands} onChange={handleBrandChecked} />
-                    </Row>
-                    <Row justify='center'>
-                        <PriceFilter
-                            currentRange={price}
-                            min={0}
-                            max={goods.maximalPrice}
-                            onRangeChange={handlePriceFilter}
-                        />
-                    </Row>
                 </Col>
             </Section>
         </>

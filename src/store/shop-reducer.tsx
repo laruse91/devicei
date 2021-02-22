@@ -1,11 +1,10 @@
-import { TCategories, TProduct, TInfo, TGoods } from '../types/types'
+import { TCategories, TGoods, TInfo, TProduct } from '../types/types'
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { goodsAPI } from '../api/goods-api'
 import { part } from '../utils/helpers'
 
 const SET_GOODS = 'SET_GOODS'
-const SET_CATEGORIES = 'SET_CATEGORIES'
 
 export const initialState = {
     goods: null as TGoods | null,
@@ -17,7 +16,6 @@ export type TInitialState = typeof initialState
 const shopReducer = (state = initialState, action: TActions): TInitialState => {
     switch (action.type) {
         case SET_GOODS:
-        case SET_CATEGORIES:
             return {
                 ...state,
                 ...action.payload,
@@ -32,7 +30,6 @@ type TActions = TCombineActions<typeof actions>
 
 const actions = {
     setGoods: (goods: TGoods) => ({ type: SET_GOODS, payload: { goods } } as const),
-    setCategories: (categories: TCategories) => ({ type: SET_CATEGORIES, payload: { categories } } as const),
 }
 
 // Thunks
@@ -58,11 +55,6 @@ export const getGoods = (
         brands: info?.brands,
     }
     dispatch(actions.setGoods(goods))
-}
-export const getCategories = (): TThunk => async (dispatch) => {
-    const data = await goodsAPI.requestCategories()
-    // @ts-ignore
-    dispatch(actions.setCategories(data.categories))
 }
 
 export default shopReducer

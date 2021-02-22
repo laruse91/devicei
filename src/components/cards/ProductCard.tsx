@@ -9,16 +9,25 @@ import { Price } from '../common/Price'
 const { Title, Paragraph } = Typography
 const { useBreakpoint } = Grid
 
+type TResponsive = {
+    xs: number
+    sm?: number
+    md?: number
+    lg?: number
+    xl?: number
+    xxl?: number
+}
+
 type TProps = {
     product: TProduct
-    size?: number
     type?: 'vertical' | 'horizontal'
     hover?: boolean
     desc?: boolean
+    responsive?: TResponsive
 }
 
 export const ProductCard: React.FC<TProps> = memo(
-    ({ product, size = 6, type = 'vertical', hover = true, desc = false }) => {
+    ({ product, responsive = { xs: 12, sm: 12, md: 8, lg: 6 }, type = 'vertical', hover = true, desc = false }) => {
         const screen = useBreakpoint()
         const history = useHistory()
 
@@ -33,13 +42,25 @@ export const ProductCard: React.FC<TProps> = memo(
 
         if (type === 'vertical')
             return (
-                <Col xs={24 / (24 / size - 2)} md={24 / (24 / size - 1)} lg={size}>
+                <Col
+                    xs={responsive.xs}
+                    sm={responsive.sm}
+                    md={responsive.md}
+                    lg={responsive.lg}
+                    xl={responsive.xl}
+                    xxl={responsive.xxl}>
                     <Badge count={badge} style={s.badge} offset={[-50, 30]}>
                         <Card size='small' hoverable={hover} style={s.productCard}>
                             <Row justify='center'>
-                                <Col style={{ margin: '0 auto' }} xs={22} sm={16} md={18}>
+                                <Col style={{ margin: '0 auto' }} span={22}>
                                     <Row justify='center' style={{ cursor: 'pointer' }} onClick={handleCardClick}>
-                                        <Image src='product' width={'100%'} fallback={product.image} />
+                                        <Image
+                                            src='product'
+                                            width='100%'
+                                            height={200}
+                                            fallback={product.image}
+                                            style={{ borderRadius: '10px', objectFit: 'cover' }}
+                                        />
                                     </Row>
 
                                     <TagLinks tags={product.tags} />
@@ -69,7 +90,13 @@ export const ProductCard: React.FC<TProps> = memo(
             )
 
         return (
-            <Col xs={24} sm={12} md={12} lg={size}>
+            <Col
+                xs={responsive.xs}
+                sm={responsive.sm}
+                md={responsive.md}
+                lg={responsive.lg}
+                xl={responsive.xl}
+                xxl={responsive.xxl}>
                 <Card size='small' style={s.productCard} hoverable={hover}>
                     <Row justify='space-between'>
                         <Col xs={10} sm={12} style={{ cursor: 'pointer' }} onClick={handleCardClick}>

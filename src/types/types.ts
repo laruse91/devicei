@@ -3,6 +3,12 @@ import { CSSProperties } from 'react'
 export type TStyle = {
     [key: string]: CSSProperties
 }
+export type TQueryParams = {
+    page?: string
+    priceFrom: string
+    priceTo: string
+    brand?: string
+}
 export type TNews = {
     article: string
     date: string
@@ -57,4 +63,10 @@ export type TGoods = {
 export type TReviewForm = {
     rate: number
     comment: string
+}
+export type TAuthorizedUser = {
+    name: string | null
+    userId: string
+    email: string | null
+    photoURL: string | null
 }

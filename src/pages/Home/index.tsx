@@ -31,6 +31,9 @@ export const Home: React.FC = memo(() => {
         dispatch(getHomeData())
     }, [])
 
+    const salesResp = { xs: 24, sm: 12, md: 12, lg: 8 }
+    const dayDealResp = { xs: 24, sm: 12, md: 16, lg: 18 }
+
     const featureCards = features?.map((f) => {
         return <FeatureCard key={f.id} product={f} />
     })
@@ -38,7 +41,7 @@ export const Home: React.FC = memo(() => {
         return <NewsCard key={n.id} image={n.image} title={n.title} id={n.id} tag={n.tag} date={n.date} />
     })
     const salesCards = saleGoods?.sale.map((g) => {
-        return <ProductCard size={8} key={g.id} product={g} type='horizontal' />
+        return <ProductCard key={g.id} product={g} type='horizontal' responsive={salesResp} />
     })
 
     if (isLoading)
@@ -82,7 +85,13 @@ export const Home: React.FC = memo(() => {
                 <Section title='Deal of days' verticalPadding={20} gutter={[20, 20]}>
                     {saleGoods && (
                         <>
-                            <ProductCard size={18} product={saleGoods.sale[0]} type='horizontal' hover={false} desc />
+                            <ProductCard
+                                responsive={dayDealResp}
+                                product={saleGoods.sale[0]}
+                                type='horizontal'
+                                hover={false}
+                                desc
+                            />
                             <FeatureCard product={saleGoods.saleOfDay[0]} type='vertical' size={6} />
                         </>
                     )}

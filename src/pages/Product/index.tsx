@@ -11,7 +11,7 @@ import { CommentForm } from '../../components/common/CommentForm'
 import { TReviewForm } from '../../types/types'
 import { TagLinks } from '../../components/common/TagLinks'
 import { Price } from '../../components/common/Price'
-import { BreadCrumbs } from '../../components/BreadCrumbs'
+import { BreadCrumbs } from '../../components/common/BreadCrumbs'
 
 const { Title, Text } = Typography
 const { TabPane } = Tabs
@@ -67,11 +67,12 @@ export const Product: React.FC = () => {
         <>
             <BreadCrumbs routes={['shop', product.category]} />
 
-            <Section bgColor='white'>
-                <Col xs={12}>
+            <Section bgColor='white' verticalPadding={20}>
+                <Col xs={20} sm={10} md={12} lg={12}>
                     <Image preview={false} style={s.productImage} src={product.image} />
                 </Col>
-                <Col xs={12}>
+
+                <Col xs={24} sm={14} md={12} lg={12}>
                     <Title level={2}>{product.name}</Title>
                     <Rate disabled value={product.rate} style={sFont(16)} />
 
@@ -103,8 +104,10 @@ export const Product: React.FC = () => {
                     </TabPane>
                     <TabPane tab='Reviews' key='reviews'>
                         <Row>
-                            <Col xs={14}>{reviews}</Col>
-                            <Col xs={10}>
+                            <Col xs={24} sm={14} md={14}>
+                                {reviews}
+                            </Col>
+                            <Col xs={24} sm={10} md={10}>
                                 <CommentForm handleSubmit={addReview} formTitle='Add a review' />
                             </Col>
                         </Row>
