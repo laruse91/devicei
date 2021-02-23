@@ -3,9 +3,9 @@ import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/auth-api'
 import { TAuthorizedUser } from '../types/types'
 
-const SET_AUTHORIZED_USER = 'SET_AUTHORIZED_USER'
 const SIGN_IN = 'SIGN_IN'
 const SIGN_OUT = 'SIGN_OUT'
+const SET_AUTHORIZED_USER = 'SET_AUTHORIZED_USER'
 
 export const initialState = {
     isAuth: false,
@@ -25,11 +25,12 @@ const authReducer = (state = initialState, action: TActions): TInitialState => {
             return {
                 ...state,
                 isAuth: false,
+                authorizedUser: null,
             }
         case SET_AUTHORIZED_USER:
             return {
                 ...state,
-                authorizedUser: action.payload,
+                ...action.payload,
             }
 
         default:
@@ -40,38 +41,32 @@ const authReducer = (state = initialState, action: TActions): TInitialState => {
 // ActionCreators
 type TActions = TCombineActions<typeof actions>
 
-const actions = {
+export const actions = {
     signIn: () => ({ type: SIGN_IN } as const),
     signOut: () => ({ type: SIGN_OUT } as const),
-    setAuthorizedUser: (user: TAuthorizedUser | null) => ({ type: SET_AUTHORIZED_USER, payload: user } as const),
+    setAuthorizedUser: (authorizedUser: TAuthorizedUser | null) =>
+        ({ type: SET_AUTHORIZED_USER, payload: { authorizedUser } } as const),
 }
 
 // Thunks
-type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
+type TThunk = ThunkAction<Promise<void>, () => TGlobalState, unknown, TActions>
 
 export const signUp = (email: string, password: string, name: string): TThunk => async (dispatch) => {
-    const signed = await authAPI.signUp(email, password).catch(catchError)
+    const signed = await authAPI.signUp(email, password)
     if (signed) dispatch(actions.signIn())
 
-    await authAPI.updateUserProfile(name)?.catch(catchError)
+    await authAPI.updateUserProfile(name)
 
     const authorizedUser = await authAPI.getUserProfile()
     if (authorizedUser) dispatch(actions.setAuthorizedUser(authorizedUser))
 }
 
-export const signIn = (email: string, password: string): TThunk => async (dispatch) => {
-    const signed = await authAPI.signIn(email, password).catch(catchError)
-
+export const signIn = (email: string, password: string, rememberMe: boolean): TThunk => async (dispatch) => {
+    const signed = await authAPI.signIn(email, password, rememberMe)
     if (signed) dispatch(actions.signIn())
+
     const authorizedUser = await authAPI.getUserProfile()
     if (authorizedUser) dispatch(actions.setAuthorizedUser(authorizedUser))
-}
-
-function catchError(error: any) {
-    const errorCode = error.code
-    const errorMessage = error.message
-    console.log('code: ' + errorCode)
-    console.log('message: ' + errorMessage)
 }
 
 export default authReducer

@@ -29,6 +29,12 @@ export const select = {
     isAuth: (state: TGlobalState) => {
         return state.auth.isAuth
     },
+    authorizedUser: (state: TGlobalState) => {
+        return state.auth.authorizedUser
+    },
+    isFetching: (state: TGlobalState) => {
+        return state.auth.isFetching
+    },
     product: (state: TGlobalState) => {
         return state.product.product
     },

@@ -11,6 +11,10 @@ export const s: TStyle = {
     futureProductName: { color: 'white', marginTop: '5px', height: '90px', cursor: 'pointer' },
     badge: { fontSize: '16px', background: '#3452ff' },
 }
+export const sAuthForm = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 12 },
+}
 
 export const sFont: (fontSize: number) => CSSProperties = (fontSize) => ({
     fontSize: `${fontSize}px`,

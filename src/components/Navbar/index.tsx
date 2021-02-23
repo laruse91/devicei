@@ -43,35 +43,33 @@ export const Navbar: React.FC = () => {
     })
     return (
         <nav>
-            <Row>
-                <Menu onSelect={handleClick} selectedKeys={[current]} mode='horizontal' style={sFont(16)}>
-                    <Menu.Item key='home' icon={<HomeOutlined style={sFont(14)} />}>
-                        <NavLink to='/home'>Home</NavLink>
-                    </Menu.Item>
+            <Menu onSelect={handleClick} selectedKeys={[current]} mode='horizontal' style={sFont(16)}>
+                <Menu.Item key='home' icon={<HomeOutlined style={sFont(14)} />}>
+                    <NavLink to='/home'>Home</NavLink>
+                </Menu.Item>
 
-                    <Menu.SubMenu
-                        key='shop'
-                        onTitleClick={handleTitleClick}
-                        icon={<HomeOutlined style={sFont(14)} />}
-                        title='Shop'>
-                        {items}
-                    </Menu.SubMenu>
+                <Menu.SubMenu
+                    key='shop'
+                    onTitleClick={handleTitleClick}
+                    icon={<HomeOutlined style={sFont(14)} />}
+                    title='Shop'>
+                    {items}
+                </Menu.SubMenu>
 
-                    {/*<Menu.Item key='shop' icon={<HomeOutlined style={sFont(14)} />}>*/}
-                    {/*    <NavLink to='/shop'>Shop</NavLink>*/}
-                    {/*</Menu.Item>*/}
+                {/*<Menu.Item key='shop' icon={<HomeOutlined style={sFont(14)} />}>*/}
+                {/*    <NavLink to='/shop'>Shop</NavLink>*/}
+                {/*</Menu.Item>*/}
 
-                    <Menu.Item key='news' icon={<ProjectOutlined style={sFont(14)} />}>
-                        <NavLink to='/news'>News</NavLink>
-                    </Menu.Item>
+                <Menu.Item key='news' icon={<ProjectOutlined style={sFont(14)} />}>
+                    <NavLink to='/news'>News</NavLink>
+                </Menu.Item>
 
-                    <Menu.SubMenu key='about' icon={<InfoCircleOutlined style={sFont(14)} />} title='About'>
-                        <Menu.Item key='About Us'>Option 1</Menu.Item>
-                        <Menu.Item key='Contacts'>Option 2</Menu.Item>
-                        <Menu.Item key='FAQ'>Option 3</Menu.Item>
-                    </Menu.SubMenu>
-                </Menu>
-            </Row>
+                <Menu.SubMenu key='about' icon={<InfoCircleOutlined style={sFont(14)} />} title='About'>
+                    <Menu.Item key='About Us'>Option 1</Menu.Item>
+                    <Menu.Item key='Contacts'>Option 2</Menu.Item>
+                    <Menu.Item key='FAQ'>Option 3</Menu.Item>
+                </Menu.SubMenu>
+            </Menu>
         </nav>
     )
 }
