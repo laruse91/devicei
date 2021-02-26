@@ -10,6 +10,23 @@ export const s: TStyle = {
     productName: { marginTop: '5px', height: '55px', cursor: 'pointer', textAlign: 'center' },
     futureProductName: { color: 'white', marginTop: '5px', height: '90px', cursor: 'pointer' },
     badge: { fontSize: '16px', background: '#3452ff' },
+    table: {
+        border: '1px solid #dddddd',
+        borderBottomLeftRadius: '10px',
+        borderBottomRightRadius: '10px',
+        maxHeight: '40vh',
+        overflow: 'auto',
+    },
+    tableHeader: {
+        borderTopLeftRadius: '10px',
+        borderTopRightRadius: '10px',
+        background: '#3452ff',
+    },
+    tableTitle: { textAlign: 'center', color: 'white', margin: 0 },
+    totals: {
+        border: '1px solid #dddddd',
+        borderRadius: '10px',
+    },
 }
 export const sAuthForm = {
     labelCol: { span: 8 },

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Section } from '../../components/common/Section'
-import { Breadcrumb, Button, Col, Divider, Image, InputNumber, Rate, Row, Tabs, Typography } from 'antd'
+import { Col, Divider, Image, InputNumber, Rate, Row, Tabs, Typography } from 'antd'
 import { s, sFont } from '../../styles/styles'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { select } from '../../selectors/selectors'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProduct } from '../../store/product-reducer'
@@ -12,6 +12,7 @@ import { TReviewForm } from '../../types/types'
 import { TagLinks } from '../../components/common/TagLinks'
 import { Price } from '../../components/common/Price'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
+import { AddToCartButton } from '../../components/common/AddToCartButton'
 
 const { Title, Text } = Typography
 const { TabPane } = Tabs
@@ -86,7 +87,12 @@ export const Product: React.FC = () => {
                             defaultValue={1}
                             style={{ marginRight: '20px', borderRadius: '10px' }}
                         />
-                        <Button shape='round'>ADD TO CART</Button>
+                        <AddToCartButton
+                            name={product.name}
+                            price={product.price}
+                            image={product.image}
+                            id={product.id}
+                        />
                     </Row>
                     <Row align='middle'>
                         <Title style={{ margin: '0 20px 0 0' }} level={5}>

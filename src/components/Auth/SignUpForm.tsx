@@ -12,29 +12,30 @@ type TProps = {
     setLoading: (loading: boolean) => void
 }
 type TForm = {
-    signUp_name: string
-    signUp_email: string
-    signUp_password: string
-    signUp_confirm: string
-    signUp_error: null | string
+    name: string
+    email: string
+    password: string
+    confirm: string
+    error: null | string
 }
+type TFields = keyof TForm
 
 const validationSchema = Yup.object().shape({
-    signUp_name: Yup.string().required('Field is required').min(3, 'Name should be min 3 symbols'),
-    signUp_email: Yup.string().email('E-mail is invalid').required('Field is required'),
-    signUp_password: Yup.string().required('Field is required').min(6, 'Password should be min 6 symbols'),
-    signUp_confirm: Yup.string()
+    name: Yup.string().required('Field is required').min(3, 'Name should be min 3 symbols'),
+    email: Yup.string().email('E-mail is invalid').required('Field is required'),
+    password: Yup.string().required('Field is required').min(6, 'Password should be min 6 symbols'),
+    confirm: Yup.string()
         .required('Field is required')
         .test('passwords-match', 'Passwords must match', function (value) {
-            return this.parent.signUp_password === value
+            return this.parent.password === value
         }),
 })
 const initialValues = {
-    signUp_name: '',
-    signUp_email: '',
-    signUp_password: '',
-    signUp_confirm: '',
-    signUp_error: null,
+    name: '',
+    email: '',
+    password: '',
+    confirm: '',
+    error: null,
 }
 
 export const SignUpForm: React.FC<TProps> = ({ form, setLoading }) => {
@@ -44,80 +45,76 @@ export const SignUpForm: React.FC<TProps> = ({ form, setLoading }) => {
         initialValues,
         validationSchema,
         validateOnBlur: true,
-        onSubmit: async (values: TForm, { setErrors }: FormikHelpers<any>) => {
+        onSubmit: async (values: TForm, { setErrors, resetForm }: FormikHelpers<any>) => {
             try {
                 setLoading(true)
-                await dispatch(signUp(values.signUp_email, values.signUp_password, values.signUp_name))
+                await dispatch(signUp(values.email.trim(), values.password.trim(), values.name.trim()))
+                resetForm()
             } catch (error) {
                 console.log(error)
-                setErrors({ signUp_error: error.message })
+                setErrors({ error: error.message })
             } finally {
                 setLoading(false)
             }
         },
     })
 
+    const validateStatus = (field: TFields) => {
+        return (formik.touched[field] && formik.errors[field]) || formik.errors.error ? 'error' : undefined
+    }
+    const help = (field: TFields) => {
+        return (formik.touched[field] && formik.errors[field]) || undefined
+    }
+
     return (
         <Form form={form} name='signUp' onFinish={formik.handleSubmit} initialValues={formik.initialValues}>
             <Form.Item
                 required
                 name='name'
+                valuePropName='name'
                 label='Your Name'
                 {...sAuthForm}
-                validateStatus={
-                    (formik.touched.signUp_name && formik.errors.signUp_name) || formik.errors.signUp_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signUp_name && formik.errors.signUp_name) || undefined}>
-                <Input {...formik.getFieldProps('signUp_name')} />
+                validateStatus={validateStatus('name')}
+                help={help('name')}>
+                <Input {...formik.getFieldProps('name')} />
             </Form.Item>
 
             <Form.Item
                 required
                 label='E-mail'
+                valuePropName='email'
                 name='email'
                 {...sAuthForm}
-                validateStatus={
-                    (formik.touched.signUp_email && formik.errors.signUp_email) || formik.errors.signUp_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signUp_email && formik.errors.signUp_email) || undefined}>
-                <Input {...formik.getFieldProps('signUp_email')} />
+                validateStatus={validateStatus('email')}
+                help={help('email')}>
+                <Input {...formik.getFieldProps('email')} />
             </Form.Item>
 
             <Form.Item
                 required
                 label='Password'
                 name='password'
+                valuePropName='password'
                 {...sAuthForm}
-                validateStatus={
-                    (formik.touched.signUp_password && formik.errors.signUp_password) || formik.errors.signUp_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signUp_password && formik.errors.signUp_password) || undefined}>
-                <Input.Password {...formik.getFieldProps('signUp_password')} />
+                validateStatus={validateStatus('password')}
+                help={help('password')}>
+                <Input.Password {...formik.getFieldProps('password')} />
             </Form.Item>
 
             <Form.Item
                 required
                 label='Confirm Password'
                 name='confirm'
+                valuePropName='confirm'
                 {...sAuthForm}
                 dependencies={['password']}
                 hasFeedback
-                validateStatus={
-                    (formik.touched.signUp_confirm && formik.errors.signUp_confirm) || formik.errors.signUp_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signUp_confirm && formik.errors.signUp_confirm) || undefined}>
-                <Input.Password {...formik.getFieldProps('signUp_confirm')} />
+                validateStatus={validateStatus('confirm')}
+                help={help('confirm')}>
+                <Input.Password {...formik.getFieldProps('confirm')} />
             </Form.Item>
 
-            <Text style={{ color: 'red' }}>{formik.errors.signUp_error}</Text>
+            <Text style={{ color: 'red' }}>{formik.errors.error}</Text>
         </Form>
     )
 }

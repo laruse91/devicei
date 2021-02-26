@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png'
 import { Col, Image, Row } from 'antd'
 import { Navbar } from '../Navbar'
 import { Auth } from '../Auth'
+import { Cart } from '../Cart'
 
 export const Header: React.FC = () => {
     return (
@@ -13,7 +14,14 @@ export const Header: React.FC = () => {
                         <Image src='logo' fallback={logo} />
                     </Col>
                     <Col>
-                        <Auth />
+                        <Row justify='end' align='middle' gutter={20}>
+                            <Col xs={18}>
+                                <Auth />
+                            </Col>
+                            <Col xs={6}>
+                                <Cart />
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
                 <Row>

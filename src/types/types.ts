@@ -70,3 +70,10 @@ export type TAuthorizedUser = {
     email: string | null
     photoURL: string | null
 }
+export type TCart = {
+    id: string
+    quantity: number
+    image: string | null
+    name: string
+    price: number
+}

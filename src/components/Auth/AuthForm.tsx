@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Modal, Tabs } from 'antd'
-import { useSelector } from 'react-redux'
 import { signIn, signUp } from '../../store/auth-reducer'
-import { select } from '../../selectors/selectors'
 import { SignInForm } from './SignInForm'
 import { SignUpForm } from './SignUpForm'
 

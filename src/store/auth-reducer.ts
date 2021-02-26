@@ -2,6 +2,7 @@ import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/auth-api'
 import { TAuthorizedUser } from '../types/types'
+import { getUserCart } from './cart-reducer'
 
 const SIGN_IN = 'SIGN_IN'
 const SIGN_OUT = 'SIGN_OUT'
@@ -58,7 +59,10 @@ export const signUp = (email: string, password: string, name: string): TThunk =>
     await authAPI.updateUserProfile(name)
 
     const authorizedUser = await authAPI.getUserProfile()
-    if (authorizedUser) dispatch(actions.setAuthorizedUser(authorizedUser))
+    if (authorizedUser) {
+        dispatch(actions.setAuthorizedUser(authorizedUser))
+        await dispatch(getUserCart(authorizedUser.userId))
+    }
 }
 
 export const signIn = (email: string, password: string, rememberMe: boolean): TThunk => async (dispatch) => {
@@ -66,7 +70,10 @@ export const signIn = (email: string, password: string, rememberMe: boolean): TT
     if (signed) dispatch(actions.signIn())
 
     const authorizedUser = await authAPI.getUserProfile()
-    if (authorizedUser) dispatch(actions.setAuthorizedUser(authorizedUser))
+    if (authorizedUser) {
+        dispatch(actions.setAuthorizedUser(authorizedUser))
+        await dispatch(getUserCart(authorizedUser.userId))
+    }
 }
 
 export default authReducer

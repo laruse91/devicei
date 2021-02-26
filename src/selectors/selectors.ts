@@ -32,11 +32,11 @@ export const select = {
     authorizedUser: (state: TGlobalState) => {
         return state.auth.authorizedUser
     },
-    isFetching: (state: TGlobalState) => {
-        return state.auth.isFetching
-    },
     product: (state: TGlobalState) => {
         return state.product.product
+    },
+    cartGoods: (state: TGlobalState) => {
+        return state.cart.cart
     },
 }
 type TSelector = typeof select

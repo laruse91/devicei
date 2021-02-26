@@ -5,6 +5,8 @@ import { signIn } from '../../store/auth-reducer'
 import { useDispatch } from 'react-redux'
 import * as Yup from 'yup'
 import { sAuthForm } from '../../styles/styles'
+import { getUserCart } from '../../store/cart-reducer'
+
 const { Text } = Typography
 
 type TProps = {
@@ -12,21 +14,22 @@ type TProps = {
     setLoading: (loading: boolean) => void
 }
 type TForm = {
-    signIn_email: string
-    signIn_password: string
-    signIn_rememberMe: boolean
-    signIn_error: null | string
+    email: string
+    password: string
+    rememberMe: boolean
+    error: null | string
 }
+type TFields = keyof TForm
 
 const validationSchema = Yup.object().shape({
-    signIn_email: Yup.string().email('E-mail is invalid').required('Field is required'),
-    signIn_password: Yup.string().required('Field is required').min(6, 'Password should be min 6 symbols'),
+    email: Yup.string().email('E-mail is invalid').required('Field is required'),
+    password: Yup.string().required('Field is required').min(6, 'Password should be min 6 symbols'),
 })
 const initialValues = {
-    signIn_email: '',
-    signIn_password: '',
-    signIn_rememberMe: true,
-    signIn_error: null,
+    email: '',
+    password: '',
+    rememberMe: true,
+    error: null,
 }
 
 export const SignInForm: React.FC<TProps> = ({ form, setLoading }) => {
@@ -36,53 +39,55 @@ export const SignInForm: React.FC<TProps> = ({ form, setLoading }) => {
         initialValues,
         validationSchema,
         validateOnBlur: true,
-        onSubmit: async (values: TForm, { setErrors }: FormikHelpers<any>) => {
+        onSubmit: async (values: TForm, { resetForm, setErrors }: FormikHelpers<any>) => {
             try {
                 setLoading(true)
-                await dispatch(signIn(values.signIn_email, values.signIn_password, values.signIn_rememberMe))
+                await dispatch(signIn(values.email.trim(), values.password.trim(), values.rememberMe))
+                resetForm()
             } catch (error) {
-                setErrors({ signIn_error: error.message })
+                setErrors({ error: error.message })
             } finally {
                 setLoading(false)
             }
         },
     })
 
+    const validateStatus = (field: TFields) => {
+        return (formik.touched[field] && formik.errors[field]) || formik.errors.error ? 'error' : undefined
+    }
+    const help = (field: TFields) => {
+        return (formik.touched[field] && formik.errors[field]) || undefined
+    }
+
     return (
         <Form form={form} name='signIn' onFinish={formik.handleSubmit} initialValues={formik.initialValues}>
             <Form.Item
                 required
                 {...sAuthForm}
+                valuePropName='email'
                 label='E-mail'
                 name='email'
-                validateStatus={
-                    (formik.touched.signIn_email && formik.errors.signIn_email) || formik.errors.signIn_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signIn_email && formik.errors.signIn_email) || undefined}>
-                <Input {...formik.getFieldProps('signIn_email')} />
+                validateStatus={validateStatus('email')}
+                help={help('email')}>
+                <Input {...formik.getFieldProps('email')} />
             </Form.Item>
 
             <Form.Item
                 required
                 {...sAuthForm}
                 label='Password'
+                valuePropName='password'
                 name='password'
-                validateStatus={
-                    (formik.touched.signIn_password && formik.errors.signIn_password) || formik.errors.signIn_error
-                        ? 'error'
-                        : undefined
-                }
-                help={(formik.touched.signIn_password && formik.errors.signIn_password) || undefined}>
-                <Input.Password {...formik.getFieldProps('signIn_password')} />
+                validateStatus={validateStatus('password')}
+                help={help('password')}>
+                <Input.Password {...formik.getFieldProps('password')} />
             </Form.Item>
 
             <Form.Item name='rememberMe' valuePropName='checked' wrapperCol={{ offset: 8, span: 12 }}>
-                <Checkbox {...formik.getFieldProps('signIn_rememberMe')}>Remember me</Checkbox>
+                <Checkbox {...formik.getFieldProps('rememberMe')}>Remember me</Checkbox>
             </Form.Item>
 
-            <Text style={{ color: 'red' }}>{formik.errors.signIn_error}</Text>
+            <Text style={{ color: 'red' }}>{formik.errors.error}</Text>
         </Form>
     )
 }

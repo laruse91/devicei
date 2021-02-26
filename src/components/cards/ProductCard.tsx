@@ -1,10 +1,11 @@
 import React, { memo } from 'react'
-import { Badge, Button, Card, Col, Grid, Image, Rate, Row, Typography } from 'antd'
+import { Badge, Card, Col, Grid, Image, Rate, Row, Typography } from 'antd'
 import { useHistory } from 'react-router-dom'
 import { TProduct } from '../../types/types'
 import { s, sFont } from '../../styles/styles'
 import { TagLinks } from '../common/TagLinks'
 import { Price } from '../common/Price'
+import { AddToCartButton } from '../common/AddToCartButton'
 
 const { Title, Paragraph } = Typography
 const { useBreakpoint } = Grid
@@ -17,7 +18,6 @@ type TResponsive = {
     xl?: number
     xxl?: number
 }
-
 type TProps = {
     product: TProduct
     type?: 'vertical' | 'horizontal'
@@ -78,9 +78,12 @@ export const ProductCard: React.FC<TProps> = memo(
                                     </Row>
 
                                     <Row justify='center' style={{ marginTop: '10px' }}>
-                                        <Button shape='round' size='small'>
-                                            TO CART
-                                        </Button>
+                                        <AddToCartButton
+                                            name={product.name}
+                                            price={product.price}
+                                            image={product.image}
+                                            id={product.id}
+                                        />
                                     </Row>
                                 </Col>
                             </Row>
@@ -119,9 +122,12 @@ export const ProductCard: React.FC<TProps> = memo(
                             <Price oldPrice={product.oldPrice} price={product.price} />
 
                             <Row justify='center' style={{ margin: '10px 0' }}>
-                                <Button shape='round' size='small'>
-                                    TO CART
-                                </Button>
+                                <AddToCartButton
+                                    name={product.name}
+                                    price={product.price}
+                                    image={product.image}
+                                    id={product.id}
+                                />
                             </Row>
 
                             {screen.lg && description}

@@ -6,11 +6,11 @@ import { Home } from './pages/Home'
 import { Shop } from './pages/Shop'
 import { Product } from './pages/Product'
 import './App.css'
+import { Cart } from './pages/Cart'
 
 const App: React.FC = () => {
     let about
     let news
-    let login
     let error
 
     return (
@@ -25,9 +25,9 @@ const App: React.FC = () => {
                     <Route path='/home' render={() => <Home />} />
                     <Route path='/shop/:category?' render={() => <Shop />} />
                     <Route path='/product/:id' render={() => <Product />} />
+                    <Route path='/cart' render={() => <Cart />} />
                     <Route path='/about' render={about} />
                     <Route path='/news' render={news} />
-                    <Route path='/login' render={login} />
                     <Route path='/*' render={error} />
                 </Switch>
             </main>
