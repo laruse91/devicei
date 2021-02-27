@@ -1,9 +1,12 @@
 .row {
-    padding: 10px 0;
+    padding: 10px ;
     transition: all 0.4s ease;
 }
-
-.row:hover {
+.preview {
+    padding: 5px 10px ;
+    transition: all 0.4s ease;
+}
+.preview:hover, .row:hover {
     background: #f3fbff;
 }
 

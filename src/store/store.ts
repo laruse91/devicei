@@ -22,15 +22,9 @@ export type TGlobalState = ReturnType<TRootReducer>
 // type for combine ActionCreators into one type
 export type TCombineActions<T> = T extends { [key: string]: (...args: Array<any>) => infer U } ? U : never
 
-const store = createStore(
-    rootReducer,
-    compose(
-        applyMiddleware(thunk),
-        // @ts-ignore
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
-)
-
+// @ts-ignore
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 // !! helper to see store in console
 // @ts-ignore
 window.__store__ = store

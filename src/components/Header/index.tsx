@@ -10,20 +10,22 @@ export const Header: React.FC = () => {
         <Row justify='center'>
             <Col xs={22} xl={18} xxl={16}>
                 <Row justify='space-between' align='middle'>
-                    <Col>
+                    <Col span={12}>
                         <Image src='logo' fallback={logo} />
                     </Col>
+
                     <Col>
                         <Row justify='end' align='middle' gutter={20}>
-                            <Col xs={18}>
+                            <Col>
                                 <Auth />
                             </Col>
-                            <Col xs={6}>
+                            <Col>
                                 <Cart />
                             </Col>
                         </Row>
                     </Col>
                 </Row>
+
                 <Row>
                     <Navbar />
                 </Row>
