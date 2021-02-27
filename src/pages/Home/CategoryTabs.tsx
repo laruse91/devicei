@@ -37,7 +37,7 @@ export const CategoryTabs = () => {
         return <>'...loading'</>
     } else {
         return (
-            <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px' }}>
+            <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px', width: '100%' }}>
                 <TabPane tab='Top Rated' key='rate' style={{ maxHeight: '410px' }}>
                     <Row justify='center' gutter={[10, 10]}>
                         {cards}

@@ -23,6 +23,9 @@ export const select = {
     goods: (state: TGlobalState) => {
         return state.shop.goods
     },
+    isFetching: (state: TGlobalState) => {
+        return state.shop.isFetching
+    },
     categories: (state: TGlobalState) => {
         return state.app.categories
     },

@@ -4,7 +4,7 @@ import { ProductCard } from '../../components/cards/ProductCard'
 import { getGoods } from '../../store/shop-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
-import { Affix, Col, Collapse, Divider, Dropdown, Grid, Input, Menu, Pagination, Row, Typography } from 'antd'
+import { Affix, Col, Spin, Collapse, Divider, Dropdown, Grid, Input, Menu, Pagination, Row, Typography } from 'antd'
 import { useHistory, useParams } from 'react-router-dom'
 import { DownOutlined } from '@ant-design/icons'
 import { MenuInfo } from 'rc-menu/lib/interface'
@@ -31,6 +31,7 @@ export const Shop: React.FC = memo(() => {
     const [price, setPrice] = useState<[number, number] | undefined>(undefined)
     const [page, setPage] = useState(1)
 
+    const isFetching = useSelector(select.isFetching)
     const goods = useSelector(select.goods)
     const categories = useSelector(select.categories)
     const dispatch = useDispatch()
@@ -180,7 +181,9 @@ export const Shop: React.FC = memo(() => {
                         />
                         <Col xs={4} />
                     </Row>
-                    <Row gutter={[20, 20]}>{goodsCards}</Row>
+                    <Spin spinning={isFetching}>
+                        <Row gutter={[20, 20]}>{goodsCards}</Row>
+                    </Spin>
                 </Col>
             </Section>
         </>

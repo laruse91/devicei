@@ -5,10 +5,12 @@ import { goodsAPI } from '../api/goods-api'
 import { part } from '../utils/helpers'
 
 const SET_GOODS = 'SET_GOODS'
+const SET_IS_FETCHING = 'SET_IS_FETCHING'
 
 export const initialState = {
     goods: null as TGoods | null,
     categories: null as TCategories | null,
+    isFetching: false,
 }
 
 export type TInitialState = typeof initialState
@@ -16,6 +18,7 @@ export type TInitialState = typeof initialState
 const shopReducer = (state = initialState, action: TActions): TInitialState => {
     switch (action.type) {
         case SET_GOODS:
+        case SET_IS_FETCHING:
             return {
                 ...state,
                 ...action.payload,
@@ -30,6 +33,7 @@ type TActions = TCombineActions<typeof actions>
 
 const actions = {
     setGoods: (goods: TGoods) => ({ type: SET_GOODS, payload: { goods } } as const),
+    setIsFetching: (isFetching: boolean) => ({ type: SET_IS_FETCHING, payload: { isFetching } } as const),
 }
 
 // Thunks
@@ -43,6 +47,7 @@ export const getGoods = (
     currentPage: number,
     pageSize: number = 12
 ): TThunk => async (dispatch) => {
+    dispatch(actions.setIsFetching(true))
     // @ts-ignore
     const data: TProduct[] = await goodsAPI.requestGoods(category, price, brands, sort)
     // @ts-ignore
@@ -55,6 +60,7 @@ export const getGoods = (
         brands: info?.brands,
     }
     dispatch(actions.setGoods(goods))
+    dispatch(actions.setIsFetching(false))
 }
 
 export default shopReducer

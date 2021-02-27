@@ -23,7 +23,7 @@ export const Cart: React.FC = () => {
         return sum + product.quantity
     }, 0)
     const totalPrice: number = cartGoods.reduce((sum, product) => {
-        return sum + product.price
+        return sum + product.price * product.quantity
     }, 0)
 
     const content = !cartGoods.length ? (
