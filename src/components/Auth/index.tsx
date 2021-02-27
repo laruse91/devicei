@@ -6,30 +6,39 @@ import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { actions } from '../../store/auth-reducer'
 import { actions as cartActions } from '../../store/cart-reducer'
+import { Profile } from '../Profile'
 
 const { Text, Paragraph } = Typography
 
 export const Auth: React.FC = () => {
-    const [isVisible, setIsVisible] = useState(false)
+    const [isAuthFormVisible, setIsAuthFormVisible] = useState(false)
+    const [isProfileVisible, setIsProfileVisible] = useState(false)
 
     const isAuth = useSelector(select.isAuth)
     const authorizedUser = useSelector(select.authorizedUser)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        isAuth && setIsVisible(false)
+        isAuth && setIsAuthFormVisible(false)
     }, [isAuth])
 
     const handleSignInClick = () => {
-        setIsVisible(true)
+        setIsAuthFormVisible(true)
     }
     const handleSignOutClick = () => {
         dispatch(actions.signOut())
         dispatch(cartActions.clearCart())
         message.info('You signed out')
     }
-    const handleCancel = () => {
-        setIsVisible(false)
+    const handleAuthFormClose = () => {
+        setIsAuthFormVisible(false)
+    }
+
+    const handleProfileClick = () => {
+        setIsProfileVisible(true)
+    }
+    const handleProfileClose = () => {
+        setIsProfileVisible(false)
     }
 
     const menu = (
@@ -37,7 +46,7 @@ export const Auth: React.FC = () => {
             <Menu.ItemGroup title={authorizedUser?.name}>
                 <Menu.Divider />
 
-                <Menu.Item>
+                <Menu.Item onClick={handleProfileClick}>
                     <Text>Profile</Text>
                 </Menu.Item>
 
@@ -76,7 +85,10 @@ export const Auth: React.FC = () => {
                 </div>
             )}
 
-            <AuthForm handleCancel={handleCancel} isVisible={isVisible} />
+            <AuthForm handleCancel={handleAuthFormClose} isVisible={isAuthFormVisible} />
+            {authorizedUser && (
+                <Profile isVisible={isProfileVisible} user={authorizedUser} handleClose={handleProfileClose} />
+            )}
         </>
     )
 }

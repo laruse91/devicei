@@ -5,7 +5,6 @@ import { signIn } from '../../store/auth-reducer'
 import { useDispatch } from 'react-redux'
 import * as Yup from 'yup'
 import { sAuthForm } from '../../styles/styles'
-import { getUserCart } from '../../store/cart-reducer'
 
 const { Text } = Typography
 
