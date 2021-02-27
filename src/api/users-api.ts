@@ -39,11 +39,11 @@ export const usersAPI = {
             })
     },
 
-    updateQuantity(userId: string, productId: string, n: 1 | -1) {
+    updateQuantity(userId: string, productId: string, value: number) {
         return fireDB
             .collection('users')
             .doc(userId)
-            .update({ [`cart.${productId}`]: firestore.FieldValue.increment(n) })
+            .update({ [`cart.${productId}`]: value })
             .then(() => true)
             .catch((error) => {
                 console.log('Error adding document:', error)

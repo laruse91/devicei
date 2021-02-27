@@ -37,7 +37,7 @@ const cartReducer = (state = initialState, action: TActions): TInitialState => {
                 ...state,
                 cart: state.cart.map((o) => {
                     if (o.id === action.productId) {
-                        o.quantity = o.quantity + action.n
+                        o.quantity = action.value
                         return o
                     }
                     return o
@@ -54,7 +54,7 @@ type TActions = TCombineActions<typeof actions>
 export const actions = {
     addToCart: (product: TCart) => ({ type: ADD_TO_CART, product } as const),
     removeProduct: (productId: string) => ({ type: REMOVE_PRODUCT, productId } as const),
-    updateQuantity: (productId: string, n: 1 | -1) => ({ type: UPDATE_QUANTITY, productId, n } as const),
+    updateQuantity: (productId: string, value: number) => ({ type: UPDATE_QUANTITY, productId, value } as const),
     clearCart: () => ({ type: CLEAR_CART } as const),
 }
 
@@ -63,7 +63,7 @@ type TThunk = ThunkAction<Promise<void>, () => TGlobalState, unknown, TActions>
 
 export const addProductToCart = (userId: string | undefined, product: TCart): TThunk => async (dispatch) => {
     if (userId) {
-        const resp = userId && (await usersAPI.addCartProduct(userId, product.id, product.quantity))
+        const resp = await usersAPI.addCartProduct(userId, product.id, product.quantity)
         if (resp) dispatch(actions.addToCart(product))
     } else {
         let cart: { [id: string]: number } = {}
@@ -91,11 +91,22 @@ export const removeProduct = (userId: string | undefined, productId: string): TT
         dispatch(actions.removeProduct(productId))
     }
 }
-export const updateQuantity = (userId: string | undefined, productId: string, n: 1 | -1): TThunk => async (
+export const updateQuantity = (userId: string | undefined, productId: string, value: number): TThunk => async (
     dispatch
 ) => {
-    const resp = userId && (await usersAPI.updateQuantity(userId, productId, n))
-    if (resp) dispatch(actions.updateQuantity(productId, n))
+    if (userId) {
+        const resp = await usersAPI.addCartProduct(userId, productId, value)
+        if (resp) dispatch(actions.updateQuantity(productId, value))
+    } else {
+        let cart: { [id: string]: number } = {}
+        const prev = localStorage.getItem('cart')
+        if (prev) {
+            cart = prev && JSON.parse(prev)
+        }
+        cart[productId] = value
+        localStorage.setItem('cart', JSON.stringify(cart))
+        dispatch(actions.updateQuantity(productId, value))
+    }
 }
 
 export const getCartProduct = (id: string, quantity: number): TThunk => async (dispatch) => {

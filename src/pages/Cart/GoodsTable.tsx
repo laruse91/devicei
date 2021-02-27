@@ -26,9 +26,8 @@ export const GoodsTable: React.FC = () => {
         s.tableHeader.padding = '25px 0'
     }
 
-    const handleChangeQuantity = (id: string) => (value: number, info: { type: 'up' | 'down' }) => {
-        const n = info.type === 'up' ? +1 : -1
-        dispatch(updateQuantity(authorizedUser?.userId, id, n))
+    const handleChangeQuantity = (id: string) => (value: number) => {
+        dispatch(updateQuantity(authorizedUser?.userId, id, value))
     }
     const handleDelete = (id: string) => () => {
         dispatch(removeProduct(authorizedUser?.userId, id))
