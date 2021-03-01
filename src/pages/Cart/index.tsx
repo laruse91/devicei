@@ -47,6 +47,7 @@ export const Cart: React.FC = () => {
                             <Text style={{ fontSize: '16px' }}>${totalPrice}</Text>
                         </Row>
                     </Col>
+
                     <Row justify='end' style={{ marginTop: '20px' }}>
                         <div>
                             <Link to={'#'}>

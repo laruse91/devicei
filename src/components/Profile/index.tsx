@@ -67,7 +67,6 @@ export const Profile: React.FC<TProps> = ({ isVisible, user, onClose }) => {
                         </Button>
                     </Tooltip>
                 </Row>
-
                 <Col span={6}>
                     <Avatar
                         size={50}
