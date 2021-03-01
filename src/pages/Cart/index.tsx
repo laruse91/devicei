@@ -50,7 +50,7 @@ export const Cart: React.FC = () => {
                     <Row justify='end' style={{ marginTop: '20px' }}>
                         <div>
                             <Link to={'#'}>
-                                <Button shape='round' type='primary' size='large'>
+                                <Button disabled={!cartGoods.length} shape='round' type='primary' size='large'>
                                     PROCEED TO CHECKOUT
                                 </Button>
                             </Link>

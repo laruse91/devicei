@@ -5,7 +5,7 @@ import { AuthForm } from './AuthForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { actions } from '../../store/auth-reducer'
-import { actions as cartActions } from '../../store/cart-reducer'
+import { clearCart } from '../../store/cart-reducer'
 import { Profile } from '../Profile'
 
 const { Text, Paragraph } = Typography
@@ -27,13 +27,12 @@ export const Auth: React.FC = () => {
     }
     const handleSignOutClick = () => {
         dispatch(actions.signOut())
-        dispatch(cartActions.clearCart())
-        message.info('You signed out')
+        dispatch(clearCart())
+        message.success('You signed out')
     }
     const handleAuthFormClose = () => {
         setIsAuthFormVisible(false)
     }
-
     const handleProfileClick = () => {
         setIsProfileVisible(true)
     }
@@ -62,7 +61,7 @@ export const Auth: React.FC = () => {
             {isAuth ? (
                 <Dropdown overlay={menu}>
                     <div style={{ maxWidth: '150px', cursor: 'pointer' }}>
-                        <Row justify='center'>
+                        <Row justify='center' onClick={handleProfileClick}>
                             <Avatar
                                 size={30}
                                 src={authorizedUser?.photoURL && authorizedUser?.photoURL}
@@ -87,7 +86,7 @@ export const Auth: React.FC = () => {
 
             <AuthForm handleCancel={handleAuthFormClose} isVisible={isAuthFormVisible} />
             {authorizedUser && (
-                <Profile isVisible={isProfileVisible} user={authorizedUser} handleClose={handleProfileClose} />
+                <Profile isVisible={isProfileVisible} user={authorizedUser} onClose={handleProfileClose} />
             )}
         </>
     )

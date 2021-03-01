@@ -70,10 +70,22 @@ export type TAuthorizedUser = {
     email: string | null
     photoURL: string | null
 }
+export type TContacts = {
+    phoneNumber: string
+    city: string
+    street: string
+    house: string
+    flat: string
+}
 export type TCart = {
     id: string
     quantity: number
     image: string | null
     name: string
     price: number
+}
+export type TUpdateData = {
+    displayName?: string
+    photoURL?: string
+    phoneNumber?: string
 }

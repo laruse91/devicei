@@ -35,6 +35,9 @@ export const select = {
     authorizedUser: (state: TGlobalState) => {
         return state.auth.authorizedUser
     },
+    contacts: (state: TGlobalState) => {
+        return state.auth.contacts
+    },
     product: (state: TGlobalState) => {
         return state.product.product
     },

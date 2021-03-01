@@ -1,4 +1,4 @@
-import { fireDB, firestore } from '../index'
+import { fireDB, fireStorage, firestore } from '../index'
 
 export const usersAPI = {
     requestUser(id: string) {
@@ -27,23 +27,11 @@ export const usersAPI = {
                 console.log('Error adding document:', error)
             })
     },
-
     removeCartProduct(userId: string, productId: string) {
         return fireDB
             .collection('users')
             .doc(userId)
             .update({ [`cart.${productId}`]: firestore.FieldValue.delete() })
-            .then(() => true)
-            .catch((error) => {
-                console.log('Error adding document:', error)
-            })
-    },
-
-    updateQuantity(userId: string, productId: string, value: number) {
-        return fireDB
-            .collection('users')
-            .doc(userId)
-            .update({ [`cart.${productId}`]: value })
             .then(() => true)
             .catch((error) => {
                 console.log('Error adding document:', error)

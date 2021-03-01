@@ -3,6 +3,7 @@ import { ThunkAction } from 'redux-thunk'
 import { usersAPI } from '../api/users-api'
 import { goodsAPI } from '../api/goods-api'
 import { TCart } from '../types/types'
+import { Dispatch } from 'redux'
 
 const ADD_TO_CART = 'ADD_TO_CART'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
@@ -140,6 +141,11 @@ export const getUserCart = (userId?: string | null): TThunk => async (dispatch) 
             }
         }
     }
+}
+
+export const clearCart = () => (dispatch: Dispatch): void => {
+    localStorage.removeItem('cart')
+    dispatch(actions.clearCart())
 }
 
 export default cartReducer

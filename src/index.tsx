@@ -8,6 +8,7 @@ import firebase from 'firebase/app'
 import 'firebase/database'
 import 'firebase/firestore'
 import 'firebase/auth'
+import 'firebase/storage'
 import store from './store/store'
 import { Provider } from 'react-redux'
 
@@ -23,6 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 export const db = firebase.database()
+export const fireStorage = firebase.storage()
 export const fireDB = firebase.firestore()
 export const firestore = firebase.firestore
 export const fireAuth = firebase.auth()
