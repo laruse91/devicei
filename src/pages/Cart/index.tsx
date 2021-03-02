@@ -7,15 +7,16 @@ import { useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { s } from '../../styles/styles'
 import { Link } from 'react-router-dom'
+import { TCart } from '../../types/types'
 
 const { Title, Text } = Typography
 
 export const Cart: React.FC = () => {
     const cartGoods = useSelector(select.cartGoods)
-    const totalItems: number = cartGoods.reduce((sum, product) => {
+    const totalItems: number = cartGoods.reduce((sum: number, product: TCart) => {
         return sum + product.quantity
     }, 0)
-    const totalPrice: number = cartGoods.reduce((sum, product) => {
+    const totalPrice: number = cartGoods.reduce((sum: number, product: TCart) => {
         return sum + product.quantity * product.price
     }, 0)
 
