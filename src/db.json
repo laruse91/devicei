@@ -1097,8 +1097,8 @@
       "total": 32
     }
   },
-  "home": {
-    "data": {
+  "pages": {
+    "home": {
       "carousel": [
         {
           "id": "4wQckX5WGWF6KvlCZLs6",
@@ -1181,13 +1181,45 @@
           ]
         }
       ]
+    },
+    "about": {
+      "main": {
+        "title": "Hello!\nHere we are.",
+        "desc": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-1-2.jpg?alt=media&token=304305dd-e4ad-49ab-ab73-5ffecdef5e96"
+      },
+      "sections": [
+        {
+          "title": "We will help you to choose",
+          "desc": "We offer a wide range of electronics, household appliances and various consumer products from clothing to alcoholic beverages.",
+          "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-2-2.jpg?alt=media&token=5caff9ba-a59c-40ec-822f-c028a48888c8"
+        },
+        {
+          "title": "We are trusted",
+          "desc": "Our main goal and fundamental principle in the work is the satisfaction of customers – both retail buyers and organizations.",
+          "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-3-2.jpg?alt=media&token=c2a91eae-e548-49e9-8edc-40ef79f57647"
+        }
+      ],
+      "numbers": {
+        "ship": {
+          "count": 2453,
+          "desc": "goods available for purchase"
+        },
+        "refund": {
+          "count": 3758,
+          "desc": "returning customers"
+        },
+        "support": {
+          "count": 837,
+          "desc": "of users visited"
+        },
+        "delivery": {
+          "count": 1285,
+          "desc": "new arrivals"
+        }
+      }
     }
   },
-  "about": [
-    "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-3-2.jpg?alt=media&token=c2a91eae-e548-49e9-8edc-40ef79f57647",
-    "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-2-2.jpg?alt=media&token=5caff9ba-a59c-40ec-822f-c028a48888c8",
-    "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-1-2.jpg?alt=media&token=304305dd-e4ad-49ab-ab73-5ffecdef5e96"
-  ],
   "news": {
     "lLOfAVUTqhU1olEw8R8r": {
       "id": "lLOfAVUTqhU1olEw8R8r",

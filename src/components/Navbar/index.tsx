@@ -56,18 +56,18 @@ export const Navbar: React.FC = () => {
                     {items}
                 </Menu.SubMenu>
 
-                {/*<Menu.Item key='shop' icon={<HomeOutlined style={sFont(14)} />}>*/}
-                {/*    <NavLink to='/shop'>Shop</NavLink>*/}
-                {/*</Menu.Item>*/}
-
                 <Menu.Item key='news' icon={<ProjectOutlined style={sFont(14)} />}>
                     <NavLink to='/news'>News</NavLink>
                 </Menu.Item>
 
-                <Menu.SubMenu key='about' icon={<InfoCircleOutlined style={sFont(14)} />} title='About'>
-                    <Menu.Item key='About Us'>Option 1</Menu.Item>
-                    <Menu.Item key='Contacts'>Option 2</Menu.Item>
-                    <Menu.Item key='FAQ'>Option 3</Menu.Item>
+                <Menu.SubMenu
+                    key='about'
+                    icon={<InfoCircleOutlined style={sFont(14)} />}
+                    onTitleClick={handleTitleClick}
+                    title='About'>
+                    <Menu.Item key='About Us'>About Us</Menu.Item>
+                    <Menu.Item key='Contacts'>Contacts</Menu.Item>
+                    <Menu.Item key='FAQ'>FAQ</Menu.Item>
                 </Menu.SubMenu>
             </Menu>
         </nav>

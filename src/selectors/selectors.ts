@@ -44,5 +44,8 @@ export const select = {
     cartGoods: (state: TGlobalState) => {
         return state.cart.cart
     },
+    about: (state: TGlobalState) => {
+        return state.content.about
+    },
 }
 type TSelector = typeof select

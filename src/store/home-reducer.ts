@@ -3,6 +3,7 @@ import { ThunkAction } from 'redux-thunk'
 import { TCarousel, TGroup, TNews, TProduct, TSales, TTabs } from '../types/types'
 import { homeAPI } from '../api/home-api'
 import { newsAPI } from '../api/news-api'
+import { contentApi } from '../api/pages-api'
 
 const SET_GOODS = 'SET_TAB_GOODS'
 const SET_DATA = 'SET_DATA'
@@ -75,7 +76,7 @@ export const getNews = (): TThunk => async (dispatch) => {
 }
 
 export const getHomeData = (): TThunk => async (dispatch) => {
-    const response = await homeAPI.requestData()
+    const response = await contentApi.requestPageContent('home')
     if (response) {
         const carousel: TCarousel[] = response.carousel
         const features: TProduct[] = response.features

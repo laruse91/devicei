@@ -7,6 +7,7 @@ import { Shop } from './pages/Shop'
 import { Product } from './pages/Product'
 import './App.css'
 import { Cart } from './pages/Cart'
+import { About } from './pages/About'
 
 const App: React.FC = () => {
     let about
@@ -26,7 +27,7 @@ const App: React.FC = () => {
                     <Route path='/shop/:category?' render={() => <Shop />} />
                     <Route path='/product/:id' render={() => <Product />} />
                     <Route path='/cart' render={() => <Cart />} />
-                    <Route path='/about' render={about} />
+                    <Route path='/about' render={() => <About />} />
                     <Route path='/news' render={news} />
                     <Route path='/*' render={error} />
                 </Switch>

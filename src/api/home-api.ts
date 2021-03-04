@@ -26,20 +26,4 @@ export const homeAPI = {
                 })
         }
     },
-    requestData() {
-        return fireDB
-            .collection('home')
-            .doc('data')
-            .get()
-            .then((doc) => {
-                if (doc.exists) {
-                    return doc.data()
-                } else {
-                    console.log('No such document!')
-                }
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
-    },
 }

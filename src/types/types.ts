@@ -89,3 +89,22 @@ export type TUpdateData = {
     photoURL?: string
     phoneNumber?: string
 }
+export type TAboutSection = {
+    title: string
+    desc: string
+    image: string
+}
+export type TAboutNum = {
+    count: number
+    desc: string
+}
+export type TAbout = {
+    main: TAboutSection
+    sections: TAboutSection[]
+    numbers: {
+        ship: TAboutNum
+        refund: TAboutNum
+        support: TAboutNum
+        delivery: TAboutNum
+    }
+}
