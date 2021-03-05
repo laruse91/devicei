@@ -1190,11 +1190,14 @@
       },
       "sections": [
         {
+
+          "id": "RKpJ0MorlQyarJZa04sB",
           "title": "We will help you to choose",
           "desc": "We offer a wide range of electronics, household appliances and various consumer products from clothing to alcoholic beverages.",
           "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-2-2.jpg?alt=media&token=5caff9ba-a59c-40ec-822f-c028a48888c8"
         },
         {
+          "id": "FNr2zyx5M99uvdVAuTJp",
           "title": "We are trusted",
           "desc": "Our main goal and fundamental principle in the work is the satisfaction of customers – both retail buyers and organizations.",
           "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/features-3-2.jpg?alt=media&token=c2a91eae-e548-49e9-8edc-40ef79f57647"
@@ -1202,20 +1205,24 @@
       ],
       "numbers": {
         "ship": {
+          "icon": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/icons%2Fhome.png?alt=media&token=291f24e5-ec29-4304-abc2-8e9a2a503527",
           "count": 2453,
           "desc": "goods available for purchase"
         },
         "refund": {
+          "icon": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/icons%2Fsend.png?alt=media&token=115755d4-076f-4171-a65c-eb274fdf125b",
           "count": 3758,
           "desc": "returning customers"
         },
         "support": {
+          "icon": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/icons%2Fsecurity.png?alt=media&token=62b33611-6946-40dd-a29c-29cdaa413347",
           "count": 837,
           "desc": "of users visited"
         },
         "delivery": {
           "count": 1285,
-          "desc": "new arrivals"
+          "desc": "new arrivals",
+          "icon": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/icons%2Fflash.png?alt=media&token=3edfcad9-d28a-4d60-b5f7-d400a0573e05"
         }
       }
     }

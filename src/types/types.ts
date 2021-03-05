@@ -90,6 +90,7 @@ export type TUpdateData = {
     phoneNumber?: string
 }
 export type TAboutSection = {
+    id: string
     title: string
     desc: string
     image: string
@@ -97,14 +98,15 @@ export type TAboutSection = {
 export type TAboutNum = {
     count: number
     desc: string
+    icon: string
 }
 export type TAbout = {
     main: TAboutSection
     sections: TAboutSection[]
     numbers: {
-        ship: TAboutNum
-        refund: TAboutNum
-        support: TAboutNum
-        delivery: TAboutNum
+        'ship': TAboutNum
+        'refund': TAboutNum
+        'support': TAboutNum
+        'delivery': TAboutNum
     }
 }

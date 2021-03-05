@@ -35,6 +35,8 @@ const actions = {
 // Thunks
 type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
+
+
 export const getProduct = (id: string): TThunk => async (dispatch) => {
     // @ts-ignore
     const product: TProduct = await goodsAPI.requestProduct(id)

@@ -4,42 +4,79 @@ import { Col, Row, Typography } from 'antd'
 import { select } from '../../selectors/selectors'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAbout } from '../../store/content-reducer'
+import { TAboutSection } from '../../types/types'
+import { BreadCrumbs } from '../../components/common/BreadCrumbs'
 
-const { Title, Paragraph } = Typography
+const { Title, Paragraph, Text } = Typography
 
 export const About: React.FC = () => {
-    const dispatch = useDispatch()
 
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getAbout())
     }, [])
 
     const a = useSelector(select.about)
 
-    const STitle: CSSProperties = {
-        background: `url(${a?.main.image}) no-repeat center`,
-
+    const style = (url: string | undefined, height: string): CSSProperties => ({
+        backgroundImage: `url(${url})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        borderRadius: '20px',
-        height: '400px',
+        borderRadius: '10px',
+        height: height,
         width: '100%',
+        padding: '10%',
+    })
+
+    const block = (card: TAboutSection | undefined, reverse: boolean = false) => {
+        if (!card) return null
+        return (
+            <Section bgColor='white' gutter={[40, 0]} verticalPadding={40} reverse={reverse}>
+                <Col xs={24} md={12} style={{ padding: '20px 50px 20px 40px' }}>
+                    <Title level={5}>{card.title}</Title>
+                    <Paragraph style={{ fontSize: '20px', color: '#0000008f' }}>{card.desc}</Paragraph>
+                </Col>
+                <Col xs={24} md={12}>
+                    <div style={style(card.image, '280px')} />
+                </Col>
+            </Section>
+        )
     }
+    const numbers = a && Object.values(a.numbers).map((n) => {
+        return (
+            <Col xs={12} md={6} key={n.icon}>
+                <Row justify='center'>
+                    <img src={n.icon} alt={'ico'} style={{ height: '30px', width: '30px' }} />
+                </Row>
+                <Row justify='center'>
+                    <Text style={{ fontSize: '35px', margin: '10px', textAlign: 'center' }}>{n.count}</Text>
+                </Row>
+                <Row justify='center'>
+                    <Text type='secondary' style={{ textAlign: 'center' }}>{n.desc}</Text>
+                </Row>
+            </Col>
+        )
+    })
 
     return (
         <>
-            <Section bgColor='white'>
-                <Row style={STitle}>{a?.main.title}</Row>
+            <BreadCrumbs routes={['about', undefined]} />
+            <Section bgColor='white' verticalPadding={40}>
+                <Col style={style(a?.main.image, '50vh')}>
+                    <Title>
+                        {a?.main.title}
+                    </Title>
+                </Col>
             </Section>
 
-            <Section>
-                <Col>
-                    <Row>
-                        <Title>{a?.sections[0].title}</Title>
-                        <Paragraph>{a?.sections[0].desc}</Paragraph>
-                    </Row>
-                </Col>
-                <Col />
+            {block(a?.sections[0])}
+
+            <Section bgColor='white' gutter={[40, 40]} verticalPadding={40}>
+                {numbers}
             </Section>
+
+            {block(a?.sections[1], true)}
         </>
     )
 }
