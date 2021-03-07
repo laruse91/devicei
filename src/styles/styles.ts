@@ -27,6 +27,7 @@ export const s: TStyle = {
         border: '1px solid #dddddd',
         borderRadius: '10px',
     },
+    tags:{display: 'block', width: '100%', color: '#1890ff'}
 }
 export const sAuthForm = {
     labelCol: { span: 8 },

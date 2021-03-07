@@ -70,7 +70,7 @@ export const SignUpForm: React.FC<TProps> = ({ form, setLoading }) => {
         <Form form={form} name='signUp' onFinish={formik.handleSubmit} initialValues={formik.initialValues}>
             <Form.Item
                 required
-                name='ame'
+                name='name'
                 valuePropName='username'
                 label='Your Name'
                 {...sAuthForm}

@@ -97,7 +97,7 @@ export const Home: React.FC = memo(() => {
                     )}
                 </Section>
             </Space>
-            <Section title='Popular news' bgColor='white' verticalPadding={40} gutter={[20, 0]}>
+            <Section align='top' title='Popular news' bgColor='white' verticalPadding={40} gutter={[20, 20]}>
                 {newsCards}
             </Section>
         </>

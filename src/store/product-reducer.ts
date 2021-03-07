@@ -41,9 +41,9 @@ export const getProduct = (id: string): TThunk => async (dispatch) => {
     // @ts-ignore
     const product: TProduct = await goodsAPI.requestProduct(id)
 
-    // for (let id in pages) {
+    // for (let id in news) {
     //     // @ts-ignore
-    //     await fireDB.collection('pages').doc(id).set(pages[id])
+    //     await fireDB.collection('news').doc(id).set(news[id])
     // }
     if (product) dispatch(actions.setGoods(product))
 }

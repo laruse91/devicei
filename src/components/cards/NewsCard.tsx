@@ -1,6 +1,8 @@
 import React from 'react'
-import { Col, Row, Typography } from 'antd'
+import { Col, Image, Row, Typography } from 'antd'
 import { Link } from 'react-router-dom'
+import { s } from '../../styles/styles'
+import { errorImg } from '../../utils/helpers'
 
 const { Title, Text } = Typography
 
@@ -12,34 +14,31 @@ type TProps = {
     date: string
 }
 
-export const NewsCard: React.FC<TProps> = React.memo(({ image, title, date, tag }) => {
+export const NewsCard: React.FC<TProps> = React.memo(({ id, image, title, date, tag }) => {
+
     return (
-        <Col xs={8} style={{ borderRadius: '10px' }}>
-            <Row
-                style={{
-                    background: `url(${image})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    cursor: 'pointer',
-                    borderRadius: '10px',
-                    height: '200px',
-                }}
-            />
+        <Col xs={22} sm={12} md={8} style={{ borderRadius: '10px'}}>
+            <Row align='top'>
+                <Link to={`/news/${id}`}>
+                    <Image src={image}
+                           width={'100%'}
+                           preview={false}
+                           style={{ borderRadius: '10px' }}
+                           fallback={errorImg}
+                    />
+                </Link>
+            </Row>
 
             <Col>
-                <Row>
-                    <Link to={'#'}>{tag}</Link>
-                </Row>
-                <Row>
-                    <Title style={{ cursor: 'pointer', marginTop: '5px' }} level={5}>
+                <Text style={s.tags}>{tag}</Text>
+
+                <Link to={`/news/${id}`}>
+                    <Title level={5}>
                         {title}
                     </Title>
-                </Row>
+                </Link>
 
-                <Row>
-                    <Text type='secondary'>{date}</Text>
-                </Row>
+                <Text type='secondary'>{date}</Text>
             </Col>
         </Col>
     )

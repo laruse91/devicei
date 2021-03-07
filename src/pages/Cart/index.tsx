@@ -22,7 +22,7 @@ export const Cart: React.FC = () => {
 
     return (
         <>
-            <BreadCrumbs routes={['cart', undefined]} />
+            <BreadCrumbs />
 
             <Section justify='start' bgColor='white'>
                 <Title style={{ margin: '0' }}>My Cart</Title>

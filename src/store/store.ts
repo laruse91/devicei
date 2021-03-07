@@ -7,6 +7,7 @@ import appReducer from './app-reducer'
 import authReducer from './auth-reducer'
 import cartReducer from './cart-reducer'
 import contentReducer from './content-reducer'
+import newsReducer from './news-reducer'
 
 const rootReducer = combineReducers({
     app: appReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     product: productReducer,
     cart: cartReducer,
     content: contentReducer,
+    news: newsReducer
 })
 
 type TRootReducer = typeof rootReducer // (globalState: GlobalStateType)=> globalState

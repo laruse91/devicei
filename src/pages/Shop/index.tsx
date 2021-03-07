@@ -18,6 +18,7 @@ import { CardSkeleton } from '../../components/cards/CardSkeleton'
 import { fillArray } from '../../utils/helpers'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
 import { getCategories } from '../../store/app-reducer'
+import { PageHeader } from '../../components/common/PageHeader'
 
 const { Panel } = Collapse
 const { Search } = Input
@@ -136,12 +137,9 @@ export const Shop: React.FC = memo(() => {
 
     return (
         <>
-            <BreadCrumbs routes={['shop', category]} onClick={handleLinkClick} />
+            <BreadCrumbs onClick={handleLinkClick} />
 
-            <Section justify='start' bgColor='white'>
-                <Title style={{ margin: '0' }}>{pageTitle}</Title>
-                <Divider />
-            </Section>
+            <PageHeader/>
 
             <Section bgColor='white' gutter={[20, 20]} justify='start'>
                 <Col xs={24} sm={8} md={8} lg={6} xl={6} xxl={4}>

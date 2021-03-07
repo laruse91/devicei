@@ -61,7 +61,7 @@ export const About: React.FC = () => {
 
     return (
         <>
-            <BreadCrumbs routes={['about', undefined]} />
+            <BreadCrumbs />
             <Section bgColor='white' verticalPadding={40}>
                 <Col style={style(a?.main.image, '50vh')}>
                     <Title>

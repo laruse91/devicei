@@ -10,8 +10,8 @@ export const Carousell: React.FC = () => {
 
     const SContent = (url: string): CSSProperties => ({
         color: '#fff',
-        lineHeight: '500px',
-        height: '500px',
+        lineHeight: '50vh',
+        height: '50vh',
         background: `url(${url})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -42,7 +42,7 @@ export const Carousell: React.FC = () => {
 
     return (
         <section>
-            <Col style={{ height: '500px' }}>
+            <Col style={{ height: '50vh' }}>
                 <Carousel autoplay effect='fade'>
                     {carouselItems}
                 </Carousel>

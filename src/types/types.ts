@@ -10,7 +10,7 @@ export type TQueryParams = {
     brand?: string
 }
 export type TNews = {
-    article: string
+    articles: string[]
     date: string
     id: string
     image: string

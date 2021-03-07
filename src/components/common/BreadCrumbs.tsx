@@ -1,26 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Section } from './Section'
 import { Breadcrumb } from 'antd'
 import { s } from '../../styles/styles'
+import { capitalize } from '../../utils/helpers'
 
 type TProps = {
-    routes: [string, string | undefined]
     onClick?: () => void
 }
 
-export const BreadCrumbs: React.FC<TProps> = ({ routes, onClick = () => {} }) => {
+export const BreadCrumbs: React.FC<TProps> = ({ onClick = () => {} }) => {
+
+    const location = useLocation()
+    const routes = location.pathname.split('/').slice(1)
+    console.log(routes)
+
     const breadcrumbItems = routes.map((r) => {
-        if (!r) {
-            return null
-        }
         const last = routes.indexOf(r) === routes.length - 1
         return last ? (
-            <Breadcrumb.Item key={r}>{r[0].toUpperCase() + r.slice(1)}</Breadcrumb.Item>
+            <Breadcrumb.Item key={r}>{capitalize(r)}</Breadcrumb.Item>
         ) : (
             <Breadcrumb.Item key={r}>
                 <Link to={`/${r}`} onClick={onClick}>
-                    {r[0].toUpperCase() + r.slice(1)}
+                    {capitalize(r)}
                 </Link>
             </Breadcrumb.Item>
         )

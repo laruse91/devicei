@@ -8,10 +8,9 @@ import { Product } from './pages/Product'
 import './App.css'
 import { Cart } from './pages/Cart'
 import { About } from './pages/About'
+import { News } from './pages/News'
 
 const App: React.FC = () => {
-    let about
-    let news
     let error
 
     return (
@@ -28,7 +27,7 @@ const App: React.FC = () => {
                     <Route path='/product/:id' render={() => <Product />} />
                     <Route path='/cart' render={() => <Cart />} />
                     <Route path='/about' render={() => <About />} />
-                    <Route path='/news' render={news} />
+                    <Route path='/news/:id?' render={() => <News />} />
                     <Route path='/*' render={error} />
                 </Switch>
             </main>

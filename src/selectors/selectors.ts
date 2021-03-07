@@ -47,5 +47,11 @@ export const select = {
     about: (state: TGlobalState) => {
         return state.content.about
     },
+    article: (state: TGlobalState) => {
+        return state.news.article
+    },
+    Nnews: (state: TGlobalState) => {
+        return state.news.news
+    },
 }
 type TSelector = typeof select

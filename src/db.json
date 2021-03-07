@@ -1190,7 +1190,6 @@
       },
       "sections": [
         {
-
           "id": "RKpJ0MorlQyarJZa04sB",
           "title": "We will help you to choose",
           "desc": "We offer a wide range of electronics, household appliances and various consumer products from clothing to alcoholic beverages.",
@@ -1230,38 +1229,86 @@
   "news": {
     "lLOfAVUTqhU1olEw8R8r": {
       "id": "lLOfAVUTqhU1olEw8R8r",
-      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog1-2.jpg?alt=media&token=a058adec-2c16-449a-9b4c-b8f3440ab4c2",
+      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog5-2.jpg?alt=media&token=ca2641c6-073a-4d73-b875-d4c0f438894e",
       "title": "Best care and support at Our Stores",
-      "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.\n\nEtiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
       "date": "JANUARY 10, 2021",
       "tag": "Hi-Tech",
       "comments": null
     },
-    "EbFATZyPpNcxnF3xtlAP": {
-      "id": "EbFATZyPpNcxnF3xtlAP",
-      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog3-2-580x410.jpg?alt=media&token=f7593c05-db9e-4859-b546-a97ee2d05d58",
-      "title": "Dairy:A free Sketch UI kit for minimal apps",
-      "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.\n\nEtiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.",
-      "date": "JANUARY 27, 2021",
-      "tag": "Hi-Tech",
+    "ZsgV11t3i2sjPgk5CAnn": {
+      "id": "ZsgV11t3i2sjPgk5CAnn",
+      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog3-2.jpeg?alt=media&token=804495a5-9ff7-4505-8f44-6efb37e96c98",
+      "title": "Free set of smartphone clay mockups",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
+      "date": "JANUARY 20, 2021",
+      "tag": "Business",
       "comments": null
     },
     "jUuBhXdWNkSz4lpyuNkS": {
       "id": "jUuBhXdWNkSz4lpyuNkS",
       "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog4-2.jpg?alt=media&token=7f4ee849-e82d-4dd6-8c3a-a77c3420431c",
       "title": "Laptop technical details",
-      "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.\n\nEtiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
       "date": "JANUARY 24, 2021",
       "tag": "Business",
       "comments": null
     },
-    "ZsgV11t3i2sjPgk5CAnn": {
-      "id": "ZsgV11t3i2sjPgk5CAnn",
-      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog5-2.jpg?alt=media&token=ca2641c6-073a-4d73-b875-d4c0f438894e",
-      "title": "Free set of smartphone clay mockups",
-      "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.\n\nEtiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.",
-      "date": "JANUARY 20, 2021",
-      "tag": "Business",
+    "EbFATZyPpNcxnF3xtlAP": {
+      "id": "EbFATZyPpNcxnF3xtlAP",
+      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog1-2.jpg?alt=media&token=a058adec-2c16-449a-9b4c-b8f3440ab4c2",
+      "title": "Dairy:A free Sketch UI kit for minimal apps",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
+      "date": "JANUARY 27, 2021",
+      "tag": "Hi-Tech",
+      "comments": null
+    },
+    "ShLxLadn1le5u9vnf4c7": {
+      "id": "ShLxLadn1le5u9vnf4c7",
+      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog6-2.jpeg?alt=media&token=2e4dec24-15f1-434d-9f60-43bf1e8c852e",
+      "title": "The best products at your fingertips",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
+      "date": "FEBRUARY 20, 2021",
+      "tag": "Hi-Tech",
+      "comments": null
+    },
+    "VjcJRL5lsrMDHajTLw8b": {
+      "id": "VjcJRL5lsrMDHajTLw8b",
+      "image": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/blog2-2.jpeg?alt=media&token=34d22364-959a-483b-99fb-ad18d964ebd2",
+      "title": "100+ Apple Watch Design Resources",
+      "articles": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum non mattis pharetra. Integer laoreet non felis sit amet pharetra. Integer mollis eget felis non finibus. Nullam nibh mauris, fermentum vitae felis vehicula, aliquam bibendum sapien. In euismod velit vitae neque rhoncus congue. Aliquam luctus, sapien in consectetur cursus, quam urna euismod magna, sed pellentesque massa libero eu lorem. Aenean rhoncus gravida nisl vel pretium. Nam ac nisl non ipsum vestibulum vehicula vulputate sagittis magna. Aenean est nisl, convallis volutpat tempor ac, tempus ac ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce rhoncus sodales tempor. Nunc pretium tortor felis, eget cursus magna accumsan a.",
+        "Etiam eu molestie eros, commodo hendrerit sapien. Maecenas tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut, lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus. Aliquam auctor, sapien sit amet accumsan facilisis, enim enim aliquet arcu, tincidunt pellentesque justo turpis id neque. Duis eleifend nunc sit amet mi dapibus ornare. Suspendisse vel libero sem.\n\n",
+        "Sed nec blandit nibh. Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.\n\n",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus. Integer arcu libero, feugiat non eros vel, aliquet sodales justo. Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laoreet.\n\n"
+      ],
+      "date": "FEBRUARY 24, 2021",
+      "tag": "Hi-Tech",
       "comments": null
     }
   }

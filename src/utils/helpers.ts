@@ -10,6 +10,12 @@ export const random = (min: number, max: number): number => {
     const rand = min + Math.random() * (max + 1 - min)
     return Math.floor(rand)
 }
+// make first capital letter
+export const capitalize = (word:string): string => {
+    return (
+        word[0].toLocaleUpperCase() + word.slice(1)
+    )
+}
 
 //create new arr with x=num elements
 export const fillArray = (num: number) => {
@@ -24,7 +30,7 @@ export const fillArray = (num: number) => {
 export const part = (page: number, limit: number, array: any[]): any[] => {
     return array.slice((page - 1) * limit, (page - 1) * limit + limit)
 }
-//get miPrice and maxPrice
+//get minPrice and maxPrice
 export const minMax = (array: TProduct[]): [number, number] => {
     let max = 0
     let min = Infinity

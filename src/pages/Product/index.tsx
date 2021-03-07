@@ -66,7 +66,7 @@ export const Product: React.FC = () => {
     if (!product) return <div>loading</div>
     return (
         <>
-            <BreadCrumbs routes={['shop', product.category]} />
+            <BreadCrumbs />
 
             <Section bgColor='white' verticalPadding={20}>
                 <Col xs={20} sm={10} md={12} lg={12}>
