@@ -4,15 +4,19 @@ import { Section } from './Section'
 import { useLocation } from 'react-router-dom'
 import { capitalize } from '../../utils/helpers'
 
-const {Title} = Typography
+const { Title } = Typography
+type TProps = {
+    customTitle?: string
+    verticalPadding?: number
+}
 
-export const PageHeader = () => {
+export const PageHeader: React.FC<TProps> = ({ customTitle ,verticalPadding}) => {
     const location = useLocation()
     const title = location.pathname.split('/').slice(-1)[0]
 
     return (
-        <Section justify='start' bgColor='white' verticalPadding={40}>
-            <Title style={{ margin: '0' }}>{capitalize(title)}</Title>
+        <Section justify='start' bgColor='white' verticalPadding={verticalPadding}>
+            <Title style={{ margin:  0 }}>{customTitle || capitalize(title)}</Title>
             <Divider />
         </Section>
     )

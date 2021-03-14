@@ -1,9 +1,9 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
-import { usersAPI } from '../api/users-api'
 import { goodsAPI } from '../api/goods-api'
 import { TCart } from '../types/types'
 import { Dispatch } from 'redux'
+import { authAPI } from '../api/auth-api'
 
 const ADD_TO_CART = 'ADD_TO_CART'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
@@ -64,7 +64,7 @@ type TThunk = ThunkAction<Promise<void>, () => TGlobalState, unknown, TActions>
 
 export const addProductToCart = (userId: string | undefined, product: TCart): TThunk => async (dispatch) => {
     if (userId) {
-        const resp = await usersAPI.addCartProduct(userId, product.id, product.quantity)
+        const resp = await authAPI.addCartProduct(userId, product.id, product.quantity)
         if (resp) dispatch(actions.addToCart(product))
     } else {
         let cart: { [id: string]: number } = {}
@@ -79,7 +79,7 @@ export const addProductToCart = (userId: string | undefined, product: TCart): TT
 }
 export const removeProduct = (userId: string | undefined, productId: string): TThunk => async (dispatch) => {
     if (userId) {
-        const resp = await usersAPI.removeCartProduct(userId, productId)
+        const resp = await authAPI.removeCartProduct(userId, productId)
         if (resp) dispatch(actions.removeProduct(productId))
     } else {
         let cart: { [id: string]: number } = {}
@@ -93,10 +93,10 @@ export const removeProduct = (userId: string | undefined, productId: string): TT
     }
 }
 export const updateQuantity = (userId: string | undefined, productId: string, value: number): TThunk => async (
-    dispatch
+    dispatch,
 ) => {
     if (userId) {
-        const resp = await usersAPI.addCartProduct(userId, productId, value)
+        const resp = await authAPI.addCartProduct(userId, productId, value)
         if (resp) dispatch(actions.updateQuantity(productId, value))
     } else {
         let cart: { [id: string]: number } = {}
@@ -119,6 +119,7 @@ export const getCartProduct = (id: string, quantity: number): TThunk => async (d
             image: product.image,
             name: product.name,
             price: product.price,
+            category: product.category,
         }
         dispatch(actions.addToCart(cartProduct))
     }
@@ -126,7 +127,8 @@ export const getCartProduct = (id: string, quantity: number): TThunk => async (d
 
 export const getUserCart = (userId?: string | null): TThunk => async (dispatch) => {
     if (userId) {
-        const user = await usersAPI.requestUser(userId)
+        const user = await authAPI.requestUserInfo(userId).catch(err => console.log(err))
+        console.log(user)
         if (user) {
             for (let id in user.cart) {
                 await dispatch(getCartProduct(id, user.cart[id]))

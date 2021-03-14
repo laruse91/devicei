@@ -1,9 +1,8 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/auth-api'
-import { TContacts, TAuthorizedUser } from '../types/types'
+import { TAuthorizedUser, TContacts } from '../types/types'
 import { getUserCart } from './cart-reducer'
-import { usersAPI } from '../api/users-api'
 
 const SIGN_IN = 'SIGN_IN'
 const SIGN_OUT = 'SIGN_OUT'
@@ -30,6 +29,7 @@ const authReducer = (state = initialState, action: TActions): TInitialState => {
                 ...state,
                 isAuth: false,
                 authorizedUser: null,
+                contacts: null
             }
         case SET_AUTHORIZED_USER:
         case SET_USER_CONTACTS:
@@ -74,7 +74,6 @@ export const signIn = (email: string, password: string, rememberMe: boolean): TT
 }
 export const updateUserProfile = (userName?: string, photoUrl?: string): TThunk => async (dispatch) => {
     const updatedUser = await authAPI.updateUserProfile(userName, photoUrl)
-    console.log(updatedUser)
     if (updatedUser) dispatch(actions.setAuthorizedUser(updatedUser))
 }
 export const addUserPhoto = (userId: string, file: Blob | File): TThunk => async (dispatch) => {
@@ -83,12 +82,11 @@ export const addUserPhoto = (userId: string, file: Blob | File): TThunk => async
 }
 
 export const addUserContacts = (userId: string, contacts: TContacts): TThunk => async (dispatch) => {
-    const resp = await authAPI.addContacts(userId, contacts)
+    const resp = await authAPI.addContacts(userId, contacts).catch(err => console.log(err))
     if (resp) dispatch(actions.setContacts(contacts))
 }
 export const getUserContacts = (userId: string): TThunk => async (dispatch) => {
-    const user = await usersAPI.requestUser(userId)
-    console.log(user)
+    const user = await authAPI.requestUserInfo(userId).catch(err => console.log(err))
     if (user) dispatch(actions.setContacts(user.contacts))
 }
 

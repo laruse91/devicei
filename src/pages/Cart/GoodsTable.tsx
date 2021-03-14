@@ -46,7 +46,7 @@ export const GoodsTable: React.FC = () => {
 
                         <Col xs={5} sm={3}>
                             <Row justify='center' align='middle' style={{ height: '100%' }}>
-                                <Link to={`/product/${p.id}`}>
+                                <Link to={`/shop/${p.category}/${p.id}`}>
                                     <div className={cl.image} style={{ backgroundImage: `url(${p.image})` }} />
                                 </Link>
                             </Row>
@@ -54,7 +54,7 @@ export const GoodsTable: React.FC = () => {
 
                         <Col xs={7} sm={6}>
                             <Row align='middle' style={{ height: '100%' }}>
-                                <Link to={`/product/${p.id}`}>
+                                <Link to={`/shop/${p.category}/${p.id}`}>
                                     <Paragraph ellipsis={{ rows: 2 }} style={{ fontSize: '16px', margin: 0 }}>
                                         {p.name}
                                     </Paragraph>
@@ -73,9 +73,10 @@ export const GoodsTable: React.FC = () => {
                                 <InputNumber
                                     size={!screen.sm ? 'middle' : 'large'}
                                     min={1}
+                                    max={10}
                                     value={p.quantity}
                                     style={{ borderRadius: '10px' }}
-                                    onStep={handleChangeQuantity(p.id)}
+                                    onChange={handleChangeQuantity(p.id)}
                                 />
                             </Row>
                         </Col>

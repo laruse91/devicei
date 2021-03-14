@@ -4,14 +4,16 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Home } from './pages/Home'
 import { Shop } from './pages/Shop'
-import { Product } from './pages/Product'
+import { Product } from './pages/Shop/Product'
 import './App.css'
 import { Cart } from './pages/Cart'
 import { About } from './pages/About'
 import { News } from './pages/News'
+import { FAQ } from './pages/FAQ'
+import { Contacts } from './pages/Contacts'
+import Error from './pages/Error'
 
 const App: React.FC = () => {
-    let error
 
     return (
         <div className='container'>
@@ -22,13 +24,15 @@ const App: React.FC = () => {
             <main className='main'>
                 <Switch>
                     <Route exact path='/' render={() => <Redirect to={'/home'} />} />
-                    <Route path='/home' render={() => <Home />} />
+                    <Route exact path='/home' render={() => <Home />} />
+                    <Route exact path='/shop/:category/:id' render={() => <Product />} />
                     <Route path='/shop/:category?' render={() => <Shop />} />
-                    <Route path='/product/:id' render={() => <Product />} />
-                    <Route path='/cart' render={() => <Cart />} />
-                    <Route path='/about' render={() => <About />} />
-                    <Route path='/news/:id?' render={() => <News />} />
-                    <Route path='/*' render={error} />
+                    <Route exact path='/cart' render={() => <Cart />} />
+                    <Route exact path='/about' render={() => <About />} />
+                    <Route exact path='/news/:id?' render={() => <News />} />
+                    <Route exact path='/faq' render={() => <FAQ />} />
+                    <Route exact path='/contacts' render={() => <Contacts />} />
+                    <Route path='/*' render={()=> <Error/>} />
                 </Switch>
             </main>
 

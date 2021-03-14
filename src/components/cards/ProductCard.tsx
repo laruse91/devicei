@@ -33,7 +33,7 @@ export const ProductCard: React.FC<TProps> = memo(
         const history = useHistory()
 
         const handleCardClick = () => {
-            history.replace({ pathname: `/product/${product.id}` })
+            history.replace({ pathname: `/shop/${product.category}/${product.id}` })
         }
 
         const tag = product.group
@@ -88,6 +88,7 @@ export const ProductCard: React.FC<TProps> = memo(
                                         price={product.price}
                                         image={product.image}
                                         id={product.id}
+                                        category={product.category}
                                     />
                                 </Row>
                             </Col>
@@ -131,6 +132,7 @@ export const ProductCard: React.FC<TProps> = memo(
                                     price={product.price}
                                     image={product.image}
                                     id={product.id}
+                                    category={product.category}
                                 />
                             </Row>
 

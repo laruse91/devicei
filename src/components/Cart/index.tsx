@@ -41,6 +41,7 @@ export const Cart: React.FC = () => {
                         id={g.id}
                         price={g.price}
                         name={g.name}
+                        category={g.category}
                     />
                 )
             })}

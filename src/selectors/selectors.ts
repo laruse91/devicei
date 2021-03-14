@@ -53,5 +53,8 @@ export const select = {
     Nnews: (state: TGlobalState) => {
         return state.news.news
     },
+    faq: (state: TGlobalState) => {
+        return state.content.faq
+    },
 }
 type TSelector = typeof select

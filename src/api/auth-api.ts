@@ -1,5 +1,6 @@
-import { fireAUTH, fireAuth, fireDB, fireStorage } from '../index'
-import { TContacts, TAuthorizedUser, TUpdateData } from '../types/types'
+import { fireAUTH, fireAuth, fireStorage } from '../index'
+import { TAuthorizedUser, TContacts, TUpdateData, TUserInfo } from '../types/types'
+import { dbInstance } from './api'
 
 export const authAPI = {
     signUp(email: string, password: string, name: string) {
@@ -25,7 +26,6 @@ export const authAPI = {
         const data = {} as TUpdateData
         if (displayName) data.displayName = displayName
         if (photoURL) data.photoURL = photoURL
-
         return fireAuth.currentUser?.updateProfile(data).then(() => this.requestUserProfile())
     },
     uploadUserPhoto(userId: string, file: File) {
@@ -56,31 +56,26 @@ export const authAPI = {
         }
     },
 
-    addContacts(userId: string, contacts: TContacts) {
-        return fireDB
-            .collection('users')
-            .doc(userId)
-            .set({ contacts: contacts })
-            .then(() => true)
-            .catch((error) => {
-                console.log('Error adding document:', error)
+    requestUserInfo(id: string) {
+        return dbInstance
+            .get<TUserInfo>(`users/${id}.json`)
+            .then((response) => {
+                const { data } = response
+                return data
             })
     },
-
-    requestUserInfo(userId: string) {
-        return fireDB
-            .collection('users')
-            .doc(userId)
-            .get()
-            .then((doc) => {
-                if (doc.exists) {
-                    return doc.data()
-                } else {
-                    console.log('No such document!')
-                }
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
+    addCartProduct(userId: string, productId: string, quantity: number) {
+        return dbInstance
+            .patch(`users/${userId}/cart.json`, { [productId]: quantity })
+            .then(() => true)
+    },
+    removeCartProduct(userId: string, productId: string) {
+        return dbInstance.delete(`users/${userId}/cart/${productId}.json`)
+            .then(() => true)
+    },
+    addContacts(userId: string, contacts: TContacts) {
+        return dbInstance
+            .patch(`users/${userId}/contacts.json`, { ...contacts })
+            .then(() => true)
     },
 }

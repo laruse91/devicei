@@ -61,13 +61,12 @@ export const Navbar: React.FC = () => {
                 </Menu.Item>
 
                 <Menu.SubMenu
-                    key='about'
+                    key='more'
                     icon={<InfoCircleOutlined style={sFont(14)} />}
-                    onTitleClick={handleTitleClick}
-                    title='About'>
-                    <Menu.Item key='About Us'>About Us</Menu.Item>
-                    <Menu.Item key='Contacts'>Contacts</Menu.Item>
-                    <Menu.Item key='FAQ'>FAQ</Menu.Item>
+                    title='More'>
+                    <Menu.Item key='about'><NavLink to='/about'>About</NavLink></Menu.Item>
+                    <Menu.Item key='contacts'><NavLink to='/contacts'>Contacts</NavLink></Menu.Item>
+                    <Menu.Item key='FAQ'><NavLink to='/faq'>FAQ</NavLink></Menu.Item>
                 </Menu.SubMenu>
             </Menu>
         </nav>

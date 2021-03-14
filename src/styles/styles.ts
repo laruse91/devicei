@@ -8,6 +8,7 @@ export const s: TStyle = {
     productImage: { borderRadius: '10px', border: '1px solid #dddddd', width: '90%' },
     productCard: { border: '1px solid #dddddd', borderRadius: '10px', cursor: 'default', width: '100%' },
     productName: { marginTop: '5px', height: '55px', cursor: 'pointer', textAlign: 'center' },
+    imageWrapper: {borderRadius: '20px', background: '#f2f2f2', height: '100%', padding: '80px 0'},
     futureProductName: { color: 'white', marginTop: '5px', height: '90px', cursor: 'pointer' },
     badge: { fontSize: '16px', background: '#3452ff' },
     table: {

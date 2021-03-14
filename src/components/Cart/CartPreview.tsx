@@ -10,7 +10,9 @@ import { select } from '../../selectors/selectors'
 
 const { Paragraph } = Typography
 
-export const CartPreview: React.FC<TCart> = React.memo(({ id, name, image, quantity, price }) => {
+
+
+export const CartPreview: React.FC<TCart> = React.memo(({category, id, name, image, quantity, price }) => {
     const authorizedUser = useSelector(select.authorizedUser)
     const dispatch = useDispatch()
 
@@ -22,7 +24,7 @@ export const CartPreview: React.FC<TCart> = React.memo(({ id, name, image, quant
             <Row className={cl.preview}>
                 <Col span={6}>
                     <Row justify='center' align='middle' style={{ height: '100%' }}>
-                        <Link to={`/product/${id}`}>
+                        <Link to={`/shop/${category}/${id}`}>
                             <div className={cl.image} style={{ backgroundImage: `url(${image})` }} />
                         </Link>
                     </Row>
@@ -31,7 +33,7 @@ export const CartPreview: React.FC<TCart> = React.memo(({ id, name, image, quant
                 <Col span={14}>
                     <Row align='middle' style={{ height: '100%' }}>
                         <Col span={24}>
-                            <Link to={`/product/${id}`}>
+                            <Link to={`/shop/${category}/${id}`}>
                                 <Paragraph ellipsis={{ rows: 1 }} style={{ fontSize: '12px', margin: 0 }}>
                                     {name}
                                 </Paragraph>

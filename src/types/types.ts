@@ -79,6 +79,7 @@ export type TContacts = {
 }
 export type TCart = {
     id: string
+    category: string
     quantity: number
     image: string | null
     name: string
@@ -109,4 +110,21 @@ export type TAbout = {
         'support': TAboutNum
         'delivery': TAboutNum
     }
+}
+export type TFaqGroups = 'Payment and Delivery' | 'Warranty and Service'
+export type TFaqCategories = 'Electronic' | 'Computers' | 'Beayty & Health'
+export type TFaq = { [group in TFaqGroups]: { [category in TFaqCategories]: string } }
+export type THome = {
+    carousel: TCarousel[]
+    features: TProduct[]
+}
+export type TUserInfo = {
+    cart: { [id: string]: number }
+    contacts: TContacts
+}
+export type TGoodsInfo = {
+    brands: string[]
+    categories: string[]
+    maximalPrise:number
+    total: number
 }

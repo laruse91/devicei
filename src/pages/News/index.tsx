@@ -8,6 +8,8 @@ import { PageHeader } from '../../components/common/PageHeader'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
 import { Article } from './Article'
 import { useParams } from 'react-router-dom'
+import { fillArray } from '../../utils/helpers'
+import { Col, Skeleton } from 'antd'
 
 export const News: React.FC = () => {
 
@@ -20,9 +22,11 @@ export const News: React.FC = () => {
 
     const news = useSelector(select.Nnews)
 
-    const newsCards = news?.map((n) => {
-        return <NewsCard key={n.id} image={n.image} title={n.title} id={n.id} tag={n.tag} date={n.date} />
-    })
+    const newsCards = !news
+        ? fillArray(12).map((i) => <Col key={i} xs={22} sm={12} md={8}><Skeleton /></Col>)
+        : news.map((n) => {
+            return <NewsCard key={n.id} image={n.image} title={n.title} id={n.id} tag={n.tag} date={n.date} />
+        })
 
     if (params.id) {
         return (
@@ -30,6 +34,7 @@ export const News: React.FC = () => {
         )
 
     }
+
     return (
         <>
             <BreadCrumbs />

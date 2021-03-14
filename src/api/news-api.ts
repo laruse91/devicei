@@ -1,38 +1,19 @@
-import { fireDB } from '../index'
+import { instance } from './api'
 import { TNews } from '../types/types'
+// @ts-ignore
+import FireStoreParser from 'firestore-parser'
 
 export const newsAPI = {
-    requestNews(limit?: number) {
-        return fireDB
-            .collection('news')
-            .orderBy('date', 'asc')
-            .limit(limit || 20)
-            .get()
-            .then((response) => {
-                let data = [] as TNews[]
-                response.forEach((doc) => {
-                    data.push(doc.data() as TNews)
-                })
-                return data
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
-    },
     requestArticle(id: string) {
-        return fireDB
-            .collection('news')
-            .doc(id)
-            .get()
-            .then((doc) => {
-                if (doc.exists) {
-                    return doc.data()
-                } else {
-                    console.log('No such document!')
-                }
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
+        return instance
+            .get<TNews>(`documents/news/${id}`)
+            .then(response => FireStoreParser(response.data).fields as TNews)
+    },
+    requestNews(limit?: number) {
+        return instance
+            .get<TNews[]>(`documents/news?pageSize=${limit || 12}`)
+            .then(response => FireStoreParser(response.data).documents.map((d: any) => d.fields) as TNews[])
     },
 }
+
+

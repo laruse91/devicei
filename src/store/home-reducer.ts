@@ -1,9 +1,9 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
-import { TCarousel, TGroup, TNews, TProduct, TSales, TTabs } from '../types/types'
+import { TCarousel, TGroup, THome, TNews, TProduct, TSales, TTabs } from '../types/types'
 import { homeAPI } from '../api/home-api'
 import { newsAPI } from '../api/news-api'
-import { contentApi } from '../api/pages-api'
+import { contentApi } from '../api/content-api'
 
 const SET_GOODS = 'SET_TAB_GOODS'
 const SET_DATA = 'SET_DATA'
@@ -71,12 +71,12 @@ export const getGoods = (groups: TGroup[], limit = 4, tag: 'tab' | 'sale'): TThu
 }
 
 export const getNews = (): TThunk => async (dispatch) => {
-    const news: TNews[] | void = await newsAPI.requestNews(3)
-    news && dispatch(actions.setNews(news))
+    const response: TNews[] | void = await newsAPI.requestNews(3).catch((err)=>console.log(err))
+    response && dispatch(actions.setNews(response))
 }
 
 export const getHomeData = (): TThunk => async (dispatch) => {
-    const response = await contentApi.requestPageContent('home')
+    const response = await contentApi.requestContent('home') as THome
     if (response) {
         const carousel: TCarousel[] = response.carousel
         const features: TProduct[] = response.features

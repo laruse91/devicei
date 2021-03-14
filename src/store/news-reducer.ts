@@ -38,12 +38,12 @@ const actions = {
 type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
 export const getNews = (): TThunk => async (dispatch) => {
-    const news: TNews[] | void = await newsAPI.requestNews()
-    news && dispatch(actions.setNews(news))
+    const response = await newsAPI.requestNews().catch((err) => console.log(err))
+    response && dispatch(actions.setNews(response))
 }
 export const getArticle = (id: string): TThunk => async (dispatch) => {
-    const article: TNews = await newsAPI.requestArticle(id) as TNews
-    article && dispatch(actions.setArticle(article))
+    const response = await newsAPI.requestArticle(id).catch((err) => console.log(err))
+    response && dispatch(actions.setArticle(response))
 }
 
 export default newsReducer

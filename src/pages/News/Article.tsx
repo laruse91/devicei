@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
 import { Section } from '../../components/common/Section'
-import { Image, Row, Typography } from 'antd'
+import { Image, Row, Skeleton, Typography } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { getArticle } from '../../store/news-reducer'
@@ -29,9 +29,20 @@ export const Article: React.FC<TProps> = ({ id }) => {
         )
     })
 
+    if (!article) {
+        return (
+            <>
+                <BreadCrumbs />
+                <Section bgColor='white'>
+                    <Skeleton paragraph={{ rows: 15 }} />
+                </Section>
+            </>
+        )
+    }
+
     return (
         <>
-            <BreadCrumbs />
+            <BreadCrumbs itemTitle={article?.tag} />
 
             <Section bgColor='white'>
 

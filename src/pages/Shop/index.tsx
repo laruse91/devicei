@@ -4,7 +4,7 @@ import { ProductCard } from '../../components/cards/ProductCard'
 import { getGoods } from '../../store/shop-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
-import { Affix, Col, Spin, Collapse, Divider, Dropdown, Grid, Input, Menu, Pagination, Row, Typography } from 'antd'
+import { Affix, Col, Collapse, Dropdown, Grid, Input, Menu, Pagination, Row, Spin } from 'antd'
 import { useHistory, useParams } from 'react-router-dom'
 import { DownOutlined } from '@ant-design/icons'
 import { MenuInfo } from 'rc-menu/lib/interface'
@@ -22,7 +22,6 @@ import { PageHeader } from '../../components/common/PageHeader'
 
 const { Panel } = Collapse
 const { Search } = Input
-const { Title } = Typography
 const { useBreakpoint } = Grid
 
 export const Shop: React.FC = memo(() => {
@@ -37,13 +36,12 @@ export const Shop: React.FC = memo(() => {
     const categories = useSelector(select.categories)
     const dispatch = useDispatch()
 
-    const params: { category: string } = useParams()
+    const params: { category: string, id: string } = useParams()
     const history = useHistory()
     const screen = useBreakpoint()
 
+    const parsed = queryString.parse(history.location.search.substr(1)) as TQueryParams
     const parseQuery = (): void => {
-        const parsed = queryString.parse(history.location.search.substr(1)) as TQueryParams
-
         if (parsed.page) setPage(Number(parsed.page))
         if (parsed.brand) setBrands(parsed.brand.split('_'))
         if (parsed.priceFrom) setPrice([Number(parsed.priceFrom), Number(parsed.priceTo)])
@@ -61,10 +59,8 @@ export const Shop: React.FC = memo(() => {
         const query = {} as TQueryParams
         if (page !== 1) query.page = String(page)
         if (brands.length) query.brand = brands.join('_')
-        if (price) {
-            query.priceFrom = String(price[0])
-            query.priceTo = String(price[1])
-        }
+        if (price && price[0] !== 0) query.priceFrom = String(price[0])
+        if (price && price[1] !== goods?.maximalPrice) query.priceTo = String(price[1])
 
         history.push({
             search: queryString.stringify(query),
@@ -72,9 +68,17 @@ export const Shop: React.FC = memo(() => {
     }, [brands, price, page, sort])
     useEffect(() => {
         dispatch(getGoods(category, price, brands, sort, page))
-        setBrands([])
-        if (category) history.replace({ pathname: `/shop/${category}` })
+        if (category) {
+            history.replace({ pathname: `/shop/${category}` })
+            setBrands([])
+        }
     }, [category])
+    useEffect(() => {
+        setCategory(params.category)
+    }, [params.category])
+    useEffect(() => {
+        parsed.brand && setBrands(parsed.brand.split('_'))
+    }, [parsed.brand])
 
     const handlePageChange = (page: number) => {
         setPage(page)
@@ -82,7 +86,8 @@ export const Shop: React.FC = memo(() => {
     const handleSorting = (key: MenuInfo) => {
         setSort(key.keyPath[0] as 'desc' | 'asc')
     }
-    const handleSearch = () => {}
+    const handleSearch = () => {
+    }
     const handleCategorySelect = (value: string) => {
         setCategory(value)
     }
@@ -97,17 +102,16 @@ export const Shop: React.FC = memo(() => {
     }
 
     const responsive = { xs: 24, sm: 12, md: 12, lg: 8, xxl: 6 }
-    const pageTitle = category ? category[0].toUpperCase() + category.slice(1) : 'Shop'
     const offset = !screen.sm ? -1000 : 150
     const cardType = !screen.sm ? 'horizontal' : 'vertical'
 
     const goodsCards = !goods
         ? fillArray(12).map((card) => {
-              return <CardSkeleton key={card} responsive={responsive} />
-          })
+            return <CardSkeleton key={card} responsive={responsive} />
+        })
         : goods.items.map((g) => {
-              return <ProductCard key={g.id} product={g} responsive={responsive} type={cardType} />
-          })
+            return <ProductCard key={g.id} product={g} responsive={responsive} type={cardType} />
+        })
     const menu = (
         <Menu onClick={handleSorting}>
             <Menu.Item key='asc'>Price: low to height</Menu.Item>
@@ -139,7 +143,7 @@ export const Shop: React.FC = memo(() => {
         <>
             <BreadCrumbs onClick={handleLinkClick} />
 
-            <PageHeader/>
+            <PageHeader />
 
             <Section bgColor='white' gutter={[20, 20]} justify='start'>
                 <Col xs={24} sm={8} md={8} lg={6} xl={6} xxl={4}>

@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 type TProps = {
     id: string
     name: string
+    category: string
     quantity?: number
     image: string | null
     price: number
@@ -18,7 +19,7 @@ type TProps = {
 }
 
 export const AddToCartButton: React.FC<TProps> = React.memo(
-    ({ id, name, quantity = 1, image, price, size = 'small' }) => {
+    ({ category, id, name, quantity = 1, image, price, size = 'small' }) => {
         const authorizedUser = useSelector(select.authorizedUser)
         const cartGoods = useSelector(select.cartGoods)
         const dispatch = useDispatch()
@@ -32,11 +33,12 @@ export const AddToCartButton: React.FC<TProps> = React.memo(
                 quantity: 1,
                 image: image,
                 price: price,
+                category: category
             }
             dispatch(addProductToCart(authorizedUser?.userId, cart))
         }
         const handleAddOneMore = () => {
-            authorizedUser && dispatch(updateQuantity(authorizedUser.userId, id, +1))
+            dispatch(updateQuantity(authorizedUser?.userId, id, added.quantity + 1))
         }
 
         return (

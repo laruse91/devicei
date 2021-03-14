@@ -3,9 +3,10 @@ import { Section } from '../../components/common/Section'
 import { Col, Row, Typography } from 'antd'
 import { select } from '../../selectors/selectors'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAbout } from '../../store/content-reducer'
+import { getPageContent } from '../../store/content-reducer'
 import { TAboutSection } from '../../types/types'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
+import { PageHeader } from '../../components/common/PageHeader'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -13,7 +14,7 @@ export const About: React.FC = () => {
 
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getAbout())
+        dispatch(getPageContent('about'))
     }, [])
 
     const a = useSelector(select.about)
@@ -62,7 +63,9 @@ export const About: React.FC = () => {
     return (
         <>
             <BreadCrumbs />
-            <Section bgColor='white' verticalPadding={40}>
+            <PageHeader/>
+
+            <Section bgColor='white' >
                 <Col style={style(a?.main.image, '50vh')}>
                     <Title>
                         {a?.main.title}

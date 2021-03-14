@@ -1224,6 +1224,18 @@
           "icon": "https://firebasestorage.googleapis.com/v0/b/devicei.appspot.com/o/icons%2Fflash.png?alt=media&token=3edfcad9-d28a-4d60-b5f7-d400a0573e05"
         }
       }
+    },
+    "faq": {
+      "Payment and Delivery": {
+        "Electronics": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo em solo tempor incididuntut labore et dolore magna aliqua. Typi non habent claritatem insitam; est usus legentis in iisqui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod iilegunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium\n                        lectorum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo em solo tempor\n                        incididunt ut labore et dolore magna aliqua. Typi non habent claritatem insitam; est ususlegentis in iis qui facit eorum claritatem.",
+        "Computers": "Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est\n                        etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Lorem ipsum dolor sit\n                        amet, consectetur adipiscing elit, sed do eiusmo em solo tempor incididunt\n                        ut labore et dolore magna aliqua. Typi non habent claritatem insitam; est usus legentis in iis\n                        qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii\n                        legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium\n                        lectorum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+        "Beauty & Health": " A deserunt dignissimos, doloribus ducimus facilis fuga ipsum\n                        magni maxime nihil nulla pariatur porro possimus quae, quam quas quasi quia quidem quo\n                        repudiandae soluta, sunt totam velit veniam voluptate voluptatem. Aliquam amet dolor\n                        doloremque ducimus eaque eos, explicabo fugiat, harum ipsa, ipsam iste labore magnam\n                        molestias nemo neque nesciunt nostrum omnis quidem quos suscipit tempora tempore ut vero\n                        vitae voluptatibus. Accusamus adipisci aliquid corporis deserunt enim, est fugiat illum,\n                        libero minima nam nihil praesentium repellendus sint tempora, tempore voluptas."
+      },
+      "Warranty and Service": {
+        "Electronics": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo em solo tempor incididuntut labore et dolore magna aliqua. Typi non habent claritatem insitam; est usus legentis in iisqui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod iilegunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium\n                        lectorum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo em solo tempor\n                        incididunt ut labore et dolore magna aliqua. Typi non habent claritatem insitam; est ususlegentis in iis qui facit eorum claritatem.",
+        "Computers": "Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est\n                        etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Lorem ipsum dolor sit\n                        amet, consectetur adipiscing elit, sed do eiusmo em solo tempor incididunt\n                        ut labore et dolore magna aliqua. Typi non habent claritatem insitam; est usus legentis in iis\n                        qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii\n                        legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium\n                        lectorum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+        "Beauty & Health": " A deserunt dignissimos, doloribus ducimus facilis fuga ipsum\n                        magni maxime nihil nulla pariatur porro possimus quae, quam quas quasi quia quidem quo\n                        repudiandae soluta, sunt totam velit veniam voluptate voluptatem. Aliquam amet dolor\n                        doloremque ducimus eaque eos, explicabo fugiat, harum ipsa, ipsam iste labore magnam\n                        molestias nemo neque nesciunt nostrum omnis quidem quos suscipit tempora tempore ut vero\n                        vitae voluptatibus. Accusamus adipisci aliquid corporis deserunt enim, est fugiat illum,\n                        libero minima nam nihil praesentium repellendus sint tempora, tempore voluptas."
+      }
     }
   },
   "news": {
@@ -1310,6 +1322,13 @@
       "date": "FEBRUARY 24, 2021",
       "tag": "Hi-Tech",
       "comments": null
+    }
+  },
+  "users": {
+    "r2MnOi1pOwSgCrHeEIjVjAXJyeK2": {
+      "cart": {
+        "9oehs3rc5iCVhzKxXdvV": 2
+      }
     }
   }
 }

@@ -1,13 +1,15 @@
 import { fireDB } from '../index'
-import { TProduct } from '../types/types'
-import firebase from 'firebase'
+import { TGoodsInfo, TNews, TProduct } from '../types/types'
+import { instance } from './api'
+// @ts-ignore
+import FireStoreParser from 'firestore-parser'
 
 export const goodsAPI = {
     requestGoods(
         category: string | undefined,
         price: [number, number] | undefined,
         brands: string[],
-        sort: 'desc' | 'asc'
+        sort: 'desc' | 'asc',
     ) {
         let query = fireDB.collection('goods').orderBy('price', sort)
         if (category) {
@@ -33,37 +35,16 @@ export const goodsAPI = {
                 console.log('Error getting document:', error)
             })
     },
-    requestInfo(category: string | undefined) {
-        const document = !category ? 'all' : category
-        return fireDB
-            .collection('info')
-            .doc(document)
-            .get()
-            .then((doc) => {
-                if (doc.exists) {
-                    return doc.data()
-                } else {
-                    console.log('No such document!')
-                }
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
+
+    requestGoodsInfo(category: string = 'all') {
+        return instance
+            .get<TGoodsInfo>(`documents/info/${category}`)
+            .then(response => FireStoreParser(response.data).fields as TGoodsInfo)
     },
+
     requestProduct(id: string) {
-        return fireDB
-            .collection('goods')
-            .doc(id)
-            .get()
-            .then((doc) => {
-                if (doc.exists) {
-                    return doc.data()
-                } else {
-                    console.log('No such document!')
-                }
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
-            })
+        return instance
+            .get<TProduct>(`documents/goods/${id}`)
+            .then(response => FireStoreParser(response.data).fields as TProduct)
     },
 }

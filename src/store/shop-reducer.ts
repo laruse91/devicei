@@ -51,7 +51,7 @@ export const getGoods = (
     // @ts-ignore
     const data: TProduct[] = await goodsAPI.requestGoods(category, price, brands, sort)
     // @ts-ignore
-    const info: TInfo = await goodsAPI.requestInfo(category)
+    const info: TInfo = await goodsAPI.requestGoodsInfo(category)
 
     const goods: TGoods = {
         items: part(currentPage, pageSize, data as TProduct[]),

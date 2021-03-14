@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Section } from '../../components/common/Section'
-import { Col, Divider, Image, InputNumber, Rate, Row, Tabs, Typography } from 'antd'
+import { Col, Divider, Image, Rate, Row, Tabs, Typography } from 'antd'
 import { s, sFont } from '../../styles/styles'
 import { useParams } from 'react-router-dom'
 import { select } from '../../selectors/selectors'
@@ -12,13 +12,15 @@ import { TReviewForm } from '../../types/types'
 import { TagLinks } from '../../components/common/TagLinks'
 import { Price } from '../../components/common/Price'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
+import { errorImg } from '../../utils/helpers'
+import { ProductSkeleton } from './ProductSkeleton'
 import { AddToCartButton } from '../../components/common/AddToCartButton'
 
 const { Title, Text } = Typography
 const { TabPane } = Tabs
 
 export const Product: React.FC = () => {
-    const params: { id: string } = useParams()
+    const params: { category: string, id: string } = useParams()
     const product = useSelector(select.product)
     const dispatch = useDispatch()
 
@@ -63,17 +65,19 @@ export const Product: React.FC = () => {
         })
     )
 
-    if (!product) return <div>loading</div>
+    if (!product) return <ProductSkeleton />
+
     return (
         <>
-            <BreadCrumbs />
+            <BreadCrumbs itemTitle={product.name} />
 
             <Section bgColor='white' verticalPadding={20}>
                 <Col xs={20} sm={10} md={12} lg={12}>
-                    <Image preview={false} style={s.productImage} src={product.image} />
+                    <Image preview={false} style={s.productImage} fallback={errorImg} src={product.image} />
                 </Col>
 
                 <Col xs={24} sm={14} md={12} lg={12}>
+
                     <Title level={2}>{product.name}</Title>
                     <Rate disabled value={product.rate} style={sFont(16)} />
 
@@ -81,18 +85,8 @@ export const Product: React.FC = () => {
 
                     <Text>{product?.description}</Text>
                     <Row style={{ margin: '20px 0' }}>
-                        <InputNumber
-                            min={1}
-                            max={10}
-                            defaultValue={1}
-                            style={{ marginRight: '20px', borderRadius: '10px' }}
-                        />
-                        <AddToCartButton
-                            name={product.name}
-                            price={product.price}
-                            image={product.image}
-                            id={product.id}
-                        />
+                        <AddToCartButton size='large' id={product.id} image={product.image} name={product.name}
+                                         price={product.price} category={product.category}/>
                     </Row>
                     <Row align='middle'>
                         <Title style={{ margin: '0 20px 0 0' }} level={5}>

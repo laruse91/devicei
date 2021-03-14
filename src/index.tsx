@@ -13,7 +13,7 @@ import store from './store/store'
 import { Provider } from 'react-redux'
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCMEibLtK58R7RcXGjed-kdvXsmuP9rJOU',
+    apiKey: 'AIzaSyD8F0X1Unx1Yg1YtDrEza8jrsLLstp6V-Y',
     authDomain: 'devicei.firebaseapp.com',
     databaseURL: 'https://devicei-default-rtdb.firebaseio.com',
     projectId: 'devicei',
@@ -36,5 +36,5 @@ render(
             <App />
         </Provider>
     </BrowserRouter>,
-    document.getElementById('root')
+    document.getElementById('root'),
 )
