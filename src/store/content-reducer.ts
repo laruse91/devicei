@@ -1,4 +1,4 @@
-import { TAbout, TFaq } from '../types/types'
+import { TAbout, TFaq, THome } from '../types/types'
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { contentApi } from '../api/content-api'
@@ -38,7 +38,7 @@ const actions = {
 type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
 export const getPageContent = (page: 'about' | 'faq'): TThunk => async (dispatch) => {
-    const data  = await contentApi.requestContent(page) as TAbout | TFaq
+    const data  = await contentApi.requestContent(page).catch((err)=>console.log(err))
        if (data && page === 'about')  dispatch(actions.setAbout(data as TAbout))
        if (data && page === 'faq')  dispatch(actions.setFaq(data as TFaq))
 }

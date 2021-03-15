@@ -1,4 +1,4 @@
-import { TCategories } from '../types/types'
+import { TCategories, TGoodsInfo } from '../types/types'
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { goodsAPI } from '../api/goods-api'

@@ -48,7 +48,7 @@ export const FAQ: React.FC = () => {
     return (
         <>
             <BreadCrumbs upperCase />
-            <PageHeader customTitle='FAQ' />
+            <PageHeader title='FAQ' />
             {content}
 
         </>

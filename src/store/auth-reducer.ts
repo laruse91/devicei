@@ -4,10 +4,10 @@ import { authAPI } from '../api/auth-api'
 import { TAuthorizedUser, TContacts } from '../types/types'
 import { getUserCart } from './cart-reducer'
 
-const SIGN_IN = 'SIGN_IN'
-const SIGN_OUT = 'SIGN_OUT'
-const SET_AUTHORIZED_USER = 'SET_AUTHORIZED_USER'
-const SET_USER_CONTACTS = 'SET_USER_CONTACTS'
+const SIGN_IN = 'auth/SIGN_IN'
+const SIGN_OUT = 'auth/SIGN_OUT'
+const SET_AUTHORIZED_USER = 'auth/SET_AUTHORIZED_USER'
+const SET_USER_CONTACTS = 'auth/SET_USER_CONTACTS'
 
 export const initialState = {
     isAuth: false,
@@ -57,7 +57,7 @@ export const actions = {
 type TThunk = ThunkAction<Promise<void>, () => TGlobalState, unknown, TActions>
 
 export const signUp = (email: string, password: string, name: string): TThunk => async (dispatch) => {
-    const signedUser = await authAPI.signUp(email, password, name)
+    const signedUser = await authAPI.signUp(email, password, name).catch(err=>console.log(err))
     if (signedUser) {
         dispatch(actions.signIn())
         dispatch(actions.setAuthorizedUser(signedUser))
@@ -65,7 +65,7 @@ export const signUp = (email: string, password: string, name: string): TThunk =>
     }
 }
 export const signIn = (email: string, password: string, rememberMe: boolean): TThunk => async (dispatch) => {
-    const authorizedUser = await authAPI.signIn(email, password, rememberMe)
+    const authorizedUser = await authAPI.signIn(email, password, rememberMe).catch(err=>console.log(err))
     if (authorizedUser) {
         dispatch(actions.signIn())
         dispatch(actions.setAuthorizedUser(authorizedUser))
@@ -73,17 +73,17 @@ export const signIn = (email: string, password: string, rememberMe: boolean): TT
     }
 }
 export const updateUserProfile = (userName?: string, photoUrl?: string): TThunk => async (dispatch) => {
-    const updatedUser = await authAPI.updateUserProfile(userName, photoUrl)
+    const updatedUser = await authAPI.updateUserProfile(userName, photoUrl)?.catch(err=>console.log(err))
     if (updatedUser) dispatch(actions.setAuthorizedUser(updatedUser))
 }
-export const addUserPhoto = (userId: string, file: Blob | File): TThunk => async (dispatch) => {
-    const imageUrl = await authAPI.uploadUserPhoto(userId, file as File)
-    imageUrl && (await dispatch(updateUserProfile(undefined, imageUrl)))
+export const addUserPhoto = (userId: string, file: File): TThunk => async (dispatch) => {
+    const photoUrl: string = await authAPI.uploadUserPhoto(userId, file).catch(err=>console.log(err))
+    photoUrl && (await dispatch(updateUserProfile(undefined, photoUrl)))
 }
 
 export const addUserContacts = (userId: string, contacts: TContacts): TThunk => async (dispatch) => {
-    const resp = await authAPI.addContacts(userId, contacts).catch(err => console.log(err))
-    if (resp) dispatch(actions.setContacts(contacts))
+    const response = await authAPI.addContacts(userId, contacts).catch(err => console.log(err))
+    if (response) dispatch(actions.setContacts(response))
 }
 export const getUserContacts = (userId: string): TThunk => async (dispatch) => {
     const user = await authAPI.requestUserInfo(userId).catch(err => console.log(err))

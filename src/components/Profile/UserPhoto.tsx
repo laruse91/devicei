@@ -26,7 +26,7 @@ export const UserPhoto: React.FC = () => {
 
     const handleChange = (info: UploadChangeParam) => {
         setIsLoading(true)
-        info.file.originFileObj && dispatch(addUserPhoto(authorizedUser!.userId, info.file.originFileObj))
+        info.file.originFileObj && dispatch(addUserPhoto(authorizedUser!.userId, info.file.originFileObj as File))
     }
 
     const uploadButton = (

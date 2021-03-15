@@ -20,7 +20,7 @@ export const News: React.FC = () => {
         dispatch(getNews())
     }, [])
 
-    const news = useSelector(select.Nnews)
+    const news = useSelector(select.News)
 
     const newsCards = !news
         ? fillArray(12).map((i) => <Col key={i} xs={22} sm={12} md={8}><Skeleton /></Col>)

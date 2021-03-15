@@ -1,6 +1,5 @@
 import { TGlobalState } from '../store/store'
 
-//home
 export const select = {
     carousel: (state: TGlobalState) => {
         return state.home.carousel
@@ -14,21 +13,30 @@ export const select = {
     tabGoods: (state: TGlobalState) => {
         return state.home.tabGoods
     },
-    news: (state: TGlobalState) => {
-        return state.home.news
+    popularNews: (state: TGlobalState) => {
+        return state.home.popularNews
     },
     isLoading: (state: TGlobalState) => {
         return state.home.isLoading
     },
+
+
     goods: (state: TGlobalState) => {
         return state.shop.goods
+    },
+    product: (state: TGlobalState) => {
+        return state.shop.product
     },
     isFetching: (state: TGlobalState) => {
         return state.shop.isFetching
     },
+
+
     categories: (state: TGlobalState) => {
         return state.app.categories
     },
+
+
     isAuth: (state: TGlobalState) => {
         return state.auth.isAuth
     },
@@ -38,23 +46,25 @@ export const select = {
     contacts: (state: TGlobalState) => {
         return state.auth.contacts
     },
-    product: (state: TGlobalState) => {
-        return state.product.product
-    },
+
+
     cartGoods: (state: TGlobalState) => {
         return state.cart.cart
     },
-    about: (state: TGlobalState) => {
-        return state.content.about
-    },
+
+
     article: (state: TGlobalState) => {
         return state.news.article
     },
-    Nnews: (state: TGlobalState) => {
+    News: (state: TGlobalState) => {
         return state.news.news
+    },
+
+
+    about: (state: TGlobalState) => {
+        return state.content.about
     },
     faq: (state: TGlobalState) => {
         return state.content.faq
     },
 }
-type TSelector = typeof select

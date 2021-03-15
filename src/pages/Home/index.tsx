@@ -22,7 +22,7 @@ import { ProductCard } from '../../components/cards/ProductCard'
 export const Home: React.FC = memo(() => {
     const features = useSelector(select.features)
     const saleGoods = useSelector(select.saleGoods)
-    const news = useSelector(select.news)
+    const news = useSelector(select.popularNews)
     const isLoading = useSelector(select.isLoading)
 
     const dispatch = useDispatch()

@@ -52,7 +52,6 @@ export type TCarousel = {
 }
 export type TTabs = 'rate' | 'new'
 export type TSales = 'sale' | 'saleOfDay'
-export type TInfo = { brands: string[]; total: number; maximalPrice: number }
 export type TCategories = string[]
 export type TGoods = {
     items: TProduct[]
@@ -125,6 +124,6 @@ export type TUserInfo = {
 export type TGoodsInfo = {
     brands: string[]
     categories: string[]
-    maximalPrise:number
+    maximalPrice:number
     total: number
 }

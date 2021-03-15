@@ -1,9 +1,9 @@
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { TCarousel, TGroup, THome, TNews, TProduct, TSales, TTabs } from '../types/types'
-import { homeAPI } from '../api/home-api'
 import { newsAPI } from '../api/news-api'
 import { contentApi } from '../api/content-api'
+import { goodsAPI } from '../api/goods-api'
 
 const SET_GOODS = 'SET_TAB_GOODS'
 const SET_DATA = 'SET_DATA'
@@ -16,7 +16,7 @@ export const initialState = {
     features: null as TProduct[] | null,
     tabGoods: null as { [key in TTabs]: TProduct[] } | null,
     saleGoods: null as { [key in TSales]: TProduct[] } | null,
-    news: null as TNews[] | null,
+    popularNews: null as TNews[] | null,
     isLoading: true,
 }
 export type TInitialState = typeof initialState
@@ -50,7 +50,7 @@ const actions = {
     setData: (carousel: TCarousel[], features: TProduct[]) =>
         ({ type: SET_DATA, payload: { carousel, features } } as const),
     setTabGoods: (tabGoods: { [key in TTabs]: TProduct[] }) => ({ type: SET_GOODS, payload: { tabGoods } } as const),
-    setNews: (news: TNews[]) => ({ type: SET_NEWS, payload: { news } } as const),
+    setNews: (popularNews: TNews[]) => ({ type: SET_NEWS, payload: { popularNews } } as const),
     setSaleGoods: (saleGoods: { [key in TSales]: TProduct[] }) =>
         ({ type: SET_SALE_GOODS, payload: { saleGoods } } as const),
     removeLoading: () => ({ type: REMOVE_LOADING } as const),
@@ -62,22 +62,22 @@ type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 export const getGoods = (groups: TGroup[], limit = 4, tag: 'tab' | 'sale'): TThunk => async (dispatch) => {
     let goods = {} as { [key in TGroup]: TProduct[] }
 
-    for (let c of groups) {
-        const response = await homeAPI.requestGoods(c, limit)
-        if (response) goods[c] = response
+    for (let g of groups) {
+        const response = await goodsAPI.requestGoods(undefined, undefined, [], 'asc', g, limit)
+        if (response) goods[g] = response
     }
     if (tag === 'tab') dispatch(actions.setTabGoods(goods))
     if (tag === 'sale') dispatch(actions.setSaleGoods(goods))
 }
 
 export const getNews = (): TThunk => async (dispatch) => {
-    const response: TNews[] | void = await newsAPI.requestNews(3).catch((err)=>console.log(err))
-    response && dispatch(actions.setNews(response))
+    const popularNews = await newsAPI.requestNews(3).catch((err) => console.log(err))
+    popularNews && dispatch(actions.setNews(popularNews))
 }
 
 export const getHomeData = (): TThunk => async (dispatch) => {
-    const response = await contentApi.requestContent('home') as THome
-    if (response) {
+    const response = await contentApi.requestContent('home').catch(err=>console.log(err)) as THome
+    if (response ) {
         const carousel: TCarousel[] = response.carousel
         const features: TProduct[] = response.features
         dispatch(actions.setData(carousel, features))

@@ -12,6 +12,7 @@ const { Text, Title, Paragraph } = Typography
 const { useBreakpoint } = Grid
 
 export const GoodsTable: React.FC = () => {
+
     const cartGoods = useSelector(select.cartGoods)
     const authorizedUser = useSelector(select.authorizedUser)
     const dispatch = useDispatch()

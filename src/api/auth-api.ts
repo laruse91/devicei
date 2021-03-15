@@ -66,8 +66,8 @@ export const authAPI = {
     },
     addCartProduct(userId: string, productId: string, quantity: number) {
         return dbInstance
-            .patch(`users/${userId}/cart.json`, { [productId]: quantity })
-            .then(() => true)
+            .patch<{[id:string]: number}>(`users/${userId}/cart.json`, { [productId]: quantity })
+            .then((response) => response)
     },
     removeCartProduct(userId: string, productId: string) {
         return dbInstance.delete(`users/${userId}/cart/${productId}.json`)
@@ -75,7 +75,10 @@ export const authAPI = {
     },
     addContacts(userId: string, contacts: TContacts) {
         return dbInstance
-            .patch(`users/${userId}/contacts.json`, { ...contacts })
-            .then(() => true)
+            .patch<TContacts>(`users/${userId}/contacts.json`, { ...contacts })
+            .then((response) => {
+                const {data} = response
+                return data
+            })
     },
 }

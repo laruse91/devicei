@@ -2,7 +2,6 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import homeReducer from './home-reducer'
 import thunk from 'redux-thunk'
 import shopReducer from './shop-reducer'
-import productReducer from './product-reducer'
 import appReducer from './app-reducer'
 import authReducer from './auth-reducer'
 import cartReducer from './cart-reducer'
@@ -14,10 +13,9 @@ const rootReducer = combineReducers({
     auth: authReducer,
     home: homeReducer,
     shop: shopReducer,
-    product: productReducer,
     cart: cartReducer,
     content: contentReducer,
-    news: newsReducer
+    news: newsReducer,
 })
 
 type TRootReducer = typeof rootReducer // (globalState: GlobalStateType)=> globalState

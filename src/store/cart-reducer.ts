@@ -96,8 +96,8 @@ export const updateQuantity = (userId: string | undefined, productId: string, va
     dispatch,
 ) => {
     if (userId) {
-        const resp = await authAPI.addCartProduct(userId, productId, value)
-        if (resp) dispatch(actions.updateQuantity(productId, value))
+        const response = await authAPI.addCartProduct(userId, productId, value).catch((err)=>console.log(err))
+        if (response) dispatch(actions.updateQuantity(productId, value))
     } else {
         let cart: { [id: string]: number } = {}
         const prev = localStorage.getItem('cart')
@@ -111,7 +111,7 @@ export const updateQuantity = (userId: string | undefined, productId: string, va
 }
 
 export const getCartProduct = (id: string, quantity: number): TThunk => async (dispatch) => {
-    const product = await goodsAPI.requestProduct(id)
+    const product = await goodsAPI.requestProduct(id).catch(err=>console.log(err))
     if (product) {
         const cartProduct: TCart = {
             id: product.id,
@@ -128,7 +128,6 @@ export const getCartProduct = (id: string, quantity: number): TThunk => async (d
 export const getUserCart = (userId?: string | null): TThunk => async (dispatch) => {
     if (userId) {
         const user = await authAPI.requestUserInfo(userId).catch(err => console.log(err))
-        console.log(user)
         if (user) {
             for (let id in user.cart) {
                 await dispatch(getCartProduct(id, user.cart[id]))

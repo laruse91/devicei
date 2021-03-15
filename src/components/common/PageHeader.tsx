@@ -6,17 +6,17 @@ import { capitalize } from '../../utils/helpers'
 
 const { Title } = Typography
 type TProps = {
-    customTitle?: string
+    title?: string
     verticalPadding?: number
 }
 
-export const PageHeader: React.FC<TProps> = ({ customTitle ,verticalPadding}) => {
+export const PageHeader: React.FC<TProps> = ({ title ,verticalPadding}) => {
     const location = useLocation()
-    const title = location.pathname.split('/').slice(-1)[0]
+    const modTitle = location.pathname.split('/').slice(-1)[0]
 
     return (
         <Section justify='start' bgColor='white' verticalPadding={verticalPadding}>
-            <Title style={{ margin:  0 }}>{customTitle || capitalize(title)}</Title>
+            <Title style={{ margin:  0 }}>{title || capitalize(modTitle)}</Title>
             <Divider />
         </Section>
     )

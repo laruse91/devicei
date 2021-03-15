@@ -1,5 +1,5 @@
 import { fireDB } from '../index'
-import { TGoodsInfo, TNews, TProduct } from '../types/types'
+import { TGoodsInfo, TGroup, TProduct } from '../types/types'
 import { instance } from './api'
 // @ts-ignore
 import FireStoreParser from 'firestore-parser'
@@ -10,6 +10,8 @@ export const goodsAPI = {
         price: [number, number] | undefined,
         brands: string[],
         sort: 'desc' | 'asc',
+        group? : TGroup,
+        limit : number= 100
     ) {
         let query = fireDB.collection('goods').orderBy('price', sort)
         if (category) {
@@ -21,8 +23,15 @@ export const goodsAPI = {
         if (price) {
             query = query.where('price', '>=', price[0]).where('price', '<=', price[1])
         }
+        if (group && group === 'rate') {
+            query = query.where('rate', '==', 5)
+        }
+        if (group && group !== 'rate') {
+            query = query.where('group', '==', group)
+        }
 
         return query
+            .limit(limit)
             .get()
             .then((response) => {
                 let data = [] as TProduct[]
@@ -30,9 +39,6 @@ export const goodsAPI = {
                     data.push(doc.data() as TProduct)
                 })
                 return data
-            })
-            .catch((error) => {
-                console.log('Error getting document:', error)
             })
     },
 

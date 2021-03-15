@@ -8,6 +8,7 @@ import { select } from '../../selectors/selectors'
 import { s } from '../../styles/styles'
 import { Link } from 'react-router-dom'
 import { TCart } from '../../types/types'
+import { PageHeader } from '../../components/common/PageHeader'
 
 const { Title, Text } = Typography
 
@@ -23,14 +24,12 @@ export const Cart: React.FC = () => {
     return (
         <>
             <BreadCrumbs />
+            <PageHeader title='My Cart' />
 
-            <Section justify='start' bgColor='white'>
-                <Title style={{ margin: '0' }}>My Cart</Title>
-                <Divider />
-            </Section>
             <Section bgColor='white'>
                 <GoodsTable />
             </Section>
+
             <Section justify='start' bgColor='white' title='Cart totals' verticalPadding={20}>
                 <Col xs={24} md={12}>
                     <Col span={24} style={s.totals}>
