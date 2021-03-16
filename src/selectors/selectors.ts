@@ -27,6 +27,9 @@ export const select = {
     product: (state: TGlobalState) => {
         return state.shop.product
     },
+    reviews: (state: TGlobalState) => {
+        return state.shop.reviews
+    },
     isFetching: (state: TGlobalState) => {
         return state.shop.isFetching
     },

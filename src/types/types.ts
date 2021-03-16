@@ -18,12 +18,12 @@ export type TNews = {
     title: string
 }
 export type TReview = {
-    id: string
+    id: number
     comment: string
     date: string
     userId: string
     userName: string
-    userPhoto: string
+    userPhoto: string | null
     rate: number
 }
 export type TGroup = 'sale' | 'rate' | 'saleOfDay' | 'new' | 'profitable'
@@ -43,7 +43,6 @@ export type TProduct = {
     characteristics: {
         [key: string]: string
     }
-    reviews: TReview[]
 }
 export type TCarousel = {
     title: string
@@ -64,9 +63,9 @@ export type TReviewForm = {
     comment: string
 }
 export type TAuthorizedUser = {
-    name: string | null
+    name: string
     userId: string
-    email: string | null
+    email: string
     photoURL: string | null
 }
 export type TContacts = {
@@ -111,7 +110,7 @@ export type TAbout = {
     }
 }
 export type TFaqGroups = 'Payment and Delivery' | 'Warranty and Service'
-export type TFaqCategories = 'Electronic' | 'Computers' | 'Beayty & Health'
+export type TFaqCategories = 'Electronic' | 'Computers' | 'Beauty & Health'
 export type TFaq = { [group in TFaqGroups]: { [category in TFaqCategories]: string } }
 export type THome = {
     carousel: TCarousel[]
@@ -124,6 +123,7 @@ export type TUserInfo = {
 export type TGoodsInfo = {
     brands: string[]
     categories: string[]
-    maximalPrice:number
+    maximalPrice: number
     total: number
 }
+

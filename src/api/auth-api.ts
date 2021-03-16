@@ -47,8 +47,8 @@ export const authAPI = {
         const userData = fireAuth.currentUser
         if (userData) {
             const user: TAuthorizedUser = {
-                name: userData.displayName,
-                email: userData.email,
+                name: userData.displayName as string,
+                email: userData.email as string,
                 photoURL: userData.photoURL,
                 userId: userData.uid,
             }

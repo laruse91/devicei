@@ -5,10 +5,10 @@ import { s, sFont } from '../../styles/styles'
 import { useParams } from 'react-router-dom'
 import { select } from '../../selectors/selectors'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProduct } from '../../store/shop-reducer'
+import { addReview, getProduct, getReviews } from '../../store/shop-reducer'
 import { Comment } from '../../components/common/Comment'
 import { CommentForm } from '../../components/common/CommentForm'
-import { TReviewForm } from '../../types/types'
+import { TReview, TReviewForm } from '../../types/types'
 import { TagLinks } from '../../components/common/TagLinks'
 import { Price } from '../../components/common/Price'
 import { BreadCrumbs } from '../../components/common/BreadCrumbs'
@@ -22,14 +22,26 @@ const { TabPane } = Tabs
 export const Product: React.FC = () => {
     const params: { category: string, id: string } = useParams()
     const product = useSelector(select.product)
+    const reviews = useSelector(select.reviews)
+    const authorizedUser = useSelector(select.authorizedUser)
+    const isAuth = useSelector(select.isAuth)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getProduct(params.id))
+        dispatch(getReviews(params.id))
     }, [])
 
-    const addReview = (value: TReviewForm) => {
-        console.log(value)
+    const handleAddReview = (value: TReviewForm) => {
+        const review: TReview = {
+            ...value,
+            id: Date.now(),
+            userId: authorizedUser!.userId,
+            userPhoto: authorizedUser!.photoURL,
+            userName: authorizedUser!.name,
+            date: new Date().toLocaleDateString(),
+        }
+        dispatch(addReview(product!.id, review))
     }
 
     const characteristics =
@@ -48,17 +60,17 @@ export const Product: React.FC = () => {
             )
         })
 
-    const reviews = !product?.reviews.length ? (
+    const comments = !reviews ? (
         <Text>There are no any review of {product?.title} yet</Text>
     ) : (
-        product.reviews.map((r) => {
+        Object.values(reviews).sort((a, b) => a.id - b.id).map((r) => {
             return (
                 <Comment
                     key={r.id}
                     userName={r.userName}
                     userPhoto={r.userPhoto}
                     date={r.date}
-                    commentBody={r.comment}
+                    comment={r.comment}
                     rate={r.rate}
                 />
             )
@@ -86,7 +98,7 @@ export const Product: React.FC = () => {
                     <Text>{product?.description}</Text>
                     <Row style={{ margin: '20px 0' }}>
                         <AddToCartButton size='large' id={product.id} image={product.image} name={product.name}
-                                         price={product.price} category={product.category}/>
+                                         price={product.price} category={product.category} />
                     </Row>
                     <Row align='middle'>
                         <Title style={{ margin: '0 20px 0 0' }} level={5}>
@@ -102,13 +114,16 @@ export const Product: React.FC = () => {
                     <TabPane tab='Characteristics' key='characteristics'>
                         <Col>{characteristics}</Col>
                     </TabPane>
+
                     <TabPane tab='Reviews' key='reviews'>
-                        <Row>
-                            <Col xs={24} sm={14} md={14}>
-                                {reviews}
+                        <Row justify='space-between'>
+                            <Col xs={24} sm={12} md={12} style={{ maxHeight: '300px', overflow: 'auto' }}>
+                                {comments}
                             </Col>
                             <Col xs={24} sm={10} md={10}>
-                                <CommentForm handleSubmit={addReview} formTitle='Add a review' />
+
+                                <CommentForm handleSubmit={handleAddReview} isAuth={isAuth} formTitle='Add a review' />
+
                             </Col>
                         </Row>
                     </TabPane>
