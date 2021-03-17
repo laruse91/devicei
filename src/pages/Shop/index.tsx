@@ -140,7 +140,6 @@ export const Shop: React.FC = memo(() => {
     return (
         <>
             <BreadCrumbs />
-
             <PageHeader />
 
             <Section bgColor='white' gutter={[20, 20]} justify='start'>

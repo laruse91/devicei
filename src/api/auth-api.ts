@@ -67,7 +67,7 @@ export const authAPI = {
     addCartProduct(userId: string, productId: string, quantity: number) {
         return dbInstance
             .patch<{[id:string]: number}>(`users/${userId}/cart.json`, { [productId]: quantity })
-            .then((response) => response)
+            .then((response) => response.data)
     },
     removeCartProduct(userId: string, productId: string) {
         return dbInstance.delete(`users/${userId}/cart/${productId}.json`)

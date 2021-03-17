@@ -61,7 +61,7 @@ export const Product: React.FC = () => {
         })
 
     const comments = !reviews ? (
-        <Text>There are no any review of {product?.title} yet</Text>
+        <Text>There are no any review of {product?.name} yet</Text>
     ) : (
         Object.values(reviews).sort((a, b) => a.id - b.id).map((r) => {
             return (

@@ -86,7 +86,6 @@ export const getProduct = (productId: string): TThunk => async (dispatch) => {
 
 export const getReviews = (productId: string): TThunk => async (dispatch) => {
     const response = await goodsAPI.requestReviews(productId).catch((err) => console.log(err))
-    if (response) console.log(response)
     if (response) dispatch(actions.setReviews(response))
 }
 export const addReview = (productId: string, review: TReview): TThunk => async (dispatch) => {

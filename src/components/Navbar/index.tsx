@@ -1,43 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { Menu, Row } from 'antd'
 import { HomeOutlined, InfoCircleOutlined, ProjectOutlined } from '@ant-design/icons'
-import { NavLink, useHistory, useLocation } from 'react-router-dom'
+import { Link, NavLink, useHistory, useLocation } from 'react-router-dom'
 import { sFont } from '../../styles/styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { getCategories } from '../../store/app-reducer'
+import { capitalize } from '../../utils/helpers'
 
 // todo: remove any
 export const Navbar: React.FC = () => {
-    const [current, setCurrent] = useState<string>('home')
+    const [current, setCurrent] = useState<string>('shop')
     const categories = useSelector(select.categories)
     const location = useLocation()
-    const history = useHistory()
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        if (location.pathname.split('/')[1] === 'product') {
-            setCurrent('shop')
-        } else {
-            setCurrent(location.pathname.split('/')[1])
-        }
-    }, [])
+    const curLocation = location.pathname.split('/')[2] || location.pathname.split('/')[1]
     useEffect(() => {
         dispatch(getCategories())
+        setCurrent(curLocation)
     }, [])
 
     const handleClick = (e: any) => {
         setCurrent(e.key)
     }
-    const handleTitleClick = (e: any) => {
-        setCurrent(e.key)
-        history.replace({ pathname: '/' + e.key })
-    }
 
     const items = categories?.map((c) => {
         return (
             <Menu.Item key={c}>
-                <NavLink to={'/shop/' + c}>{c[0].toUpperCase() + c.slice(1)} </NavLink>
+                <Link to={'/shop/' + c}>{capitalize(c)} </Link>
             </Menu.Item>
         )
     })
@@ -49,10 +40,11 @@ export const Navbar: React.FC = () => {
                 </Menu.Item>
 
                 <Menu.SubMenu
-                    key='shop'
-                    onTitleClick={handleTitleClick}
                     icon={<HomeOutlined style={sFont(14)} />}
                     title='Shop'>
+                    <Menu.Item key='shop'>
+                        <Link to={'/shop'}>All goods</Link>
+                    </Menu.Item>
                     {items}
                 </Menu.SubMenu>
 

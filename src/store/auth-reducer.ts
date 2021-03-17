@@ -2,7 +2,7 @@ import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/auth-api'
 import { TAuthorizedUser, TContacts } from '../types/types'
-import { clearLocalCart, getUserCart } from './cart-reducer'
+import { getUpdatedUserCart } from './cart-reducer'
 
 const SIGN_IN = 'auth/SIGN_IN'
 const SIGN_OUT = 'auth/SIGN_OUT'
@@ -29,7 +29,7 @@ const authReducer = (state = initialState, action: TActions): TInitialState => {
                 ...state,
                 isAuth: false,
                 authorizedUser: null,
-                contacts: null
+                contacts: null,
             }
         case SET_AUTHORIZED_USER:
         case SET_USER_CONTACTS:
@@ -57,27 +57,27 @@ export const actions = {
 type TThunk = ThunkAction<Promise<void>, () => TGlobalState, unknown, TActions>
 
 export const signUp = (email: string, password: string, name: string): TThunk => async (dispatch) => {
-    const signedUser = await authAPI.signUp(email, password, name).catch(err=>console.log(err))
+    const signedUser = await authAPI.signUp(email, password, name).catch(err => console.log(err))
     if (signedUser) {
         dispatch(actions.signIn())
         dispatch(actions.setAuthorizedUser(signedUser))
-        await dispatch(getUserCart(signedUser.userId))
+        await dispatch(getUpdatedUserCart(signedUser.userId))
     }
 }
 export const signIn = (email: string, password: string, rememberMe: boolean): TThunk => async (dispatch) => {
-    const authorizedUser = await authAPI.signIn(email, password, rememberMe).catch(err=>console.log(err))
+    const authorizedUser = await authAPI.signIn(email, password, rememberMe).catch(err => console.log(err))
     if (authorizedUser) {
         dispatch(actions.signIn())
         dispatch(actions.setAuthorizedUser(authorizedUser))
-        await dispatch(getUserCart(authorizedUser.userId))
+        await dispatch(getUpdatedUserCart(authorizedUser.userId))
     }
 }
 export const updateUserProfile = (userName?: string, photoUrl?: string): TThunk => async (dispatch) => {
-    const updatedUser = await authAPI.updateUserProfile(userName, photoUrl)?.catch(err=>console.log(err))
+    const updatedUser = await authAPI.updateUserProfile(userName, photoUrl)?.catch(err => console.log(err))
     if (updatedUser) dispatch(actions.setAuthorizedUser(updatedUser))
 }
 export const addUserPhoto = (userId: string, file: File): TThunk => async (dispatch) => {
-    const photoUrl: string = await authAPI.uploadUserPhoto(userId, file).catch(err=>console.log(err))
+    const photoUrl: string = await authAPI.uploadUserPhoto(userId, file).catch(err => console.log(err))
     photoUrl && (await dispatch(updateUserProfile(undefined, photoUrl)))
 }
 
