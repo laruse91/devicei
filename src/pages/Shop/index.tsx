@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useEffect, useMemo, useState } from 'react'
 import { Section } from '../../components/common/Section'
 import { ProductCard } from '../../components/cards/ProductCard'
 import { getGoods } from '../../store/shop-reducer'
@@ -62,21 +62,21 @@ export const Shop: React.FC = memo(() => {
         if (price && price[0] !== 0) query.priceFrom = String(price[0])
         if (price && price[1] !== goods?.maximalPrice) query.priceTo = String(price[1])
 
-        history.push({
-            search: queryString.stringify(query),
-        })
+        history.push({ search: queryString.stringify(query) })
     }, [brands, price, page, sort])
     useEffect(() => {
         dispatch(getGoods(category, price, brands, sort, page))
         if (category) {
             history.replace({ pathname: `/shop/${category}` })
-            setBrands([])
         }
+        setPage(1)
     }, [category])
-    useEffect(() => {
+
+    useMemo(() => {
         setCategory(params.category)
+        setBrands([])
     }, [params.category])
-    useEffect(() => {
+    useMemo(() => {
         parsed.brand && setBrands(parsed.brand.split('_'))
     }, [parsed.brand])
 
@@ -96,9 +96,7 @@ export const Shop: React.FC = memo(() => {
     }
     const handleBrandChecked = (values: CheckboxValueType[]) => {
         setBrands(values as string[])
-    }
-    const handleLinkClick = () => {
-        setCategory(undefined)
+        setPage(1)
     }
 
     const responsive = { xs: 24, sm: 12, md: 12, lg: 8, xxl: 6 }
@@ -141,7 +139,7 @@ export const Shop: React.FC = memo(() => {
 
     return (
         <>
-            <BreadCrumbs onClick={handleLinkClick} />
+            <BreadCrumbs />
 
             <PageHeader />
 
@@ -176,7 +174,7 @@ export const Shop: React.FC = memo(() => {
                             </Dropdown>
                         </Col>
                         <Pagination
-                            defaultCurrent={page}
+                            current={page}
                             total={goods?.total}
                             defaultPageSize={12}
                             onChange={handlePageChange}

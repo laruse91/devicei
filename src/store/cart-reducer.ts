@@ -144,7 +144,7 @@ export const getUserCart = (userId?: string | null): TThunk => async (dispatch) 
     }
 }
 
-export const clearCart = () => (dispatch: Dispatch): void => {
+export const clearLocalCart = () => (dispatch: Dispatch): void => {
     localStorage.removeItem('cart')
     dispatch(actions.clearCart())
 }

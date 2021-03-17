@@ -2,7 +2,7 @@ import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/auth-api'
 import { TAuthorizedUser, TContacts } from '../types/types'
-import { getUserCart } from './cart-reducer'
+import { clearLocalCart, getUserCart } from './cart-reducer'
 
 const SIGN_IN = 'auth/SIGN_IN'
 const SIGN_OUT = 'auth/SIGN_OUT'

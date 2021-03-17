@@ -5,7 +5,7 @@ import { AuthForm } from './AuthForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { select } from '../../selectors/selectors'
 import { actions } from '../../store/auth-reducer'
-import { clearCart } from '../../store/cart-reducer'
+import { clearLocalCart } from '../../store/cart-reducer'
 import { Profile } from '../Profile'
 
 const { Text, Paragraph } = Typography
@@ -27,7 +27,7 @@ export const Auth: React.FC = () => {
     }
     const handleSignOutClick = () => {
         dispatch(actions.signOut())
-        dispatch(clearCart())
+        dispatch(clearLocalCart())
         message.success('You signed out')
     }
     const handleAuthFormClose = () => {
