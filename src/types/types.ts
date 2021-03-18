@@ -8,6 +8,7 @@ export type TQueryParams = {
     priceFrom: string
     priceTo: string
     brand?: string
+    term?: string
 }
 export type TNews = {
     articles: string[]

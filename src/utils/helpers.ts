@@ -44,3 +44,9 @@ export const minMax = (array: TProduct[]): [number, number] => {
     }
     return [min, max]
 }
+
+// search filter
+export const search=( arr: TProduct[],category: string | undefined, term: string,):TProduct[] =>{
+    const sortedArr = category !== undefined ? arr.filter(product=>product.category === category) : arr
+    return sortedArr.filter(product=> product.name.toLowerCase().search(term.trim().toLowerCase()) !== -1)
+}

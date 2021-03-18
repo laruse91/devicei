@@ -2,7 +2,7 @@ import { TCategories, TGoods, TProduct, TReview } from '../types/types'
 import { TCombineActions, TGlobalState } from './store'
 import { ThunkAction } from 'redux-thunk'
 import { goodsAPI } from '../api/goods-api'
-import { part } from '../utils/helpers'
+import { part, search } from '../utils/helpers'
 
 const SET_GOODS = 'shop/SET_GOODS'
 const SET_IS_FETCHING = 'shop/SET_IS_FETCHING'
@@ -57,26 +57,31 @@ type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
 export const getGoods = (
     category: string | undefined,
-    price: [number, number] | undefined,
+    price: [number | undefined, number| undefined] ,
     brands: string[],
     sort: 'desc' | 'asc',
     currentPage: number,
+    term: string | undefined,
     pageSize: number = 12,
 ): TThunk => async (dispatch) => {
 
     dispatch(actions.setIsFetching(true))
-    const data = await goodsAPI.requestGoods(category, price, brands, sort).catch(err => console.log(err))
+    let data = await goodsAPI.requestGoods(category, price, brands, sort).catch(err => console.log(err))
     const info = await goodsAPI.requestGoodsInfo(category).catch(err => console.log(err))
     if (data && info) {
+        if (term) data = search(data, category, term)
+
         const goods: TGoods = {
             items: part(currentPage, pageSize, data as TProduct[]),
             total: data.length,
             maximalPrice: info?.maximalPrice,
             brands: info?.brands,
         }
+
         dispatch(actions.setGoods(goods))
     }
     dispatch(actions.setIsFetching(false))
+
 }
 
 export const getProduct = (productId: string): TThunk => async (dispatch) => {

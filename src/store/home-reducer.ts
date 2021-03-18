@@ -63,7 +63,7 @@ export const getGoods = (groups: TGroup[], limit = 4, tag: 'tab' | 'sale'): TThu
     let goods = {} as { [key in TGroup]: TProduct[] }
 
     for (let g of groups) {
-        const response = await goodsAPI.requestGoods(undefined, undefined, [], 'asc', g, limit)
+        const response = await goodsAPI.requestGoods(undefined, [undefined, undefined], [], 'asc', g, limit)
         if (response) goods[g] = response
     }
     if (tag === 'tab') dispatch(actions.setTabGoods(goods))

@@ -35,7 +35,8 @@ export const s: TStyle = {
         width: '3px',
         height: '17px',
         backgroundColor: 'black',
-    }
+    },
+    nothingFound: { width: '100%', margin: '40px auto' }
 }
 export const sAuthForm = {
     labelCol: { span: 8 },

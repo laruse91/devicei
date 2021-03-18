@@ -7,7 +7,7 @@ import FireStoreParser from 'firestore-parser'
 export const goodsAPI = {
     requestGoods(
         category: string | undefined,
-        price: [number, number] | undefined,
+        price: [number | undefined, number| undefined],
         brands: string[],
         sort: 'desc' | 'asc',
         group?: TGroup,
@@ -20,8 +20,11 @@ export const goodsAPI = {
         if (brands.length) {
             query = query.where('brand', 'in', brands)
         }
-        if (price) {
-            query = query.where('price', '>=', price[0]).where('price', '<=', price[1])
+        if (price[0]) {
+            query = query.where('price', '>=', price[0])
+        }
+        if (price[1]) {
+            query = query.where('price', '<=', price[1])
         }
         if (group && group === 'rate') {
             query = query.where('rate', '==', 5)
