@@ -17,7 +17,7 @@ export const BreadCrumbs: React.FC<TProps> = ({ upperCase, itemTitle }) => {
 
     const title = (text: string) => upperCase ? text.toLocaleUpperCase() : capitalize(text)
     const breadcrumbItems = routes.map((r, i) => {
-        const path = routes[i - 1] ? `/${routes[i - 1]}/${r} ` : `/${r}`
+        const path = routes[i - 1] ? `/${routes[i - 1]}/${r}` : `/${r}`
         const last = routes.indexOf(r) === routes.length - 1
         return last ? (
             <Breadcrumb.Item key={r}>{itemTitle || title(r)}</Breadcrumb.Item>

@@ -9,7 +9,7 @@ export const s: TStyle = {
     productCard: { border: '1px solid #dddddd', borderRadius: '10px', cursor: 'default', width: '100%' },
     productName: { marginTop: '5px', height: '55px', cursor: 'pointer', textAlign: 'center' },
     imageWrapper: {borderRadius: '20px', background: '#f2f2f2', height: '100%', padding: '80px 0'},
-    futureProductName: { color: 'white', marginTop: '5px', height: '90px', cursor: 'pointer' },
+    futureProductName: { color: 'white', marginTop: '5px', height: '90px' },
     badge: { fontSize: '16px', background: '#3452ff' },
     table: {
         border: '1px solid #dddddd',
@@ -28,7 +28,14 @@ export const s: TStyle = {
         border: '1px solid #dddddd',
         borderRadius: '10px',
     },
-    tags:{display: 'block', width: '100%', color: '#1890ff'}
+    tags:{display: 'block', width: '100%', color: '#1890ff'},
+    logoBadge: { position: 'absolute', left: '99px', top: '-4px' },
+    logoStick: {
+        marginLeft: '1px',
+        width: '3px',
+        height: '17px',
+        backgroundColor: 'black',
+    }
 }
 export const sAuthForm = {
     labelCol: { span: 8 },

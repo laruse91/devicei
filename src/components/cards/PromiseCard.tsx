@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import { Col, Divider, Grid, Row, Typography } from 'antd'
 
 const { Title, Text } = Typography

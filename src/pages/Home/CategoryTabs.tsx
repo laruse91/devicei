@@ -1,4 +1,4 @@
-import React, { CSSProperties, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Tabs } from 'antd'
 import { ProductCard } from '../../components/cards/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,28 +27,24 @@ export const CategoryTabs = () => {
 
     const cards = !tabGoods
         ? fillArray(4).map((card) => {
-              return <CardSkeleton key={card} responsive={responsive} />
-          })
+            return <CardSkeleton key={card} responsive={responsive} />
+        })
         : tabGoods[tab].map((g) => {
-              return <ProductCard key={g.id} product={g} responsive={responsive} />
-          })
+            return <ProductCard key={g.id} product={g} responsive={responsive} />
+        })
 
-    if (!tabGoods) {
-        return <>'...loading'</>
-    } else {
-        return (
-            <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px', width: '100%' }}>
-                <TabPane tab='Top Rated' key='rate' style={{ maxHeight: '410px' }}>
-                    <Row justify='center' gutter={[10, 10]}>
-                        {cards}
-                    </Row>
-                </TabPane>
-                <TabPane tab='New' key='new'>
-                    <Row gutter={[25, 25]} justify='space-between' style={{ maxHeight: '400px' }}>
-                        {cards}
-                    </Row>
-                </TabPane>
-            </Tabs>
-        )
-    }
+    return (
+        <Tabs defaultActiveKey={tab} onChange={handleTabChange} style={{ padding: '0 10px 10px', width: '100%' }}>
+            <TabPane tab='Top Rated' key='rate' style={{ maxHeight: '410px' }}>
+                <Row justify='space-between' gutter={[10, 10]}>
+                    {cards}
+                </Row>
+            </TabPane>
+            <TabPane tab='New' key='new'>
+                <Row gutter={[10, 10]} justify='space-between'>
+                    {cards}
+                </Row>
+            </TabPane>
+        </Tabs>
+    )
 }

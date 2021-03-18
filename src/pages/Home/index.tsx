@@ -64,7 +64,7 @@ export const Home: React.FC = memo(() => {
                         <DollarTwoTone style={sFont(30)} />
                     </PromiseCard>
 
-                    <PromiseCard title='Client`s Support' description='Fast Service'>
+                    <PromiseCard title='24h Support' description='Fast Service'>
                         <SafetyCertificateTwoTone style={sFont(30)} />
                     </PromiseCard>
 
