@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+[![header](https://github.com/laruse91/)](https://devicei.web.app)
+You can see and test site by the link below:  
+link to site: [device_i](https://devicei.web.app)  
+You can create a new account using e-mail.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Device_i internet shop
 
-## Available Scripts
+This is my project on React JS and TypeScript. To implement the server side I used Firebase Realtime Database and 
+Firebase Cloud Store. Interaction takes place on the REST API. This project implements authorization, a small 
+profile form, filtering and sorting of goods, simple Google Maps and there is also not a big search.
+Briefly about the libraries used on the project:
 
-In the project directory, you can run:
+* `Redux` to implement the management of state
+* `axios` library is used for `GET` `POST` `PATCH` requests
+* `formik` and `yup` libraries used for processing and validation forms
+* `ant-design` library used for the design of some components
+* `firebase` library used as a back-end server part
+* `prettier` and `es-lint` libraries used for code formatting
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Other info
 
-### `yarn test`
+In my plans make an admin panel to add the goods, news, and other information to website.
+implemented in the near future
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Languages and Tools
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![TypeScript](https://img.shields.io/badge/-TypeScript-%233178c6?style=flat-square&logo=typescript&logoColor=white
+'TypeScript')
+![JavaScript](https://img.shields.io/badge/-JavaScript-%23DAF7A6?style=flat-square&logo=javaScript&logoColor=%23607d8b 'JavaScript')
+![ReactJS](https://img.shields.io/badge/-React_JS-%2361dafb?style=flat-square&logo=react&logoColor=%23000000 'React JS')
+![Redux](https://img.shields.io/badge/-Redux-%23764abc?style=flat-square&logo=redux 'Redux')
+![AntDesign](https://img.shields.io/badge/-Ant_Design-%2369f0ae?style=flat-square&logo=ant-design&logoColor=%23616161 'AntDesign')
+![Firebase](https://img.shields.io/badge/-Firebase-%231b72e8?style=flat-square&logo=firebase&logoColor=%23ffcb2b 
+'Firebase')
+![GitHub](https://img.shields.io/badge/-GitHub-%23212121?style=flat-square&logo=gitHub 'GitHub')
+![HTML](https://img.shields.io/badge/-HTML-%23ff8a65?style=flat-square&logo=html5&logoColor=white 'HTML')
+![CSS](https://img.shields.io/badge/-CSS-%239575cd?style=flat-square&logo=css3&logoColor=white 'CSS')
+![WebStorm](https://img.shields.io/badge/-WebStorm-%23607d8b?style=flat-square&logo=webstorm&logoColor=white 'WebStorm')
+![Yarn](https://img.shields.io/badge/-Yarn-%23eeeeee?style=flat-square&logo=yarn 'Yarn')
