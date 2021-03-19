@@ -47,7 +47,7 @@ type TActions = TCombineActions<typeof actions>
 const actions = {
     setGoods: (goods: TGoods) => ({ type: SET_GOODS, payload: { goods } } as const),
     setProduct: (product: TProduct) => ({ type: SET_PRODUCT, payload: { product } } as const),
-    setReviews: (reviews: { [id: string]: TReview } ) => ({ type: SET_COMMENT, payload: { reviews } } as const),
+    setReviews: (reviews: { [id: string]: TReview } |  null) => ({ type: SET_COMMENT, payload: { reviews } } as const),
     addReview: (review: { [id: string]: TReview }) => ({ type: ADD_COMMENT, payload: review } as const),
     setIsFetching: (isFetching: boolean) => ({ type: SET_IS_FETCHING, payload: { isFetching } } as const),
 }
@@ -57,7 +57,7 @@ type TThunk = ThunkAction<void, () => TGlobalState, unknown, TActions>
 
 export const getGoods = (
     category: string | undefined,
-    price: [number | undefined, number| undefined] ,
+    price: [number | undefined, number | undefined],
     brands: string[],
     sort: 'desc' | 'asc',
     currentPage: number,
@@ -90,6 +90,7 @@ export const getProduct = (productId: string): TThunk => async (dispatch) => {
 }
 
 export const getReviews = (productId: string): TThunk => async (dispatch) => {
+    dispatch(actions.setReviews(null))
     const response = await goodsAPI.requestReviews(productId).catch((err) => console.log(err))
     if (response) dispatch(actions.setReviews(response))
 }
