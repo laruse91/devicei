@@ -1,5 +1,5 @@
-[![header](https://github.com/laruse91/devicei/blob/main/public/title.png)](https://devicei.web.app)
-You can see and test site by the link below:  
+[![header](https://github.com/laruse91/devicei/blob/main/public/title.png?raw=true)](https://devicei.web.app)
+You can see and test site by the link below, or just click to preview:  
 link to site: [device_i](https://devicei.web.app)  
 You can create a new account using e-mail.
 
