@@ -8,9 +8,9 @@ import { select } from '../../selectors/selectors'
 import { getCategories } from '../../store/app-reducer'
 import { capitalize } from '../../utils/helpers'
 
-// todo: remove any
+
 export const Navbar: React.FC = () => {
-    const [current, setCurrent] = useState<string>('shop')
+    const [current, setCurrent] = useState<string>('')
     const categories = useSelector(select.categories)
     const location = useLocation()
     const dispatch = useDispatch()
